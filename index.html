@@ -62,7 +62,7 @@ top:0;
 width:100%;
 display:flex;
 justify-content:center;
-gap:40px;
+gap:35px;
 padding:15px;
 background:rgba(0,0,0,0.6);
 backdrop-filter:blur(10px);
@@ -93,9 +93,9 @@ padding:20px;
 }
 
 .hero h1{
-font-size:85px;
+font-size:80px;
 color:#ff3c00;
-text-shadow:0 0 60px red;
+text-shadow:0 0 50px red;
 }
 
 .hero p{
@@ -135,25 +135,25 @@ margin:auto;
 text-align:center;
 }
 
-/* TOKENOMICS */
+/* TOKENOMICS GRID */
 
 .grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
 gap:25px;
 }
 
 .token{
-background:rgba(0,0,0,0.55);
+background:rgba(0,0,0,0.5);
 padding:30px;
 border-radius:12px;
-box-shadow:0 0 15px rgba(255,80,0,0.5);
+box-shadow:0 0 15px rgba(255,80,0,0.4);
 }
 
 /* ROADMAP */
 
 .card{
-background:rgba(0,0,0,0.5);
+background:rgba(0,0,0,0.45);
 padding:35px;
 border-radius:15px;
 margin-bottom:35px;
@@ -162,9 +162,9 @@ box-shadow:0 0 20px rgba(255,80,0,0.5);
 }
 
 h2{
-font-size:40px;
+font-size:38px;
 color:#ff3c00;
-margin-bottom:35px;
+margin-bottom:30px;
 }
 
 h3{
@@ -243,7 +243,9 @@ padding:25px;
 
 The Dragon Rises Again  
 <br>
-Community Meme Coin on Solana
+No Presale • No Insiders  
+<br>
+Fair Launch on Pump.fun
 
 </p>
 
@@ -255,7 +257,7 @@ COMING SOON
 
 <a class="btn" href="https://pump.fun" target="_blank">
 
-Launch on Pump.fun
+🚀 Launch on Pump.fun
 
 </a>
 
@@ -270,23 +272,39 @@ Launch on Pump.fun
 <div class="grid">
 
 <div class="token">
-Total Supply <br><br>
+Total Supply  
+<br><br>
 1,000,000,000
 </div>
 
 <div class="token">
-Liquidity <br><br>
+Liquidity  
+<br><br>
 90%
 </div>
 
 <div class="token">
-Dev Wallet <br><br>
+Dev Wallet  
+<br><br>
 10%
 </div>
 
 <div class="token">
-Tax <br><br>
+Tax  
+<br><br>
 0%
+</div>
+
+<div class="token">
+Ticker  
+<br><br>
+RX
+</div>
+
+<div class="token">
+Network  
+<br><br>
+Solana
 </div>
 
 </div>
@@ -352,13 +370,13 @@ Long term ecosystem growth
 <footer>
 
 REBORNX © 2026  
-Community Driven Meme Coin
+Community Driven Meme Coin on Solana
 
 </footer>
 
 <script>
 
-/* PARTICLE ANIMATION */
+/* PARTICLES */
 
 const canvas = document.getElementById("particles");
 const ctx = canvas.getContext("2d");
@@ -366,7 +384,7 @@ const ctx = canvas.getContext("2d");
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
-let particles = [];
+let particles=[];
 
 for(let i=0;i<80;i++){
 particles.push({
@@ -383,10 +401,14 @@ ctx.clearRect(0,0,canvas.width,canvas.height);
 
 particles.forEach(p=>{
 p.y -= p.speed;
-if(p.y < 0) p.y = canvas.height;
+
+if(p.y < 0){
+p.y = canvas.height;
+}
 
 ctx.fillStyle="orange";
 ctx.fillRect(p.x,p.y,p.size,p.size);
+
 });
 
 requestAnimationFrame(animate);
@@ -398,5 +420,4 @@ animate();
 </script>
 
 </body>
-
 </html>
