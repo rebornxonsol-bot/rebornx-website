@@ -10,6 +10,12 @@
 
 <style>
 
+/* SMOOTH SCROLL */
+
+html{
+scroll-behavior:smooth;
+}
+
 body{
 margin:0;
 font-family:Arial;
@@ -34,8 +40,33 @@ z-index:-1;
 
 @keyframes firebg{
 0%{filter:brightness(1)}
-50%{filter:brightness(1.5)}
+50%{filter:brightness(1.4)}
 100%{filter:brightness(1)}
+}
+
+/* NAVBAR */
+
+.navbar{
+position:fixed;
+top:0;
+width:100%;
+background:rgba(0,0,0,0.6);
+backdrop-filter:blur(8px);
+padding:15px;
+display:flex;
+justify-content:center;
+gap:30px;
+z-index:10;
+}
+
+.navbar a{
+color:white;
+text-decoration:none;
+font-weight:bold;
+}
+
+.navbar a:hover{
+color:#ff3c00;
 }
 
 /* HERO */
@@ -60,10 +91,17 @@ font-size:22px;
 color:#eee;
 }
 
+.coming{
+margin-top:20px;
+font-size:28px;
+color:#ff3c00;
+text-shadow:0 0 20px red;
+letter-spacing:3px;
+}
+
 /* BUTTON */
 
 .btn{
-
 display:inline-block;
 margin-top:25px;
 padding:15px 40px;
@@ -72,17 +110,6 @@ border-radius:10px;
 color:white;
 text-decoration:none;
 box-shadow:0 0 20px red;
-
-}
-
-/* COUNTDOWN */
-
-.countdown{
-
-margin-top:20px;
-font-size:25px;
-color:#fff;
-
 }
 
 /* SECTION */
@@ -95,7 +122,6 @@ text-align:center;
 /* CARD */
 
 .card{
-
 max-width:850px;
 margin:auto;
 padding:40px;
@@ -103,7 +129,6 @@ border-radius:15px;
 margin-bottom:40px;
 background:rgba(0,0,0,0.35);
 backdrop-filter:blur(8px);
-
 }
 
 /* TITLES */
@@ -121,7 +146,6 @@ color:#ff3c00;
 /* COPY BUTTON */
 
 .copybtn{
-
 margin-top:20px;
 padding:12px 25px;
 background:#ff3c00;
@@ -129,7 +153,6 @@ border:none;
 color:white;
 border-radius:8px;
 cursor:pointer;
-
 }
 
 /* FOOTER */
@@ -146,9 +169,20 @@ text-align:center;
 
 <body>
 
+<!-- NAVBAR -->
+
+<div class="navbar">
+
+<a href="#home">Home</a>
+<a href="#tokenomics">Tokenomics</a>
+<a href="#roadmap">Roadmap</a>
+<a href="https://x.com/rebornxonsol" target="_blank">X</a>
+
+</div>
+
 <!-- HERO -->
 
-<div class="hero">
+<div class="hero" id="home">
 
 <h1>REBORNX</h1>
 
@@ -160,9 +194,9 @@ Fair Launch on Pump.fun
 
 </p>
 
-<div class="countdown" id="countdown">
+<div class="coming">
 
-Launch Countdown Loading...
+COMING SOON
 
 </div>
 
@@ -198,7 +232,7 @@ The official contract address will be revealed at launch.
 
 <!-- TOKENOMICS -->
 
-<div class="section">
+<div class="section" id="tokenomics">
 
 <h2>Tokenomics</h2>
 
@@ -238,17 +272,17 @@ Tax : 0%
 
 <!-- ROADMAP -->
 
-<div class="section">
+<div class="section" id="roadmap">
 
 <h2>Roadmap</h2>
 
 <div class="card">
 
-<h3>Phase 1 — Foundation</h3>
+<h3>✔ Phase 1 — Foundation (Completed)</h3>
 
-Website launch  
-Community building  
-Social media setup  
+Website launch ✔  
+Community building (In Progress)  
+Social media setup ✔  
 
 </div>
 
@@ -326,29 +360,6 @@ navigator.clipboard.writeText("COMING SOON");
 alert("Contract Address Coming Soon");
 
 }
-
-/* COUNTDOWN */
-
-var launchDate = new Date("2026-01-01").getTime();
-
-var timer = setInterval(function(){
-
-var now = new Date().getTime();
-
-var distance = launchDate - now;
-
-var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-
-var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-
-var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-
-var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-document.getElementById("countdown").innerHTML =
-days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
-
-},1000);
 
 </script>
 
