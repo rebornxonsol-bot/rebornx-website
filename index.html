@@ -10,8 +10,6 @@
 
 <style>
 
-/* RESET */
-
 *{
 margin:0;
 padding:0;
@@ -19,13 +17,13 @@ box-sizing:border-box;
 }
 
 body{
-font-family:Arial, sans-serif;
+font-family:Arial;
 background:black;
 color:white;
 overflow-x:hidden;
 }
 
-/* FIRE BACKGROUND */
+/* DRAGON FIRE BACKGROUND */
 
 body::before{
 content:"";
@@ -34,15 +32,20 @@ top:0;
 left:0;
 width:100%;
 height:100%;
-background:radial-gradient(circle,#ff3c00,#000);
-animation:firebg 5s infinite alternate;
+background:
+radial-gradient(circle at center,#ff3c00,#000),
+radial-gradient(circle at top,#ff6a00,transparent),
+radial-gradient(circle at bottom,#ff0000,transparent);
+animation:firemove 6s infinite alternate;
 z-index:-2;
 }
 
-@keyframes firebg{
+@keyframes firemove{
+
 0%{filter:brightness(1)}
-50%{filter:brightness(1.6)}
+50%{filter:brightness(1.5)}
 100%{filter:brightness(1)}
+
 }
 
 /* PARTICLES */
@@ -57,6 +60,7 @@ z-index:-1;
 /* NAVBAR */
 
 nav{
+
 position:fixed;
 top:0;
 width:100%;
@@ -67,22 +71,28 @@ padding:15px;
 background:rgba(0,0,0,0.6);
 backdrop-filter:blur(10px);
 z-index:100;
+
 }
 
 nav a{
+
 color:white;
 text-decoration:none;
 font-weight:bold;
 font-size:18px;
+
 }
 
 nav a:hover{
+
 color:#ff3c00;
+
 }
 
 /* HERO */
 
 .hero{
+
 min-height:100vh;
 display:flex;
 flex-direction:column;
@@ -90,37 +100,46 @@ align-items:center;
 justify-content:center;
 text-align:center;
 padding:20px;
+
 }
 
 .hero h1{
+
 font-size:90px;
 color:#ff3c00;
 text-shadow:0 0 60px red;
 animation:glow 2s infinite alternate;
+
 }
 
 @keyframes glow{
+
 0%{text-shadow:0 0 20px red}
 100%{text-shadow:0 0 60px orange}
+
 }
 
 .hero p{
+
 font-size:22px;
 margin-top:10px;
-max-width:600px;
+
 }
 
 .coming{
+
 margin-top:20px;
 font-size:30px;
 letter-spacing:4px;
 color:#ff3c00;
 text-shadow:0 0 20px red;
+
 }
 
 /* BUTTON */
 
 .btn{
+
 display:inline-block;
 margin-top:30px;
 padding:18px 45px;
@@ -132,70 +151,81 @@ font-weight:bold;
 font-size:18px;
 box-shadow:0 0 25px red;
 transition:0.3s;
+
 }
 
 .btn:hover{
+
 transform:scale(1.1);
 box-shadow:0 0 40px red;
+
 }
 
 /* SECTION */
 
 .section{
+
 padding:120px 20px;
 max-width:1100px;
 margin:auto;
 text-align:center;
+
 }
 
 /* TOKENOMICS */
 
 .grid{
+
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
 gap:25px;
+
 }
 
 .token{
+
 background:rgba(0,0,0,0.5);
 padding:30px;
 border-radius:12px;
 box-shadow:0 0 20px rgba(255,80,0,0.5);
-transition:0.3s;
-}
 
-.token:hover{
-transform:translateY(-8px);
 }
 
 /* ROADMAP */
 
 .card{
+
 background:rgba(0,0,0,0.5);
 padding:35px;
 border-radius:15px;
 margin-bottom:35px;
 backdrop-filter:blur(8px);
 box-shadow:0 0 20px rgba(255,80,0,0.5);
+
 }
 
 h2{
+
 font-size:40px;
 color:#ff3c00;
 margin-bottom:30px;
+
 }
 
 h3{
+
 color:#ff3c00;
-margin-bottom:10px;
+
 }
 
 /* FOOTER */
 
 footer{
+
 background:#0b0b0b;
 padding:40px;
 text-align:center;
+
 }
 
 /* MOBILE */
@@ -332,7 +362,6 @@ Solana
 Website launch ✔  
 Social media setup ✔  
 Community building 🔄  
-Initial meme campaign
 
 </div>
 
@@ -342,8 +371,7 @@ Initial meme campaign
 
 Pump.fun launch  
 Community raids  
-DEX trending push  
-Meme marketing campaign
+Marketing push  
 
 </div>
 
@@ -353,8 +381,7 @@ Meme marketing campaign
 
 DEX trading growth  
 Community expansion  
-Influencer partnerships  
-Meme contests
+Meme campaigns  
 
 </div>
 
@@ -364,8 +391,6 @@ Meme contests
 
 Global marketing  
 Strategic partnerships  
-Community events  
-Ecosystem development
 
 </div>
 
@@ -373,9 +398,8 @@ Ecosystem development
 
 <h3>🔮 Phase 5 — Future Vision</h3>
 
-Major exchange discussions  
-Community governance  
-Long term ecosystem growth
+Exchange listings  
+Long term ecosystem growth  
 
 </div>
 
@@ -392,21 +416,25 @@ Community Driven Meme Coin on Solana
 
 /* PARTICLES */
 
-const canvas = document.getElementById("particles");
-const ctx = canvas.getContext("2d");
+const canvas=document.getElementById("particles");
+const ctx=canvas.getContext("2d");
 
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
+canvas.width=window.innerWidth;
+canvas.height=window.innerHeight;
 
 let particles=[];
 
-for(let i=0;i<80;i++){
+for(let i=0;i<70;i++){
+
 particles.push({
+
 x:Math.random()*canvas.width,
 y:Math.random()*canvas.height,
 size:Math.random()*2,
 speed:Math.random()*1
+
 });
+
 }
 
 function animate(){
@@ -414,10 +442,13 @@ function animate(){
 ctx.clearRect(0,0,canvas.width,canvas.height);
 
 particles.forEach(p=>{
-p.y -= p.speed;
 
-if(p.y < 0){
-p.y = canvas.height;
+p.y-=p.speed;
+
+if(p.y<0){
+
+p.y=canvas.height;
+
 }
 
 ctx.fillStyle="orange";
@@ -434,4 +465,5 @@ animate();
 </script>
 
 </body>
+
 </html>
