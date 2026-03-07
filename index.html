@@ -18,7 +18,7 @@ background:black;
 overflow-x:hidden;
 }
 
-/* FIRE ANIMATION BACKGROUND */
+/* FIRE BACKGROUND */
 
 body::before{
 content:"";
@@ -28,16 +28,14 @@ left:0;
 width:100%;
 height:100%;
 background:radial-gradient(circle,#ff3c00,#000);
-animation:fire 6s infinite alternate;
+animation:firebg 6s infinite alternate;
 z-index:-1;
 }
 
-@keyframes fire{
-
+@keyframes firebg{
 0%{filter:brightness(1)}
-50%{filter:brightness(1.4)}
+50%{filter:brightness(1.5)}
 100%{filter:brightness(1)}
-
 }
 
 /* HERO */
@@ -65,6 +63,7 @@ color:#eee;
 /* BUTTON */
 
 .btn{
+
 display:inline-block;
 margin-top:25px;
 padding:15px 40px;
@@ -73,25 +72,38 @@ border-radius:10px;
 color:white;
 text-decoration:none;
 box-shadow:0 0 20px red;
+
 }
 
-/* SECTIONS */
+/* COUNTDOWN */
+
+.countdown{
+
+margin-top:20px;
+font-size:25px;
+color:#fff;
+
+}
+
+/* SECTION */
 
 .section{
 padding:120px 20px;
 text-align:center;
 }
 
-/* CARD STYLE */
+/* CARD */
 
 .card{
+
 max-width:850px;
 margin:auto;
 padding:40px;
 border-radius:15px;
 margin-bottom:40px;
 background:rgba(0,0,0,0.35);
-backdrop-filter:blur(6px);
+backdrop-filter:blur(8px);
+
 }
 
 /* TITLES */
@@ -111,7 +123,7 @@ color:#ff3c00;
 .copybtn{
 
 margin-top:20px;
-padding:10px 25px;
+padding:12px 25px;
 background:#ff3c00;
 border:none;
 color:white;
@@ -144,9 +156,15 @@ text-align:center;
 
 The Dragon Rises Again  
 <br>
-Launching Soon on Pump.fun
+Fair Launch on Pump.fun
 
 </p>
+
+<div class="countdown" id="countdown">
+
+Launch Countdown Loading...
+
+</div>
 
 <a class="btn" href="https://x.com/rebornxonsol" target="_blank">
 
@@ -168,7 +186,7 @@ CA : Coming Soon
 
 <br><br>
 
-The contract address will be revealed at launch.
+The official contract address will be revealed at launch.
 
 <br><br>
 
@@ -299,6 +317,8 @@ Community Driven Meme Coin
 
 <script>
 
+/* COPY CA */
+
 function copyCA(){
 
 navigator.clipboard.writeText("COMING SOON");
@@ -306,6 +326,29 @@ navigator.clipboard.writeText("COMING SOON");
 alert("Contract Address Coming Soon");
 
 }
+
+/* COUNTDOWN */
+
+var launchDate = new Date("2026-01-01").getTime();
+
+var timer = setInterval(function(){
+
+var now = new Date().getTime();
+
+var distance = launchDate - now;
+
+var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+
+var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+
+var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+
+var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+document.getElementById("countdown").innerHTML =
+days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+
+},1000);
 
 </script>
 
