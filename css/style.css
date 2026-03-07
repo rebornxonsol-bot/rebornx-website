@@ -1,76 +1,27 @@
-body{
-margin:0;
-padding:0;
-font-family:Arial;
-background:black;
-color:white;
-}
-
 .navbar{
-position:fixed;
-top:0;
-width:100%;
-background:rgba(0,0,0,0.9);
-padding:15px 0;
-}
-
-.nav-container{
 display:flex;
 justify-content:space-between;
 align-items:center;
-width:90%;
-margin:auto;
+padding:20px;
+background:black;
 }
 
-.logo img{
-height:50px;
-}
-
-nav ul{
+.menu{
 display:flex;
+gap:20px;
 list-style:none;
 }
 
-nav ul li{
-margin-left:30px;
-}
-
-nav ul li a{
+.menu a{
 color:white;
 text-decoration:none;
-font-size:18px;
+font-size:16px;
 }
 
-.hero{
-height:100vh;
+.logo{
 display:flex;
-justify-content:center;
 align-items:center;
-text-align:center;
-
-background:url("../images/dragon-bg.jpg");
-background-size:cover;
-background-position:center;
-}
-
-.hero-content{
-background:rgba(0,0,0,0.6);
-padding:40px;
-border-radius:10px;
-}
-
-.hero h1{
-font-size:70px;
-color:#ff4b2b;
-}
-
-.buy-btn{
-margin-top:20px;
-padding:15px 40px;
-background:#ff4b2b;
-border:none;
+gap:10px;
 color:white;
-font-size:20px;
-cursor:pointer;
-border-radius:8px;
+font-weight:bold;
 }
