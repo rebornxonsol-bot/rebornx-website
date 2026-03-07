@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -9,20 +9,61 @@
 
 <link rel="stylesheet" href="css/style.css">
 
+<style>
+
+body{
+margin:0;
+font-family:Arial;
+background:black;
+color:white;
+}
+
+nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px;
+background:#000;
+}
+
+nav ul{
+display:flex;
+gap:20px;
+list-style:none;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+}
+
+.hero{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+flex-direction:column;
+background:url("images/dragon-bg.jpg");
+background-size:cover;
+}
+
+button{
+padding:10px 20px;
+margin-top:15px;
+}
+
+</style>
+
 </head>
 
 <body>
 
-<!-- NAVBAR -->
+<nav>
 
-<nav class="navbar">
+<h2>REBORNX</h2>
 
-<div class="logo">
-<img src="images/logo.png" width="40">
-<span>REBORNX</span>
-</div>
-
-<ul class="menu">
+<ul>
 
 <li><a href="index.html">Home</a></li>
 
@@ -36,24 +77,18 @@
 
 </nav>
 
-<!-- HERO SECTION -->
 
 <section class="hero">
 
-<div class="hero-content">
+<img src="images/logo.png" width="80">
 
 <h1>REBORNX</h1>
 
 <p>From Fire We Rise</p>
 
-<button class="buy-btn">Buy Token</button>
-
-</div>
+<button>Buy Token</button>
 
 </section>
 
-<script src="js/script.js"></script>
-
 </body>
-
 </html>
