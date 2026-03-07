@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
 <meta charset="UTF-8">
@@ -27,7 +28,6 @@ background:#0b0b0b;
 position:fixed;
 width:100%;
 top:0;
-z-index:1000;
 }
 
 nav h2{
@@ -36,8 +36,8 @@ color:#ff3c00;
 
 nav a{
 color:white;
-text-decoration:none;
 margin-left:20px;
+text-decoration:none;
 }
 
 /* HERO */
@@ -45,26 +45,28 @@ margin-left:20px;
 .hero{
 height:100vh;
 display:flex;
+flex-direction:column;
 align-items:center;
 justify-content:center;
-flex-direction:column;
 text-align:center;
-background:
-radial-gradient(circle at center,#ff3c00,#000);
+background: radial-gradient(circle at center,#ff3c00,#000);
 }
 
 .hero h1{
-font-size:80px;
+font-size:90px;
 color:#ff3c00;
-text-shadow:0 0 30px red;
+text-shadow:0 0 40px red;
 }
 
 .hero p{
 font-size:22px;
-color:#ddd;
+color:#ccc;
 }
 
+/* BUTTON */
+
 .btn{
+display:inline-block;
 margin-top:20px;
 padding:15px 35px;
 background:#ff3c00;
@@ -74,7 +76,7 @@ text-decoration:none;
 box-shadow:0 0 20px red;
 }
 
-/* SECTIONS */
+/* SECTION */
 
 .section{
 padding:120px 20px;
@@ -87,13 +89,18 @@ margin:auto;
 background:#111;
 padding:40px;
 border-radius:12px;
+box-shadow:0 0 15px #ff3c0030;
+}
+
+h2{
+color:#ff3c00;
 }
 
 /* FOOTER */
 
 footer{
-background:#0b0b0b;
 padding:40px;
+background:#0b0b0b;
 text-align:center;
 }
 
@@ -149,7 +156,7 @@ Follow on X
 
 <div class="card">
 
-REBORNX is a community-driven meme project built on Solana.
+REBORNX is a community driven meme project built on Solana.
 
 Inspired by the phoenix and dragon, REBORNX represents rebirth and unstoppable community strength.
 
@@ -175,7 +182,7 @@ Network : Solana
 
 <br><br>
 
-Total Supply : 1,000,000,000
+Total Supply : 1,000,000,000  
 
 <br><br>
 
