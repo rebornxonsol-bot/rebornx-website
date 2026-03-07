@@ -10,6 +10,8 @@
 
 <style>
 
+/* RESET */
+
 *{
 margin:0;
 padding:0;
@@ -33,13 +35,13 @@ left:0;
 width:100%;
 height:100%;
 background:radial-gradient(circle,#ff3c00,#000);
-animation:firebg 6s infinite alternate;
+animation:firebg 5s infinite alternate;
 z-index:-2;
 }
 
 @keyframes firebg{
 0%{filter:brightness(1)}
-50%{filter:brightness(1.5)}
+50%{filter:brightness(1.6)}
 100%{filter:brightness(1)}
 }
 
@@ -91,9 +93,15 @@ padding:20px;
 }
 
 .hero h1{
-font-size:80px;
+font-size:90px;
 color:#ff3c00;
-text-shadow:0 0 50px red;
+text-shadow:0 0 60px red;
+animation:glow 2s infinite alternate;
+}
+
+@keyframes glow{
+0%{text-shadow:0 0 20px red}
+100%{text-shadow:0 0 60px orange}
 }
 
 .hero p{
@@ -104,7 +112,7 @@ max-width:600px;
 
 .coming{
 margin-top:20px;
-font-size:28px;
+font-size:30px;
 letter-spacing:4px;
 color:#ff3c00;
 text-shadow:0 0 20px red;
@@ -115,13 +123,20 @@ text-shadow:0 0 20px red;
 .btn{
 display:inline-block;
 margin-top:30px;
-padding:16px 40px;
+padding:18px 45px;
 background:#ff3c00;
 border-radius:10px;
 color:white;
 text-decoration:none;
 font-weight:bold;
+font-size:18px;
 box-shadow:0 0 25px red;
+transition:0.3s;
+}
+
+.btn:hover{
+transform:scale(1.1);
+box-shadow:0 0 40px red;
 }
 
 /* SECTION */
@@ -133,7 +148,7 @@ margin:auto;
 text-align:center;
 }
 
-/* TOKENOMICS GRID */
+/* TOKENOMICS */
 
 .grid{
 display:grid;
@@ -145,13 +160,18 @@ gap:25px;
 background:rgba(0,0,0,0.5);
 padding:30px;
 border-radius:12px;
-box-shadow:0 0 15px rgba(255,80,0,0.4);
+box-shadow:0 0 20px rgba(255,80,0,0.5);
+transition:0.3s;
+}
+
+.token:hover{
+transform:translateY(-8px);
 }
 
 /* ROADMAP */
 
 .card{
-background:rgba(0,0,0,0.45);
+background:rgba(0,0,0,0.5);
 padding:35px;
 border-radius:15px;
 margin-bottom:35px;
@@ -160,7 +180,7 @@ box-shadow:0 0 20px rgba(255,80,0,0.5);
 }
 
 h2{
-font-size:38px;
+font-size:40px;
 color:#ff3c00;
 margin-bottom:30px;
 }
@@ -204,10 +224,6 @@ padding:100px 15px;
 
 h2{
 font-size:30px;
-}
-
-.card{
-padding:25px;
 }
 
 }
@@ -313,9 +329,9 @@ Solana
 
 <h3>✔ Phase 1 — Foundation</h3>
 
-Website launch ✔ <br>
-Social media setup ✔ <br>
-Community building 🔄 <br>
+Website launch ✔  
+Social media setup ✔  
+Community building 🔄  
 Initial meme campaign
 
 </div>
@@ -324,9 +340,9 @@ Initial meme campaign
 
 <h3>🚀 Phase 2 — Launch</h3>
 
-Pump.fun launch <br>
-Community raids <br>
-DEX trending push <br>
+Pump.fun launch  
+Community raids  
+DEX trending push  
 Meme marketing campaign
 
 </div>
@@ -335,9 +351,9 @@ Meme marketing campaign
 
 <h3>📈 Phase 3 — Growth</h3>
 
-DEX trading growth <br>
-Community expansion <br>
-Influencer partnerships <br>
+DEX trading growth  
+Community expansion  
+Influencer partnerships  
 Meme contests
 
 </div>
@@ -346,9 +362,9 @@ Meme contests
 
 <h3>🌍 Phase 4 — Expansion</h3>
 
-Global marketing <br>
-Strategic partnerships <br>
-Community events <br>
+Global marketing  
+Strategic partnerships  
+Community events  
 Ecosystem development
 
 </div>
@@ -357,8 +373,8 @@ Ecosystem development
 
 <h3>🔮 Phase 5 — Future Vision</h3>
 
-Major exchange discussions <br>
-Community governance <br>
+Major exchange discussions  
+Community governance  
 Long term ecosystem growth
 
 </div>
