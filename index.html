@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
 <meta charset="UTF-8">
@@ -20,31 +21,40 @@ text-align:center;
 /* HERO */
 
 .hero{
-padding:120px 20px;
-background: radial-gradient(circle at center,#ff3c00,#000);
+position:relative;
+height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+overflow:hidden;
 }
 
-.logo{
-width:220px;
-filter: drop-shadow(0 0 20px orange);
-animation: float 4s ease-in-out infinite;
+#bgvideo{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+object-fit:cover;
+z-index:-1;
 }
 
-@keyframes float{
-0%{transform:translateY(0)}
-50%{transform:translateY(-10px)}
-100%{transform:translateY(0)}
+/* HERO TEXT */
+
+.hero-content{
+position:relative;
+z-index:2;
 }
 
 h1{
-font-size:60px;
+font-size:70px;
 color:#ff2e2e;
-text-shadow:0 0 20px red;
+text-shadow:0 0 30px red;
 }
 
 .tagline{
-font-size:20px;
-color:#ccc;
+font-size:22px;
 }
 
 /* BUTTON */
@@ -58,10 +68,10 @@ border-radius:10px;
 text-decoration:none;
 color:white;
 font-size:18px;
-box-shadow:0 0 15px red;
+box-shadow:0 0 20px red;
 }
 
-/* SECTION */
+/* SECTIONS */
 
 .section{
 padding:80px 20px;
@@ -80,12 +90,9 @@ h2{
 color:#ff2e2e;
 }
 
-/* FOOTER */
-
 footer{
 padding:30px;
 background:#0a0a0a;
-margin-top:40px;
 }
 
 </style>
@@ -98,18 +105,29 @@ margin-top:40px;
 
 <div class="hero">
 
-<img src="file_0000000093007208b010768a2d36f0b5.png" class="logo">
+<video autoplay muted loop id="bgvideo">
+<source src="https://cdn.coverr.co/videos/coverr-fire-burning-1577/1080p.mp4" type="video/mp4">
+</video>
+
+<div class="hero-content">
 
 <h1>REBORNX</h1>
 
 <p class="tagline">
-The Dragon Rises Again<br>
-No Presale • No Insiders<br>
+
+The Dragon Rises Again  
+<br>
+No Presale • No Insiders  
+<br>
 Fair Launch on Solana
+
 </p>
 
-<a class="btn" href="https://twitter.com/rebornxsol" target="_blank">Twitter</a>
-<a class="btn" href="https://t.me/rebornxsol" target="_blank">Telegram</a>
+<a class="btn" href="https://x.com/rebornxonsol" target="_blank">X</a>
+
+<a class="btn" href="#">Telegram</a>
+
+</div>
 
 </div>
 
@@ -121,11 +139,9 @@ Fair Launch on Solana
 
 <div class="card">
 
-REBORNX is a community-driven meme project built on the Solana blockchain.
+REBORNX is a community driven meme project built on Solana.
 
-The idea behind REBORNX is rebirth and power.
-
-Like a phoenix rising from the ashes and a dragon reclaiming the sky, REBORNX represents the unstoppable strength of community.
+Inspired by the phoenix and dragon, REBORNX represents rebirth, power and unstoppable community energy.
 
 No presale.  
 No insiders.  
@@ -143,14 +159,19 @@ Fair launch for everyone.
 
 <div class="card">
 
-Token Name : REBORNX<br>
-Ticker : RBX<br>
-Network : Solana<br>
-Total Supply : 1,000,000,000<br><br>
+Token Name : REBORNX  
+Ticker : RBX  
+Network : Solana  
 
-Liquidity : 95%<br>
-Marketing : 3%<br>
-Community : 2%<br>
+<br>
+
+Total Supply : 1,000,000,000  
+
+<br><br>
+
+Liquidity : 95%  
+Marketing : 3%  
+Community : 2%  
 
 Tax : 0%
 
@@ -166,26 +187,26 @@ Tax : 0%
 
 <div class="card">
 
-🚀 Phase 1  
-Website Launch  
-Community Formation  
+Phase 1  
+Website launch  
+Community building  
 
 <br><br>
 
-🔥 Phase 2  
-Token Launch  
-Marketing Campaign  
+Phase 2  
+Token launch on Pump.fun  
+Marketing campaign  
 
 <br><br>
 
-⚡ Phase 3  
-DEX Listings  
+Phase 3  
+DEX listings  
 Partnerships  
 
 <br><br>
 
-🌍 Phase 4  
-Global Expansion  
+Phase 4  
+Global expansion  
 
 </div>
 
@@ -200,10 +221,10 @@ Global Expansion
 <div class="card">
 
 Community building  
-Token launch on Pump.fun  
-Marketing campaigns  
-DEX listings  
-Global expansion  
+Token launch  
+DEX listing  
+Marketing growth  
+Global expansion
 
 </div>
 
@@ -215,9 +236,9 @@ Global expansion
 
 <h2>Community</h2>
 
-<a class="btn" href="https://twitter.com/rebornxsol" target="_blank">Twitter</a>
+<a class="btn" href="https://x.com/rebornxonsol" target="_blank">X</a>
 
-<a class="btn" href="https://t.me/rebornxsol" target="_blank">Telegram</a>
+<a class="btn" href="#">Telegram</a>
 
 </div>
 
