@@ -18,9 +18,10 @@ background:black;
 overflow-x:hidden;
 }
 
-/* FIRE BACKGROUND */
+/* ANIMATED FIRE BACKGROUND */
 
 body::before{
+
 content:"";
 position:fixed;
 top:0;
@@ -28,36 +29,45 @@ left:0;
 width:100%;
 height:100%;
 background:radial-gradient(circle,#ff3c00,#000);
-animation:firebg 6s infinite alternate;
+animation:fire 5s infinite alternate;
 z-index:-1;
+
 }
 
-@keyframes firebg{
+@keyframes fire{
+
 0%{filter:brightness(1)}
 50%{filter:brightness(1.5)}
 100%{filter:brightness(1)}
+
 }
 
 /* HERO */
 
 .hero{
+
 height:100vh;
 display:flex;
 flex-direction:column;
 align-items:center;
 justify-content:center;
 text-align:center;
+
 }
 
 .hero h1{
+
 font-size:90px;
 color:#ff3c00;
-text-shadow:0 0 40px red;
+text-shadow:0 0 40px red,0 0 80px red;
+
 }
 
 .hero p{
+
 font-size:22px;
 color:#eee;
+
 }
 
 /* BUTTON */
@@ -72,6 +82,13 @@ border-radius:10px;
 color:white;
 text-decoration:none;
 box-shadow:0 0 20px red;
+transition:0.3s;
+
+}
+
+.btn:hover{
+
+transform:scale(1.1);
 
 }
 
@@ -80,16 +97,17 @@ box-shadow:0 0 20px red;
 .countdown{
 
 margin-top:20px;
-font-size:25px;
-color:#fff;
+font-size:26px;
 
 }
 
-/* SECTION */
+/* SECTIONS */
 
 .section{
+
 padding:120px 20px;
 text-align:center;
+
 }
 
 /* CARD */
@@ -103,19 +121,31 @@ border-radius:15px;
 margin-bottom:40px;
 background:rgba(0,0,0,0.35);
 backdrop-filter:blur(8px);
+transition:0.3s;
+
+}
+
+.card:hover{
+
+transform:scale(1.03);
+box-shadow:0 0 25px red;
 
 }
 
 /* TITLES */
 
 h2{
+
 color:#ff3c00;
 font-size:40px;
 margin-bottom:30px;
+
 }
 
 h3{
+
 color:#ff3c00;
+
 }
 
 /* COPY BUTTON */
@@ -135,9 +165,11 @@ cursor:pointer;
 /* FOOTER */
 
 footer{
+
 background:#0b0b0b;
 padding:40px;
 text-align:center;
+
 }
 
 </style>
@@ -190,7 +222,11 @@ The official contract address will be revealed at launch.
 
 <br><br>
 
-<button class="copybtn" onclick="copyCA()">Copy CA</button>
+<button class="copybtn" onclick="copyCA()">
+
+Copy CA
+
+</button>
 
 </div>
 
