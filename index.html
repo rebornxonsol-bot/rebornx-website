@@ -148,18 +148,6 @@ margin:8px 0;
 color:#ddd;
 }
 
-/* COPY BUTTON */
-
-.copybtn{
-margin-top:15px;
-padding:10px 20px;
-background:#ff4a00;
-border:none;
-color:white;
-border-radius:6px;
-cursor:pointer;
-}
-
 /* FOOTER */
 
 footer{
@@ -196,6 +184,7 @@ font-size:18px;
 
 <a href="#home">Home</a>
 <a href="#tokenomics">Tokenomics</a>
+<a href="#chart">Chart</a>
 <a href="#roadmap">Roadmap</a>
 <a href="https://x.com/rebornxonsol" target="_blank">X</a>
 
@@ -208,34 +197,18 @@ font-size:18px;
 <h1>REBORNX</h1>
 
 <p>
+
 The Dragon Rises Again  
 <br>
 Fair Launch on Pump.fun
+
 </p>
 
-<h3 id="countdown"></h3>
-
 <a class="btn" href="https://pump.fun" target="_blank">
+
 Launch on Pump.fun
+
 </a>
-
-</div>
-
-<!-- CONTRACT ADDRESS -->
-
-<div class="section">
-
-<h2>Contract Address</h2>
-
-<div class="box">
-
-CA : Coming Soon
-
-<br>
-
-<button class="copybtn" onclick="copyCA()">Copy Address</button>
-
-</div>
 
 </div>
 
@@ -272,6 +245,29 @@ Tax
 </div>
 
 </div>
+
+</div>
+
+<!-- LIVE CHART -->
+
+<div class="section" id="chart">
+
+<h2>Live Chart</h2>
+
+<div style="width:100%;height:500px;border-radius:10px;overflow:hidden;">
+
+<iframe
+src="https://dexscreener.com/solana/YOURTOKENADDRESS?embed=1&theme=dark"
+width="100%"
+height="500"
+frameborder="0">
+</iframe>
+
+</div>
+
+<p style="margin-top:20px;color:#888;">
+Chart will appear automatically after launch
+</p>
 
 </div>
 
@@ -353,35 +349,6 @@ Community Driven Meme Coin
 </footer>
 
 <script>
-
-/* COPY CA */
-
-function copyCA(){
-
-navigator.clipboard.writeText("COMING SOON");
-
-alert("Contract Address Coming Soon");
-
-}
-
-/* COUNTDOWN */
-
-var launchDate = new Date("2026-01-01").getTime();
-
-var timer = setInterval(function(){
-
-var now = new Date().getTime();
-var distance = launchDate - now;
-
-var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-document.getElementById("countdown").innerHTML =
-"Launch in " + days + "d " + hours + "h " + minutes + "m " + seconds + "s";
-
-},1000);
 
 /* PARTICLES */
 
