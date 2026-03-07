@@ -1,77 +1,213 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>REBORNX</title>
 
-<title>REBORNX | Solana Meme Coin</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="style.css">
+<style>
 
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
 
+body{
+background:#020204;
+color:white;
+font-family:'Orbitron',sans-serif;
+overflow-x:hidden;
+}
+
+/* BACKGROUND */
+
+body::before{
+content:"";
+position:fixed;
+width:100%;
+height:100%;
+background:
+radial-gradient(circle at 20% 20%, rgba(255,80,0,.25), transparent 40%),
+radial-gradient(circle at 80% 80%, rgba(0,200,255,.25), transparent 40%);
+z-index:-1;
+}
+
+/* NAVBAR */
+
+header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:25px 50px;
+background:rgba(0,0,0,0.4);
+backdrop-filter:blur(10px);
+}
+
+.logo{
+font-size:28px;
+font-family:'Cinzel',serif;
+letter-spacing:5px;
+}
+
+/* FIRE ICE TEXT */
+
+.fireice{
+background:linear-gradient(90deg,#ff4d00,#ffae00,#00eaff,#0077ff);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+/* HERO */
+
+.hero{
+height:90vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:20px;
+}
+
+.hero h1{
+font-size:90px;
+font-family:'Cinzel',serif;
+letter-spacing:10px;
+margin-bottom:20px;
+
+background:linear-gradient(90deg,#ff4d00,#ffae00,#00eaff,#0077ff);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+
+text-shadow:
+0 0 20px rgba(255,100,0,.6),
+0 0 40px rgba(0,200,255,.6);
+
+}
+
+.hero p{
+opacity:.85;
+font-size:20px;
+margin-bottom:40px;
+}
+
+/* BUTTONS */
+
+.btn{
+padding:15px 40px;
+margin:10px;
+border:none;
+border-radius:40px;
+font-size:16px;
+cursor:pointer;
+}
+
+.buy{
+background:linear-gradient(90deg,#ff4d00,#ffae00);
+color:white;
+box-shadow:0 0 20px #ff4d00;
+}
+
+.chart{
+background:linear-gradient(90deg,#00eaff,#0077ff);
+color:white;
+box-shadow:0 0 20px #00eaff;
+}
+
+/* SECTIONS */
+
+section{
+padding:90px 10%;
+text-align:center;
+}
+
+section h2{
+font-size:40px;
+margin-bottom:40px;
+font-family:'Cinzel',serif;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:25px;
+}
+
+.card{
+background:rgba(255,255,255,0.05);
+border:1px solid rgba(255,255,255,0.1);
+padding:35px;
+border-radius:15px;
+backdrop-filter:blur(10px);
+
+transition:.3s;
+}
+
+.card:hover{
+transform:translateY(-10px);
+box-shadow:0 0 25px rgba(0,200,255,.5);
+}
+
+/* FOOTER */
+
+footer{
+text-align:center;
+padding:40px;
+background:#050507;
+opacity:.7;
+}
+
+</style>
 </head>
 
 <body>
 
 <header>
 
-<div class="logo">
-
-<span class="fire">R</span><span class="ice">X</span>
-
-</div>
+<div class="logo fireice">REBORNX</div>
 
 <nav>
-
 <a href="#about">About</a>
 <a href="#tokenomics">Tokenomics</a>
 <a href="#roadmap">Roadmap</a>
-<a href="#community">Community</a>
-
 </nav>
 
 </header>
 
 <section class="hero">
 
-<h1 class="title">REBORNX</h1>
+<h1>REBORNX</h1>
 
-<p class="tag">From Fire We Rise 🔥</p>
+<p>From Fire We Rise — A Solana Meme Coin</p>
 
-<div class="buttons">
-
-<button class="btn">Buy Token</button>
-<button class="btn2">View Chart</button>
-
-</div>
+<button class="btn buy">Buy Token</button>
+<button class="btn chart">View Chart</button>
 
 </section>
 
 <section id="about">
 
-<h2>About</h2>
+<h2 class="fireice">About</h2>
 
 <p>
-
-REBORNX is a community driven meme coin built on the Solana blockchain.
-Fair launch. No presale. No insiders. Only community.
-
+REBORNX is a community-driven meme coin built on the Solana blockchain.
+Forged in fire. Reborn in ice. Powered by believers.
 </p>
 
 </section>
 
 <section id="tokenomics">
 
-<h2>Tokenomics</h2>
+<h2 class="fireice">Tokenomics</h2>
 
 <div class="grid">
 
 <div class="card">
 <h3>Total Supply</h3>
-<p>1B</p>
+<p>1,000,000,000</p>
 </div>
 
 <div class="card">
@@ -100,7 +236,7 @@ Fair launch. No presale. No insiders. Only community.
 
 <section id="roadmap">
 
-<h2>Roadmap</h2>
+<h2 class="fireice">Roadmap</h2>
 
 <div class="grid">
 
@@ -116,28 +252,13 @@ Fair launch. No presale. No insiders. Only community.
 
 <div class="card">
 <h3>Phase 3</h3>
-<p>Marketing Push<br>Partnerships</p>
+<p>Marketing Expansion</p>
 </div>
 
 <div class="card">
 <h3>Phase 4</h3>
-<p>CEX Listing<br>Ecosystem Growth</p>
+<p>CEX Listings</p>
 </div>
-
-</div>
-
-</section>
-
-<section id="community">
-
-<h2>Community</h2>
-
-<div class="social">
-
-<a href="#">Twitter</a>
-<a href="#">Telegram</a>
-<a href="#">Dexscreener</a>
-<a href="#">Solscan</a>
 
 </div>
 
@@ -145,8 +266,9 @@ Fair launch. No presale. No insiders. Only community.
 
 <footer>
 
-<p>© 2026 REBORNX | Built on Solana</p>
+REBORNX © 2026 — Built on Solana
 
 </footer>
 
-</body
+</body>
+</html>
