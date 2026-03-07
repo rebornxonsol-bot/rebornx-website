@@ -1,4 +1,4 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -91,10 +91,10 @@ color:#eee;
 
 .coming{
 margin-top:20px;
-font-size:28px;
+font-size:30px;
 color:#ff3c00;
-text-shadow:0 0 20px red;
 letter-spacing:3px;
+text-shadow:0 0 20px red;
 }
 
 /* BUTTON */
@@ -153,14 +153,6 @@ border-radius:8px;
 cursor:pointer;
 }
 
-/* GAME */
-
-#gameCanvas{
-background:#111;
-border:2px solid #ff3c00;
-margin-top:20px;
-}
-
 /* FOOTER */
 
 footer{
@@ -182,7 +174,6 @@ text-align:center;
 <a href="#home">Home</a>
 <a href="#tokenomics">Tokenomics</a>
 <a href="#roadmap">Roadmap</a>
-<a href="#game">Game</a>
 <a href="https://x.com/rebornxonsol" target="_blank">X</a>
 
 </div>
@@ -227,6 +218,10 @@ CA : Coming Soon
 
 <br><br>
 
+The contract address will be revealed at launch.
+
+<br><br>
+
 <button class="copybtn" onclick="copyCA()">Copy CA</button>
 
 </div>
@@ -256,8 +251,14 @@ Dev Wallet : 10%
 
 <br><br>
 
+Dev Allocation  
+
 5% Active Dev  
 5% Locked
+
+<br><br>
+
+Tax : 0%
 
 </div>
 
@@ -289,19 +290,33 @@ Marketing push
 
 </div>
 
+<div class="card">
+
+<h3>Phase 3 — Growth</h3>
+
+DEX trading growth  
+Community expansion  
+Meme campaigns  
+
 </div>
 
-<!-- GAME -->
+<div class="card">
 
-<div class="section" id="game">
+<h3>Phase 4 — Expansion</h3>
 
-<h2>REBORNX Dragon Runner</h2>
+Global marketing  
+Strategic partnerships  
 
-<p>Press SPACE to jump the dragon 🐉</p>
+</div>
 
-<canvas id="gameCanvas" width="600" height="300"></canvas>
+<div class="card">
 
-<h3 id="gameOver"></h3>
+<h3>Phase 5 — Future Vision</h3>
+
+Exchange listings  
+Long term ecosystem growth  
+
+</div>
 
 </div>
 
@@ -314,8 +329,6 @@ Community Driven Meme Coin
 
 <script>
 
-/* COPY CA */
-
 function copyCA(){
 
 navigator.clipboard.writeText("COMING SOON");
@@ -324,67 +337,8 @@ alert("Contract Address Coming Soon");
 
 }
 
-/* GAME */
+</script>
 
-const canvas = document.getElementById("gameCanvas");
-const ctx = canvas.getContext("2d");
+</body>
 
-let dragon = {x:50,y:220,w:40,h:40,vy:0};
-let gravity = 0.6;
-let jump = -10;
-
-let obstacle = {x:600,y:240,w:20,h:60};
-
-let gameRunning = true;
-
-function drawDragon(){
-ctx.fillStyle="orange";
-ctx.fillRect(dragon.x,dragon.y,dragon.w,dragon.h);
-}
-
-function drawObstacle(){
-ctx.fillStyle="red";
-ctx.fillRect(obstacle.x,obstacle.y,obstacle.w,obstacle.h);
-}
-
-function update(){
-
-if(!gameRunning) return;
-
-ctx.clearRect(0,0,canvas.width,canvas.height);
-
-dragon.vy += gravity;
-dragon.y += dragon.vy;
-
-if(dragon.y > 220){
-dragon.y = 220;
-dragon.vy = 0;
-}
-
-obstacle.x -= 4;
-
-if(obstacle.x < -20){
-obstacle.x = 600;
-}
-
-if(
-dragon.x < obstacle.x + obstacle.w &&
-dragon.x + dragon.w > obstacle.x &&
-dragon.y < obstacle.y + obstacle.h &&
-dragon.y + dragon.h > obstacle.y
-){
-gameRunning=false;
-document.getElementById("gameOver").innerText="GAME OVER";
-}
-
-drawDragon();
-drawObstacle();
-
-requestAnimationFrame(update);
-
-}
-
-document.addEventListener("keydown",function(e){
-
-if(e.code==="Space"){
-dragon.vy
+</html>
