@@ -3,7 +3,6 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>REBORNX</title>
 
 <style>
@@ -11,36 +10,61 @@
 body{
 margin:0;
 font-family:Arial;
-background:#0a0a0a;
+background:black;
 color:white;
 text-align:center;
+overflow-x:hidden;
 }
 
-header{
-padding:80px 20px;
+canvas{
+position:fixed;
+top:0;
+left:0;
+z-index:-1;
 }
 
-h1{
-font-size:60px;
-color:#ff2b2b;
-letter-spacing:4px;
+nav{
+display:flex;
+justify-content:space-between;
+padding:20px 40px;
+background:rgba(0,0,0,0.8);
+position:fixed;
+width:100%;
+top:0;
+}
+
+nav h2{
+color:#ff2e2e;
 }
 
 .hero{
-font-size:20px;
-color:#ccc;
-margin-top:10px;
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
 }
 
-.button{
+.hero h1{
+font-size:80px;
+color:#ff2e2e;
+text-shadow:0 0 20px red;
+}
+
+.hero p{
+font-size:20px;
+opacity:0.8;
+}
+
+.btn{
 margin-top:30px;
-display:inline-block;
-padding:14px 28px;
-background:#ff2b2b;
+padding:15px 35px;
+background:#ff2e2e;
+border:none;
 color:white;
-text-decoration:none;
+font-size:18px;
 border-radius:8px;
-font-weight:bold;
+cursor:pointer;
 }
 
 .section{
@@ -49,51 +73,49 @@ max-width:900px;
 margin:auto;
 }
 
-h2{
-color:#ff2b2b;
-margin-bottom:20px;
-}
-
 .card{
 background:#111;
 padding:30px;
-border-radius:10px;
 margin:20px 0;
+border-radius:10px;
 }
 
-.roadmap div{
-margin:15px 0;
+h2{
+color:#ff2e2e;
 }
 
 footer{
-margin-top:80px;
-padding:30px;
-background:#111;
-font-size:14px;
-color:#aaa;
+padding:40px;
+background:#0a0a0a;
+margin-top:50px;
 }
 
 </style>
-
 </head>
 
 <body>
 
-<header>
+<canvas id="bg"></canvas>
+
+<nav>
+<h2>REBORNX</h2>
+</nav>
+
+<div class="hero">
 
 <h1>REBORNX</h1>
 
-<p class="hero">
-The Dragon Rises Again<br>
-No Presale • No Insiders<br>
-Fair Launch on Solana
-</p>
+<p>The Dragon Rises Again</p>
 
-<a class="button" href="#">Launch Soon on Pump.fun</a>
+<p>No Presale • No Insiders</p>
 
-</header>
+<p>Fair Launch on Solana</p>
 
-<section class="section">
+<button class="btn">Launch Soon on Pump.fun</button>
+
+</div>
+
+<div class="section">
 
 <h2>About</h2>
 
@@ -101,18 +123,13 @@ Fair Launch on Solana
 
 REBORNX is a community driven meme token built on Solana.
 The project symbolizes rebirth, power and decentralization.
-
-No presale.  
-No insider allocation.  
-Fair launch for everyone.
-
-The dragon rises again.
+No presale. No insiders. Fair launch for everyone.
 
 </div>
 
-</section>
+</div>
 
-<section class="section">
+<div class="section">
 
 <h2>Tokenomics</h2>
 
@@ -127,9 +144,9 @@ Community : 2%
 
 </div>
 
-</section>
+</div>
 
-<section class="section roadmap">
+<div class="section">
 
 <h2>Roadmap</h2>
 
@@ -169,9 +186,9 @@ Dragon Ecosystem
 
 </div>
 
-</section>
+</div>
 
-<section class="section">
+<div class="section">
 
 <h2>Community</h2>
 
@@ -183,14 +200,63 @@ Website : rebornxsol.xyz
 
 </div>
 
-</section>
+</div>
 
 <footer>
 
-REBORNX © 2026  
-Community Driven Meme Token on Solana
+REBORNX © 2026
 
 </footer>
+
+<script>
+
+const canvas=document.getElementById("bg");
+const ctx=canvas.getContext("2d");
+
+canvas.width=window.innerWidth;
+canvas.height=window.innerHeight;
+
+let particles=[];
+
+for(let i=0;i<120;i++){
+particles.push({
+x:Math.random()*canvas.width,
+y:Math.random()*canvas.height,
+r:Math.random()*2,
+d:Math.random()*1
+});
+}
+
+function draw(){
+
+ctx.clearRect(0,0,canvas.width,canvas.height);
+
+ctx.fillStyle="red";
+
+for(let i=0;i<particles.length;i++){
+
+let p=particles[i];
+
+ctx.beginPath();
+ctx.arc(p.x,p.y,p.r,0,Math.PI*2,true);
+ctx.fill();
+
+p.y+=p.d;
+
+if(p.y>canvas.height){
+p.y=0;
+p.x=Math.random()*canvas.width;
+}
+
+}
+
+requestAnimationFrame(draw);
+
+}
+
+draw();
+
+</script>
 
 </body>
 </html>
