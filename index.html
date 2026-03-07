@@ -1,10 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>REBORNX</title>
 
 <style>
@@ -12,48 +10,23 @@
 body{
 margin:0;
 font-family:Arial;
-background:#000;
+background:black;
 color:white;
 text-align:center;
-overflow-x:hidden;
-}
-.logo{
-width:220px;
-margin-top:20px;
-filter: drop-shadow(0 0 20px orange);
-animation: float 4s ease-in-out infinite;
-}
-
-@keyframes float{
-0%{transform:translateY(0)}
-50%{transform:translateY(-10px)}
-100%{transform:translateY(0)}
-}
-/* FIRE BACKGROUND */
-
-body::before{
-content:"";
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:radial-gradient(circle at center,#ff4500,#000);
-opacity:0.15;
-z-index:-1;
 }
 
 /* HERO */
 
 .hero{
-padding:120px 20px;
+padding-top:80px;
+padding-bottom:80px;
+background: radial-gradient(circle at center,#ff3c00,#000);
 }
 
 .logo{
 width:220px;
-margin-top:20px;
-filter: drop-shadow(0 0 25px orange);
-animation: float 4s ease-in-out infinite;
+filter:drop-shadow(0 0 20px orange);
+animation:float 4s ease-in-out infinite;
 }
 
 @keyframes float{
@@ -63,59 +36,45 @@ animation: float 4s ease-in-out infinite;
 }
 
 h1{
-font-size:70px;
-color:#ff2e2e;
-text-shadow:0 0 20px red;
-margin:10px 0;
+font-size:60px;
+color:#ff2b2b;
+text-shadow:0 0 25px red;
 }
 
 .tagline{
-font-size:22px;
-opacity:0.9;
+font-size:20px;
+color:#ccc;
+margin-top:10px;
 }
 
-button{
+.btn{
+display:inline-block;
 margin-top:30px;
-padding:15px 40px;
-font-size:18px;
-background:#ff2e2e;
+padding:16px 35px;
+background:#ff2b2b;
+border-radius:12px;
+text-decoration:none;
 color:white;
-border:none;
-border-radius:8px;
-cursor:pointer;
-box-shadow:0 0 15px red;
+font-size:18px;
+box-shadow:0 0 20px red;
 }
 
 /* SECTION */
 
 .section{
-padding:80px 20px;
-max-width:900px;
-margin:auto;
+padding:70px 20px;
 }
 
 .card{
+max-width:600px;
+margin:auto;
 background:#111;
 padding:30px;
-border-radius:10px;
-margin:20px 0;
-box-shadow:0 0 10px rgba(255,0,0,0.2);
-}
-
-h2{
-color:#ff2e2e;
-}
-
-/* FOOTER */
-
-footer{
-margin-top:60px;
-padding:30px;
-background:#0a0a0a;
+border-radius:15px;
+box-shadow:0 0 20px #ff2b2b33;
 }
 
 </style>
-
 </head>
 
 <body>
@@ -124,25 +83,22 @@ background:#0a0a0a;
 
 <div class="hero">
 
-<div class="hero">
 <img src="file_0000000093007208b010768a2d36f0b5.png" class="logo">
-<h1>REBORNX</h1>
-<p>The Dragon Rises Again</p>
-</div>
 
 <h1>REBORNX</h1>
 
-<div class="tagline">
-
-The Dragon Rises Again<br>
-No Presale • No Insiders<br>
+<p class="tagline">
+The Dragon Rises Again  
+<br>
+No Presale • No Insiders  
+<br>
 Fair Launch on Solana
+</p>
+
+<a class="btn" href="#">Launch Soon on Pump.fun</a>
 
 </div>
 
-<button>Launch Soon on Pump.fun</button>
-
-</div>
 
 <!-- ABOUT -->
 
@@ -152,103 +108,34 @@ Fair Launch on Solana
 
 <div class="card">
 
+<p>
+
 REBORNX is a community driven meme token built on Solana.
-The project represents rebirth, strength and decentralization.
 
-No presale.  
+Inspired by the phoenix and the dragon, REBORNX represents
+rebirth, strength and unstoppable community energy.
+
 No insiders.  
-Fair launch for everyone.
+No presale.  
+Only the community.
 
-The dragon rises again.
-
-</div>
-
-</div>
-
-<!-- TOKENOMICS -->
-
-<div class="section">
-
-<h2>Tokenomics</h2>
-
-<div class="card">
-
-Total Supply : 1,000,000,000<br>
-Chain : Solana<br>
-Tax : 0%<br>
-Liquidity : 95%<br>
-Marketing : 3%<br>
-Community : 2%
+</p>
 
 </div>
 
 </div>
 
-<!-- ROADMAP -->
-
-<div class="section">
-
-<h2>Roadmap</h2>
-
-<div class="card">
-
-Phase 1<br>
-Website Launch<br>
-Community Setup<br>
-Social Media
-
-</div>
-
-<div class="card">
-
-Phase 2<br>
-Pump.fun Launch<br>
-Marketing Campaigns<br>
-Meme Contests
-
-</div>
-
-<div class="card">
-
-Phase 3<br>
-DEX Listings<br>
-10k Holders<br>
-Partnerships
-
-</div>
-
-<div class="card">
-
-Phase 4<br>
-CEX Listings<br>
-Global Expansion<br>
-Dragon Ecosystem
-
-</div>
-
-</div>
 
 <!-- COMMUNITY -->
 
 <div class="section">
 
-<h2>Community</h2>
+<h2>Join the Community</h2>
 
-<div class="card">
-
-Twitter : Coming Soon<br>
-Telegram : Coming Soon<br>
-Website : rebornxsol.xyz
+<a class="btn" href="#">Twitter</a>
+<a class="btn" href="#">Telegram</a>
 
 </div>
-
-</div>
-
-<footer>
-
-REBORNX © 2026
-
-</footer>
 
 </body>
 </html>
