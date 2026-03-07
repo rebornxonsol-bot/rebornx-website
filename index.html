@@ -19,9 +19,110 @@ background:black;
 
 /* FIRE BACKGROUND */
 
+<style>
+
 body{
-background:linear-gradient(135deg,#000000,#1a0000,#330000);
+margin:0;
+font-family:Arial;
+color:white;
+
+/* FIRE ANIMATION BACKGROUND */
+
+background: linear-gradient(270deg,#ff3c00,#000000,#8b0000,#ff3c00);
+background-size:800% 800%;
+
+animation:firebg 15s ease infinite;
 }
+
+@keyframes firebg{
+
+0%{
+background-position:0% 50%;
+}
+
+50%{
+background-position:100% 50%;
+}
+
+100%{
+background-position:0% 50%;
+}
+
+}
+
+/* HERO */
+
+.hero{
+height:100vh;
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+text-align:center;
+}
+
+.hero h1{
+font-size:90px;
+color:#ff3c00;
+text-shadow:0 0 40px red;
+}
+
+.hero p{
+font-size:22px;
+color:#ddd;
+}
+
+.coming{
+font-size:30px;
+margin-top:20px;
+color:#ff3c00;
+text-shadow:0 0 20px red;
+letter-spacing:3px;
+}
+
+.btn{
+display:inline-block;
+margin-top:25px;
+padding:15px 40px;
+background:#ff3c00;
+border-radius:10px;
+color:white;
+text-decoration:none;
+box-shadow:0 0 25px red;
+}
+
+.section{
+padding:120px 20px;
+text-align:center;
+}
+
+.card{
+max-width:850px;
+margin:auto;
+padding:20px;
+}
+
+h2{
+color:#ff3c00;
+font-size:40px;
+margin-bottom:30px;
+}
+
+.phase{
+margin-bottom:40px;
+}
+
+.phase h3{
+color:#ff3c00;
+}
+
+footer{
+background:#0b0b0b;
+padding:40px;
+text-align:center;
+}
+
+</style>
 
 /* HERO */
 
