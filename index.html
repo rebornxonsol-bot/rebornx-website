@@ -19,7 +19,7 @@ box-sizing:border-box;
 }
 
 body{
-font-family:Arial;
+font-family:Arial, sans-serif;
 background:black;
 color:white;
 overflow-x:hidden;
@@ -35,14 +35,23 @@ left:0;
 width:100%;
 height:100%;
 background:radial-gradient(circle,#ff3c00,#000);
-animation:firebg 5s infinite alternate;
-z-index:-1;
+animation:firebg 6s infinite alternate;
+z-index:-2;
 }
 
 @keyframes firebg{
 0%{filter:brightness(1)}
 50%{filter:brightness(1.5)}
 100%{filter:brightness(1)}
+}
+
+/* PARTICLES */
+
+canvas{
+position:fixed;
+top:0;
+left:0;
+z-index:-1;
 }
 
 /* NAVBAR */
@@ -56,7 +65,7 @@ justify-content:center;
 gap:40px;
 padding:15px;
 background:rgba(0,0,0,0.6);
-backdrop-filter:blur(12px);
+backdrop-filter:blur(10px);
 z-index:100;
 }
 
@@ -211,6 +220,8 @@ padding:25px;
 
 <body>
 
+<canvas id="particles"></canvas>
+
 <!-- NAVBAR -->
 
 <nav>
@@ -259,26 +270,22 @@ Launch on Pump.fun
 <div class="grid">
 
 <div class="token">
-Total Supply  
-<br><br>
+Total Supply <br><br>
 1,000,000,000
 </div>
 
 <div class="token">
-Liquidity  
-<br><br>
+Liquidity <br><br>
 90%
 </div>
 
 <div class="token">
-Dev Wallet  
-<br><br>
+Dev Wallet <br><br>
 10%
 </div>
 
 <div class="token">
-Tax  
-<br><br>
+Tax <br><br>
 0%
 </div>
 
@@ -348,6 +355,47 @@ REBORNX © 2026
 Community Driven Meme Coin
 
 </footer>
+
+<script>
+
+/* PARTICLE ANIMATION */
+
+const canvas = document.getElementById("particles");
+const ctx = canvas.getContext("2d");
+
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+let particles = [];
+
+for(let i=0;i<80;i++){
+particles.push({
+x:Math.random()*canvas.width,
+y:Math.random()*canvas.height,
+size:Math.random()*2,
+speed:Math.random()*1
+});
+}
+
+function animate(){
+
+ctx.clearRect(0,0,canvas.width,canvas.height);
+
+particles.forEach(p=>{
+p.y -= p.speed;
+if(p.y < 0) p.y = canvas.height;
+
+ctx.fillStyle="orange";
+ctx.fillRect(p.x,p.y,p.size,p.size);
+});
+
+requestAnimationFrame(animate);
+
+}
+
+animate();
+
+</script>
 
 </body>
 
