@@ -1,4 +1,4 @@
- html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -15,6 +15,7 @@ margin:0;
 font-family:Arial;
 color:white;
 background:black;
+overflow-x:hidden;
 }
 
 /* FIRE BACKGROUND */
@@ -26,8 +27,15 @@ top:0;
 left:0;
 width:100%;
 height:100%;
-background: radial-gradient(circle at center,#ff3c00,#000);
+background:radial-gradient(circle,#ff3c00,#000);
+animation:firebg 6s infinite alternate;
 z-index:-1;
+}
+
+@keyframes firebg{
+0%{filter:brightness(1)}
+50%{filter:brightness(1.5)}
+100%{filter:brightness(1)}
 }
 
 /* HERO */
@@ -49,40 +57,56 @@ text-shadow:0 0 40px red;
 
 .hero p{
 font-size:22px;
-color:#ccc;
+color:#eee;
 }
 
-.coming{
-margin-top:20px;
-font-size:30px;
-color:#ff3c00;
-text-shadow:0 0 20px red;
-letter-spacing:2px;
-}
+/* BUTTON */
 
 .btn{
+
 display:inline-block;
-margin-top:30px;
+margin-top:25px;
 padding:15px 40px;
 background:#ff3c00;
 border-radius:10px;
 color:white;
 text-decoration:none;
 box-shadow:0 0 20px red;
+
 }
 
-/* SECTIONS */
+/* COUNTDOWN */
+
+.countdown{
+
+margin-top:20px;
+font-size:25px;
+color:#fff;
+
+}
+
+/* SECTION */
 
 .section{
 padding:120px 20px;
 text-align:center;
 }
 
+/* CARD */
+
 .card{
+
 max-width:850px;
 margin:auto;
-padding:20px;
+padding:40px;
+border-radius:15px;
+margin-bottom:40px;
+background:rgba(0,0,0,0.35);
+backdrop-filter:blur(8px);
+
 }
+
+/* TITLES */
 
 h2{
 color:#ff3c00;
@@ -90,14 +114,22 @@ font-size:40px;
 margin-bottom:30px;
 }
 
-/* ROADMAP */
-
-.phase{
-margin-bottom:40px;
+h3{
+color:#ff3c00;
 }
 
-.phase h3{
-color:#ff3c00;
+/* COPY BUTTON */
+
+.copybtn{
+
+margin-top:20px;
+padding:12px 25px;
+background:#ff3c00;
+border:none;
+color:white;
+border-radius:8px;
+cursor:pointer;
+
 }
 
 /* FOOTER */
@@ -121,66 +153,44 @@ text-align:center;
 <h1>REBORNX</h1>
 
 <p>
-The Dragon Rises Again
+
+The Dragon Rises Again  
 <br>
-Community Meme Coin on Solana
+Fair Launch on Pump.fun
+
 </p>
 
-<div class="coming">
-COMING SOON
+<div class="countdown" id="countdown">
+
+Launch Countdown Loading...
+
 </div>
 
 <a class="btn" href="https://x.com/rebornxonsol" target="_blank">
+
 Follow on X
+
 </a>
 
 </div>
 
-<!-- INTRO -->
+<!-- CONTRACT ADDRESS -->
 
 <div class="section">
 
-<h2>Introduction</h2>
+<h2>Contract Address</h2>
 
 <div class="card">
 
-REBORNX is a community driven meme coin launching on the Solana blockchain.
+CA : Coming Soon
 
-The project represents rebirth, strength and community power.
+<br><br>
 
-No presale.  
-No insiders.  
-Fair launch on Pump.fun.
+The official contract address will be revealed at launch.
 
-</div>
+<br><br>
 
-</div>
-
-<!-- VISION -->
-
-<div class="section">
-
-<h2>Vision</h2>
-
-<div class="card">
-
-REBORNX aims to build a powerful meme narrative on Solana and create a strong global community driven by memes and culture.
-
-</div>
-
-</div>
-
-<!-- MISSION -->
-
-<div class="section">
-
-<h2>Mission</h2>
-
-<div class="card">
-
-Build a strong community  
-Create viral meme culture  
-Expand the REBORNX narrative across crypto
+<button class="copybtn" onclick="copyCA()">Copy CA</button>
 
 </div>
 
@@ -200,27 +210,27 @@ Network : Solana
 
 <br><br>
 
-Total Supply : 1,000,000,000  
+Total Supply : 1,000,000,000
+
+<br><br>
+
+Pump.fun Launch : Fair Launch
 
 <br><br>
 
 Liquidity : 90%  
-Dev Wallet : 10%  
+Dev Wallet : 10%
 
 <br><br>
 
-Dev Allocation  
+Dev Allocation
 
 5% Active Dev Wallet  
-5% Locked  
+5% Locked for Future Development
 
 <br><br>
 
-Tax : 0%  
-
-<br><br>
-
-CA : Coming Soon
+Tax : 0%
 
 </div>
 
@@ -234,27 +244,25 @@ CA : Coming Soon
 
 <div class="card">
 
-<div class="phase">
+<h3>Phase 1 — Foundation</h3>
 
-<h3>✔ Phase 1 — Foundation (Completed)</h3>
-
-Website launch ✔  
-Community building (In Progress)  
-Social media setup ✔
+Website launch  
+Community building  
+Social media setup  
 
 </div>
 
-<div class="phase">
+<div class="card">
 
 <h3>Phase 2 — Launch</h3>
 
-Pump.fun token launch  
+Pump.fun launch  
 Community raids  
 Marketing push  
 
 </div>
 
-<div class="phase">
+<div class="card">
 
 <h3>Phase 3 — Growth</h3>
 
@@ -264,45 +272,21 @@ Meme campaigns
 
 </div>
 
-<div class="phase">
+<div class="card">
 
 <h3>Phase 4 — Expansion</h3>
 
 Global marketing  
-Partnerships  
-Community ecosystem  
-
-</div>
-
-<div class="phase">
-
-<h3>Phase 5 — Future Vision</h3>
-
-Exchange listings  
 Strategic partnerships  
-Long term development  
 
 </div>
-
-</div>
-
-</div>
-
-<!-- NARRATIVE -->
-
-<div class="section">
-
-<h2>Narrative</h2>
 
 <div class="card">
 
-REBORNX is inspired by the mythical phoenix and dragon.
+<h3>Phase 5 — Future Vision</h3>
 
-The phoenix rises from ashes and the dragon represents strength and dominance.
-
-REBORNX symbolizes the moment when the market rises again.
-
-The Dragon Rises Again.
+Major exchange discussions  
+Long term ecosystem growth  
 
 </div>
 
@@ -316,14 +300,58 @@ The Dragon Rises Again.
 
 <div class="card">
 
-REBORNX is a meme coin created for community engagement.
+REBORNX is a meme coin created for entertainment and community engagement.
 
-Cryptocurrency investments carry risk.
-
-Always do your own research.
+Always do your own research before investing in cryptocurrency.
 
 </div>
 
 </div>
 
-<
+<footer>
+
+REBORNX © 2026  
+Community Driven Meme Coin
+
+</footer>
+
+<script>
+
+/* COPY CA */
+
+function copyCA(){
+
+navigator.clipboard.writeText("COMING SOON");
+
+alert("Contract Address Coming Soon");
+
+}
+
+/* COUNTDOWN */
+
+var launchDate = new Date("2026-01-01").getTime();
+
+var timer = setInterval(function(){
+
+var now = new Date().getTime();
+
+var distance = launchDate - now;
+
+var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+
+var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+
+var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+
+var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+document.getElementById("countdown").innerHTML =
+days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+
+},1000);
+
+</script>
+
+</body>
+
+</html>
