@@ -1,51 +1,84 @@
 body{
 
-background:#04040a;
+background:black;
 color:white;
-font-family:'Orbitron',sans-serif;
 text-align:center;
-
-}
-
-header{
-
-display:flex;
-justify-content:space-between;
-padding:20px 40px;
-background:#0a0a14;
-
-}
-
-.logo{
-
-font-size:32px;
-font-weight:bold;
-
-background:linear-gradient(90deg,#00f2ff,#ff00ea);
--webkit-background-clip:text;
--webkit-text-fill-color:transparent;
-
-}
-
-nav a{
-
-margin-left:20px;
-color:white;
-text-decoration:none;
+font-family:'Orbitron',sans-serif;
 
 }
 
 .hero{
 
-padding:150px 20px;
+padding-top:200px;
 
 }
 
-.title{
+.logo{
 
-font-size:80px;
+font-size:120px;
+font-weight:700;
 
-background:linear-gradient(90deg,#00f2ff,#7a5cff,#ff00ea);
+}
+
+/* FIRE SIDE */
+
+.fire{
+
+background:linear-gradient(
+45deg,
+#ff3c00,
+#ff8c00,
+#ff0000
+);
+
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+
+text-shadow:
+
+0 0 10px #ff3c00,
+0 0 20px #ff3c00,
+0 0 40px #ff0000;
+
+animation:fireGlow 3s infinite alternate;
+
+}
+
+/* ICE SIDE */
+
+.ice{
+
+background:linear-gradient(
+45deg,
+#00eaff,
+#0077ff,
+#00c3ff
+);
+
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+
+text-shadow:
+
+0 0 10px #00eaff,
+0 0 20px #0077ff,
+0 0 40px #00c3ff;
+
+animation:iceGlow 3s infinite alternate;
+
+}
+
+.name{
+
+font-size:60px;
+margin-top:20px;
+
+background:linear-gradient(
+90deg,
+#ff6a00,
+#00eaff
+);
+
 -webkit-background-clip:text;
 -webkit-text-fill-color:transparent;
 
@@ -53,70 +86,76 @@ background:linear-gradient(90deg,#00f2ff,#7a5cff,#ff00ea);
 
 .tagline{
 
-margin-top:20px;
-font-size:22px;
 opacity:0.8;
+margin-top:10px;
 
 }
 
-.btn{
+.buy{
 
-margin-top:20px;
-padding:12px 30px;
+margin-top:30px;
+padding:15px 40px;
+
 border:none;
-border-radius:30px;
 
-background:linear-gradient(90deg,#7a5cff,#00f2ff);
+background:linear-gradient(
+90deg,
+#ff3c00,
+#00eaff
+);
 
 color:white;
+border-radius:30px;
 cursor:pointer;
 
-}
+font-size:18px;
 
-section{
-
-padding:80px 20px;
-
-}
-
-.grid{
-
-display:flex;
-flex-wrap:wrap;
-justify-content:center;
-gap:20px;
+box-shadow:
+0 0 20px #ff3c00,
+0 0 30px #00eaff;
 
 }
 
-.card{
+/* FIRE ANIMATION */
 
-background:#0e0e1c;
-padding:30px;
-border-radius:10px;
-width:220px;
+@keyframes fireGlow{
 
-box-shadow:0 0 15px #7a5cff33;
+0%{
 
-}
-
-.social a{
-
-display:inline-block;
-margin:10px;
-padding:12px 25px;
-
-background:#7a5cff;
-
-border-radius:30px;
-
-color:white;
-text-decoration:none;
+text-shadow:
+0 0 10px #ff3c00,
+0 0 20px #ff0000;
 
 }
 
-footer{
+100%{
 
-background:#0a0a14;
-padding:40px;
+text-shadow:
+0 0 30px #ff3c00,
+0 0 60px #ff0000;
+
+}
+
+}
+
+/* ICE ANIMATION */
+
+@keyframes iceGlow{
+
+0%{
+
+text-shadow:
+0 0 10px #00eaff,
+0 0 20px #0077ff;
+
+}
+
+100%{
+
+text-shadow:
+0 0 30px #00eaff,
+0 0 60px #0077ff;
+
+}
 
 }
