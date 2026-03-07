@@ -155,15 +155,10 @@ cursor:pointer;
 
 /* GAME */
 
-#fire{
-font-size:80px;
-cursor:pointer;
-animation:firemove 1s infinite alternate;
-}
-
-@keyframes firemove{
-0%{transform:translateY(0)}
-100%{transform:translateY(-20px)}
+#gameCanvas{
+background:#111;
+border:2px solid #ff3c00;
+margin-top:20px;
 }
 
 /* FOOTER */
@@ -296,17 +291,17 @@ Marketing push
 
 </div>
 
-<!-- MINI GAME -->
+<!-- GAME -->
 
 <div class="section" id="game">
 
-<h2>REBORNX Mini Game</h2>
+<h2>REBORNX Dragon Runner</h2>
 
-<p>Click the Fire 🔥 and earn points</p>
+<p>Press SPACE to jump the dragon 🐉</p>
 
-<h3 id="score">Score : 0</h3>
+<canvas id="gameCanvas" width="600" height="300"></canvas>
 
-<div id="fire" onclick="addScore()">🔥</div>
+<h3 id="gameOver"></h3>
 
 </div>
 
@@ -331,16 +326,73 @@ alert("Contract Address Coming Soon");
 
 /* GAME */
 
-let score = 0;
+const canvas = document.getElementById("gameCanvas");
+const ctx = canvas.getContext("2d");
 
-function addScore(){
+let dragon = {x:50,y:220,w:40,h:40,vy:0};
+let gravity = 0.6;
+let jump = -10;
 
-score++;
+let obstacle = {x:600,y:240,w:20,h:60};
 
-document.getElementById("score").innerHTML =
-"Score : " + score;
+let gameRunning = true;
+
+function drawDragon(){
+ctx.fillStyle="orange";
+ctx.fillRect(dragon.x,dragon.y,dragon.w,dragon.h);
+}
+
+function drawObstacle(){
+ctx.fillStyle="red";
+ctx.fillRect(obstacle.x,obstacle.y,obstacle.w,obstacle.h);
+}
+
+function update(){
+
+if(!gameRunning) return;
+
+ctx.clearRect(0,0,canvas.width,canvas.height);
+
+dragon.vy += gravity;
+dragon.y += dragon.vy;
+
+if(dragon.y > 220){
+dragon.y = 220;
+dragon.vy = 0;
+}
+
+obstacle.x -= 4;
+
+if(obstacle.x < -20){
+obstacle.x = 600;
+}
+
+if(
+dragon.x < obstacle.x + obstacle.w &&
+dragon.x + dragon.w > obstacle.x &&
+dragon.y < obstacle.y + obstacle.h &&
+dragon.y + dragon.h > obstacle.y
+){
+gameRunning=false;
+document.getElementById("gameOver").innerText="GAME OVER";
+}
+
+drawDragon();
+drawObstacle();
+
+requestAnimationFrame(update);
 
 }
+
+document.addEventListener("keydown",function(e){
+
+if(e.code==="Space"){
+dragon.vy = jump;
+}
+
+});
+
+update();
 
 </script>
 
