@@ -21,8 +21,6 @@ color:white;
 overflow-x:hidden;
 }
 
-/* PARTICLES */
-
 canvas{
 position:fixed;
 top:0;
@@ -58,13 +56,14 @@ color:#ff4a00;
 /* MENU ICON */
 
 .menu-icon{
+display:none;
 position:absolute;
 right:25px;
 font-size:28px;
 cursor:pointer;
 }
 
-/* FULL MENU */
+/* FULL SCREEN MENU */
 
 .menu{
 position:fixed;
@@ -223,6 +222,20 @@ text-align:center;
 
 @media(max-width:768px){
 
+nav{
+justify-content:flex-start;
+gap:20px;
+padding-left:20px;
+}
+
+nav a{
+display:none;
+}
+
+.menu-icon{
+display:block;
+}
+
 .hero h1{
 font-size:45px;
 }
@@ -255,7 +268,7 @@ font-size:18px;
 
 </nav>
 
-<!-- MENU PANEL -->
+<!-- MENU -->
 
 <div id="menu" class="menu">
 
