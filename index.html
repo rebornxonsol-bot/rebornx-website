@@ -10,8 +10,6 @@
 
 <style>
 
-/* SMOOTH SCROLL */
-
 html{
 scroll-behavior:smooth;
 }
@@ -155,6 +153,19 @@ border-radius:8px;
 cursor:pointer;
 }
 
+/* GAME */
+
+#fire{
+font-size:80px;
+cursor:pointer;
+animation:firemove 1s infinite alternate;
+}
+
+@keyframes firemove{
+0%{transform:translateY(0)}
+100%{transform:translateY(-20px)}
+}
+
 /* FOOTER */
 
 footer{
@@ -176,6 +187,7 @@ text-align:center;
 <a href="#home">Home</a>
 <a href="#tokenomics">Tokenomics</a>
 <a href="#roadmap">Roadmap</a>
+<a href="#game">Game</a>
 <a href="https://x.com/rebornxonsol" target="_blank">X</a>
 
 </div>
@@ -220,10 +232,6 @@ CA : Coming Soon
 
 <br><br>
 
-The official contract address will be revealed at launch.
-
-<br><br>
-
 <button class="copybtn" onclick="copyCA()">Copy CA</button>
 
 </div>
@@ -248,23 +256,13 @@ Total Supply : 1,000,000,000
 
 <br><br>
 
-Pump.fun Launch : Fair Launch
-
-<br><br>
-
 Liquidity : 90%  
 Dev Wallet : 10%
 
 <br><br>
 
-Dev Allocation
-
-5% Active Dev Wallet  
-5% Locked for Future Development
-
-<br><br>
-
-Tax : 0%
+5% Active Dev  
+5% Locked
 
 </div>
 
@@ -296,49 +294,19 @@ Marketing push
 
 </div>
 
-<div class="card">
-
-<h3>Phase 3 — Growth</h3>
-
-DEX trading growth  
-Community expansion  
-Meme campaigns  
-
 </div>
 
-<div class="card">
+<!-- MINI GAME -->
 
-<h3>Phase 4 — Expansion</h3>
+<div class="section" id="game">
 
-Global marketing  
-Strategic partnerships  
+<h2>REBORNX Mini Game</h2>
 
-</div>
+<p>Click the Fire 🔥 and earn points</p>
 
-<div class="card">
+<h3 id="score">Score : 0</h3>
 
-<h3>Phase 5 — Future Vision</h3>
-
-Major exchange discussions  
-Long term ecosystem growth  
-
-</div>
-
-</div>
-
-<!-- DISCLAIMER -->
-
-<div class="section">
-
-<h2>Disclaimer</h2>
-
-<div class="card">
-
-REBORNX is a meme coin created for entertainment and community engagement.
-
-Always do your own research before investing in cryptocurrency.
-
-</div>
+<div id="fire" onclick="addScore()">🔥</div>
 
 </div>
 
@@ -355,4 +323,27 @@ Community Driven Meme Coin
 
 function copyCA(){
 
-navigator.clipboard
+navigator.clipboard.writeText("COMING SOON");
+
+alert("Contract Address Coming Soon");
+
+}
+
+/* GAME */
+
+let score = 0;
+
+function addScore(){
+
+score++;
+
+document.getElementById("score").innerHTML =
+"Score : " + score;
+
+}
+
+</script>
+
+</body>
+
+</html>
