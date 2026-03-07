@@ -14,152 +14,168 @@
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:Arial;
 }
 
 body{
-background:linear-gradient(135deg,#050505,#140000,#050505);
+
+font-family:Arial;
+background:linear-gradient(135deg,#050505,#120000,#050505);
 color:white;
 overflow-x:hidden;
+
+}
+
+/* PARTICLES */
+
+canvas{
+position:fixed;
+top:0;
+left:0;
+z-index:-1;
 }
 
 /* NAVBAR */
 
-.navbar{
+nav{
+
 position:fixed;
 top:0;
 width:100%;
-background:rgba(0,0,0,0.7);
-backdrop-filter:blur(8px);
 display:flex;
 justify-content:center;
 gap:40px;
 padding:15px;
+background:rgba(0,0,0,0.7);
+backdrop-filter:blur(10px);
 z-index:10;
+
 }
 
-.navbar a{
+nav a{
+
 color:white;
 text-decoration:none;
 font-weight:bold;
+
 }
 
-.navbar a:hover{
-color:#ff3c00;
+nav a:hover{
+
+color:#ff4a00;
+
 }
 
 /* HERO */
 
 .hero{
+
 height:100vh;
 display:flex;
 flex-direction:column;
 align-items:center;
 justify-content:center;
 text-align:center;
-padding:20px;
+
 }
 
 .hero h1{
-font-size:80px;
-color:#ff3c00;
+
+font-size:90px;
+color:#ff4a00;
 text-shadow:0 0 40px red;
+
 }
 
 .hero p{
+
 font-size:22px;
 margin-top:10px;
-}
 
-.coming{
-margin-top:15px;
-font-size:28px;
-color:#ff3c00;
-letter-spacing:3px;
 }
 
 .btn{
-display:inline-block;
-margin-top:25px;
-padding:15px 40px;
-background:#ff3c00;
-border-radius:10px;
+
+margin-top:30px;
+padding:18px 40px;
+background:#ff4a00;
+border-radius:8px;
 color:white;
 text-decoration:none;
-box-shadow:0 0 20px red;
+font-weight:bold;
 transition:0.3s;
+
 }
 
 .btn:hover{
+
 transform:scale(1.1);
+
 }
 
 /* SECTION */
 
 .section{
+
 padding:120px 20px;
-text-align:center;
 max-width:1000px;
 margin:auto;
+text-align:center;
+
 }
-
-/* CARD */
-
-.card{
-background:rgba(255,255,255,0.05);
-padding:40px;
-border-radius:15px;
-margin-bottom:40px;
-backdrop-filter:blur(10px);
-}
-
-/* TITLES */
 
 h2{
-color:#ff3c00;
+
+color:#ff4a00;
 font-size:40px;
 margin-bottom:30px;
+
 }
 
-h3{
-color:#ff3c00;
-margin-bottom:10px;
-}
-
-/* TOKEN GRID */
+/* TOKENOMICS */
 
 .grid{
+
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
 gap:20px;
+
+}
+
+.box{
+
+background:rgba(255,255,255,0.05);
+padding:30px;
+border-radius:12px;
+backdrop-filter:blur(10px);
+
 }
 
 /* ROADMAP */
 
+.roadmap{
+
+display:flex;
+flex-direction:column;
+gap:25px;
+
+}
+
 .step{
+
 background:rgba(255,255,255,0.05);
 padding:30px;
 border-radius:12px;
-margin-bottom:20px;
-}
 
-.step ul{
-list-style:none;
-padding:0;
-}
-
-.step li{
-margin:8px 0;
-color:#ddd;
 }
 
 /* FOOTER */
 
 footer{
+
 background:#000;
 padding:40px;
 text-align:center;
-margin-top:50px;
+
 }
 
 /* MOBILE */
@@ -167,11 +183,15 @@ margin-top:50px;
 @media(max-width:768px){
 
 .hero h1{
+
 font-size:45px;
+
 }
 
 .hero p{
+
 font-size:18px;
+
 }
 
 }
@@ -182,16 +202,18 @@ font-size:18px;
 
 <body>
 
+<canvas id="particles"></canvas>
+
 <!-- NAVBAR -->
 
-<div class="navbar">
+<nav>
 
 <a href="#home">Home</a>
 <a href="#tokenomics">Tokenomics</a>
 <a href="#roadmap">Roadmap</a>
 <a href="https://x.com/rebornxonsol" target="_blank">X</a>
 
-</div>
+</nav>
 
 <!-- HERO -->
 
@@ -203,19 +225,13 @@ font-size:18px;
 
 The Dragon Rises Again  
 <br>
-Community Meme Coin on Solana
+Fair Launch on Pump.fun
 
 </p>
 
-<div class="coming">
+<a class="btn" href="https://pump.fun" target="_blank">
 
-COMING SOON
-
-</div>
-
-<a class="btn" href="https://x.com/rebornxonsol" target="_blank">
-
-Follow on X
+Launch on Pump.fun
 
 </a>
 
@@ -229,7 +245,7 @@ Follow on X
 
 <div class="grid">
 
-<div class="card">
+<div class="box">
 
 Total Supply  
 <br><br>
@@ -237,7 +253,7 @@ Total Supply
 
 </div>
 
-<div class="card">
+<div class="box">
 
 Liquidity  
 <br><br>
@@ -245,7 +261,7 @@ Liquidity
 
 </div>
 
-<div class="card">
+<div class="box">
 
 Dev Wallet  
 <br><br>
@@ -253,7 +269,7 @@ Dev Wallet
 
 </div>
 
-<div class="card">
+<div class="box">
 
 Tax  
 <br><br>
@@ -271,79 +287,50 @@ Tax
 
 <h2>Roadmap</h2>
 
+<div class="roadmap">
+
 <div class="step">
 
-<h3>✔ Phase 1 — Foundation (Completed)</h3>
-
-<ul>
-
-<li>Website launch ✔</li>
-
-<li>Social media setup ✔</li>
-
-<li>Community building 🔄 (In Progress)</li>
-
-</ul>
+Phase 1 — Foundation  
+Website launch  
+Social media setup  
+Community building  
 
 </div>
 
 <div class="step">
 
-<h3>Phase 2 — Launch</h3>
-
-<ul>
-
-<li>Pump.fun launch</li>
-
-<li>Community raids</li>
-
-<li>Marketing push</li>
-
-</ul>
+Phase 2 — Launch  
+Pump.fun launch  
+Community raids  
+Marketing push  
 
 </div>
 
 <div class="step">
 
-<h3>Phase 3 — Growth</h3>
-
-<ul>
-
-<li>DEX trading growth</li>
-
-<li>Community expansion</li>
-
-<li>Meme campaigns</li>
-
-</ul>
+Phase 3 — Growth  
+DEX trading growth  
+Community expansion  
+Meme campaigns  
 
 </div>
 
 <div class="step">
 
-<h3>Phase 4 — Expansion</h3>
-
-<ul>
-
-<li>Global marketing</li>
-
-<li>Strategic partnerships</li>
-
-</ul>
+Phase 4 — Expansion  
+Global marketing  
+Strategic partnerships  
 
 </div>
 
 <div class="step">
 
-<h3>Phase 5 — Future Vision</h3>
+Phase 5 — Future Vision  
+Exchange listings  
+Long term ecosystem growth  
 
-<ul>
-
-<li>Exchange listings</li>
-
-<li>Long term ecosystem growth</li>
-
-</ul>
+</div>
 
 </div>
 
@@ -355,6 +342,56 @@ REBORNX © 2026
 Community Driven Meme Coin
 
 </footer>
+
+<script>
+
+const canvas=document.getElementById("particles");
+const ctx=canvas.getContext("2d");
+
+canvas.width=window.innerWidth;
+canvas.height=window.innerHeight;
+
+let particles=[];
+
+for(let i=0;i<100;i++){
+
+particles.push({
+
+x:Math.random()*canvas.width,
+y:Math.random()*canvas.height,
+size:Math.random()*2,
+speed:Math.random()*0.5
+
+});
+
+}
+
+function animate(){
+
+ctx.clearRect(0,0,canvas.width,canvas.height);
+
+particles.forEach(p=>{
+
+p.y-=p.speed;
+
+if(p.y<0){
+
+p.y=canvas.height;
+
+}
+
+ctx.fillStyle="white";
+ctx.fillRect(p.x,p.y,p.size,p.size);
+
+});
+
+requestAnimationFrame(animate);
+
+}
+
+animate();
+
+</script>
 
 </body>
 
