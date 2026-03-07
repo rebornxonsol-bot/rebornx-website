@@ -1,12 +1,45 @@
 body{
 margin:0;
 padding:0;
-font-family:Arial, sans-serif;
+font-family:Arial;
 background:black;
 color:white;
 }
 
-/* HERO SECTION */
+.navbar{
+position:fixed;
+top:0;
+width:100%;
+background:rgba(0,0,0,0.9);
+padding:15px 0;
+}
+
+.nav-container{
+display:flex;
+justify-content:space-between;
+align-items:center;
+width:90%;
+margin:auto;
+}
+
+.logo img{
+height:50px;
+}
+
+nav ul{
+display:flex;
+list-style:none;
+}
+
+nav ul li{
+margin-left:30px;
+}
+
+nav ul li a{
+color:white;
+text-decoration:none;
+font-size:18px;
+}
 
 .hero{
 height:100vh;
@@ -15,37 +48,21 @@ justify-content:center;
 align-items:center;
 text-align:center;
 
-background-image:url("../images/dragon-bg.jpg");
+background:url("../images/dragon-bg.jpg");
 background-size:cover;
 background-position:center;
 }
 
-/* DARK OVERLAY */
-
-.hero::before{
-content:"";
-position:absolute;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:rgba(0,0,0,0.6);
-}
-
 .hero-content{
-position:relative;
-z-index:2;
+background:rgba(0,0,0,0.6);
+padding:40px;
+border-radius:10px;
 }
-
-/* TITLE */
 
 .hero h1{
 font-size:70px;
-letter-spacing:5px;
 color:#ff4b2b;
 }
-
-/* BUTTON */
 
 .buy-btn{
 margin-top:20px;
@@ -56,8 +73,4 @@ color:white;
 font-size:20px;
 cursor:pointer;
 border-radius:8px;
-}
-
-.buy-btn:hover{
-background:#ff784e;
 }
