@@ -15,85 +15,66 @@ margin:0;
 font-family:Arial;
 background:black;
 color:white;
+scroll-behavior:smooth;
 }
 
 /* HERO */
 
 .hero{
-position:relative;
 height:100vh;
-background:url("dragon-fire.jpg") center/cover no-repeat;
 display:flex;
 align-items:center;
 justify-content:center;
+flex-direction:column;
 text-align:center;
-}
-
-/* DARK OVERLAY */
-
-.overlay{
-position:absolute;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:linear-gradient(
-rgba(0,0,0,0.6),
-rgba(0,0,0,0.8)
-);
-}
-
-/* HERO CONTENT */
-
-.hero-content{
-position:relative;
-z-index:2;
+background: radial-gradient(circle,#ff3c00,#000);
 }
 
 .hero h1{
-font-size:90px;
+font-size:120px;
 color:#ff3c00;
 text-shadow:0 0 40px red;
 }
 
 .hero p{
-font-size:22px;
-color:#ccc;
+font-size:25px;
 }
 
 /* BUTTON */
 
 .btn{
-display:inline-block;
 margin-top:20px;
-padding:15px 35px;
+padding:15px 40px;
 background:#ff3c00;
 border-radius:10px;
 color:white;
 text-decoration:none;
+font-size:18px;
 box-shadow:0 0 20px red;
 }
 
 /* SECTION */
 
 .section{
-padding:100px 20px;
+height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
 text-align:center;
+padding:40px;
 }
 
 .card{
 max-width:700px;
-margin:auto;
 background:#111;
 padding:40px;
-border-radius:10px;
+border-radius:12px;
 }
 
 h2{
 color:#ff3c00;
+font-size:50px;
 }
-
-/* FOOTER */
 
 footer{
 padding:40px;
@@ -111,25 +92,20 @@ text-align:center;
 
 <div class="hero">
 
-<div class="overlay"></div>
-
-<div class="hero-content">
-
 <h1>REBORNX</h1>
 
 <p>
 
 The Dragon Rises Again  
-<br>
 Launching Soon on Pump.fun
 
 </p>
 
 <a class="btn" href="https://x.com/rebornxonsol" target="_blank">
-Follow on X
-</a>
 
-</div>
+Follow on X
+
+</a>
 
 </div>
 
@@ -137,17 +113,19 @@ Follow on X
 
 <div class="section">
 
-<h2>About</h2>
-
 <div class="card">
 
-REBORNX is a community driven meme coin launching on Pump.fun.
+<h2>About</h2>
 
-No presale.  
-No insiders.  
-Fair launch.
+<p>
 
-Powered by community and strong meme narrative.
+REBORNX is a community driven meme coin built on Solana.
+
+No presale  
+No insiders  
+Fair launch
+
+</p>
 
 </div>
 
@@ -157,25 +135,22 @@ Powered by community and strong meme narrative.
 
 <div class="section">
 
-<h2>Tokenomics</h2>
-
 <div class="card">
 
-Token Name : REBORNX  
-Ticker : RBX  
-Network : Solana  
+<h2>Tokenomics</h2>
+
+<p>
+
+Total Supply  
+1,000,000,000
 
 <br><br>
 
-Total Supply : 1,000,000,000
+Liquidity 95%  
+Marketing 3%  
+Community 2%
 
-<br><br>
-
-Liquidity : 95%  
-Marketing : 3%  
-Community : 2%
-
-Tax : 0%
+</p>
 
 </div>
 
@@ -185,29 +160,26 @@ Tax : 0%
 
 <div class="section">
 
-<h2>Roadmap</h2>
-
 <div class="card">
 
+<h2>Roadmap</h2>
+
+<p>
+
 Phase 1  
-Website launch  
-Community building
+Website launch
 
 <br><br>
 
 Phase 2  
-Pump.fun launch  
-Marketing push
+Pump.fun launch
 
 <br><br>
 
 Phase 3  
 DEX listing
 
-<br><br>
-
-Phase 4  
-Global community growth
+</p>
 
 </div>
 
@@ -215,8 +187,7 @@ Global community growth
 
 <footer>
 
-REBORNX © 2026  
-Community Meme Coin
+REBORNX © 2026
 
 </footer>
 
