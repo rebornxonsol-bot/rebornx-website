@@ -1,17 +1,36 @@
-const title = document.querySelector(".title")
+const canvas=document.createElement("canvas")
+document.getElementById("particles").appendChild(canvas)
 
-let glow = 0
+const ctx=canvas.getContext("2d")
 
-setInterval(()=>{
+canvas.width=window.innerWidth
+canvas.height=window.innerHeight
 
-glow++
+let stars=[]
 
-title.style.textShadow="0 0 "+glow+"px #7a5cff"
+for(let i=0;i<120;i++){
+stars.push({
+x:Math.random()*canvas.width,
+y:Math.random()*canvas.height,
+size:Math.random()*2
+})
+}
 
-if(glow>40){
+function draw(){
 
-glow=0
+ctx.clearRect(0,0,canvas.width,canvas.height)
+
+stars.forEach(s=>{
+ctx.fillStyle="white"
+ctx.fillRect(s.x,s.y,s.size,s.size)
+
+s.y+=0.3
+
+if(s.y>canvas.height)s.y=0
+})
+
+requestAnimationFrame(draw)
 
 }
 
-},100)
+draw()
