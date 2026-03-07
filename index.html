@@ -9,86 +9,38 @@
 
 <link rel="stylesheet" href="css/style.css">
 
-<style>
-
-body{
-margin:0;
-font-family:Arial;
-background:black;
-color:white;
-}
-
-nav{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:20px;
-background:#000;
-}
-
-nav ul{
-display:flex;
-gap:20px;
-list-style:none;
-}
-
-nav a{
-color:white;
-text-decoration:none;
-}
-
-.hero{
-height:100vh;
-display:flex;
-justify-content:center;
-align-items:center;
-text-align:center;
-flex-direction:column;
-background:url("images/dragon-bg.jpg");
-background-size:cover;
-}
-
-button{
-padding:10px 20px;
-margin-top:15px;
-}
-
-</style>
-
 </head>
 
 <body>
 
-<nav>
+<nav class="navbar">
 
-<h2>REBORNX</h2>
+<h2 class="logo">REBORNX</h2>
 
-<ul>
+<div class="nav-links">
 
-<li><a href="index.html">Home</a></li>
+<a href="index.html">Home</a>
+<a href="about.html">About</a>
+<a href="tokenomics.html">Tokenomics</a>
+<a href="roadmap.html">Roadmap</a>
 
-<li><a href="about.html">About</a></li>
-
-<li><a href="tokenomics.html">Tokenomics</a></li>
-
-<li><a href="roadmap.html">Roadmap</a></li>
-
-</ul>
+</div>
 
 </nav>
 
-
 <section class="hero">
 
-<img src="images/logo.png" width="80">
+<img src="images/logo.png" class="hero-logo">
 
 <h1>REBORNX</h1>
 
 <p>From Fire We Rise</p>
 
-<button>Buy Token</button>
+<button class="buy-btn">Buy Token</button>
 
 </section>
+
+<script src="js/script.js"></script>
 
 </body>
 </html>
