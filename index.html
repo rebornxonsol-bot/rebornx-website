@@ -17,12 +17,10 @@ box-sizing:border-box;
 }
 
 body{
-
 font-family:Arial;
 background:linear-gradient(135deg,#050505,#120000,#050505);
 color:white;
 overflow-x:hidden;
-
 }
 
 /* PARTICLES */
@@ -37,7 +35,6 @@ z-index:-1;
 /* NAVBAR */
 
 nav{
-
 position:fixed;
 top:0;
 width:100%;
@@ -48,53 +45,41 @@ padding:15px;
 background:rgba(0,0,0,0.7);
 backdrop-filter:blur(10px);
 z-index:10;
-
 }
 
 nav a{
-
 color:white;
 text-decoration:none;
 font-weight:bold;
-
 }
 
 nav a:hover{
-
 color:#ff4a00;
-
 }
 
 /* HERO */
 
 .hero{
-
 height:100vh;
 display:flex;
 flex-direction:column;
 align-items:center;
 justify-content:center;
 text-align:center;
-
 }
 
 .hero h1{
-
 font-size:90px;
 color:#ff4a00;
 text-shadow:0 0 40px red;
-
 }
 
 .hero p{
-
 font-size:22px;
 margin-top:10px;
-
 }
 
 .btn{
-
 margin-top:30px;
 padding:18px 40px;
 background:#ff4a00;
@@ -103,79 +88,73 @@ color:white;
 text-decoration:none;
 font-weight:bold;
 transition:0.3s;
-
 }
 
 .btn:hover{
-
 transform:scale(1.1);
-
 }
 
 /* SECTION */
 
 .section{
-
 padding:120px 20px;
 max-width:1000px;
 margin:auto;
 text-align:center;
-
 }
 
 h2{
-
 color:#ff4a00;
 font-size:40px;
 margin-bottom:30px;
-
 }
 
 /* TOKENOMICS */
 
 .grid{
-
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
 gap:20px;
-
 }
 
 .box{
-
 background:rgba(255,255,255,0.05);
 padding:30px;
 border-radius:12px;
 backdrop-filter:blur(10px);
-
 }
 
 /* ROADMAP */
 
 .roadmap{
-
 display:flex;
 flex-direction:column;
 gap:25px;
-
 }
 
 .step{
-
 background:rgba(255,255,255,0.05);
 padding:30px;
 border-radius:12px;
+}
 
+.step ul{
+list-style:none;
+margin-top:10px;
+padding:0;
+}
+
+.step li{
+margin:8px 0;
+color:#ddd;
 }
 
 /* FOOTER */
 
 footer{
-
 background:#000;
 padding:40px;
 text-align:center;
-
 }
 
 /* MOBILE */
@@ -183,15 +162,11 @@ text-align:center;
 @media(max-width:768px){
 
 .hero h1{
-
 font-size:45px;
-
 }
 
 .hero p{
-
 font-size:18px;
-
 }
 
 }
@@ -222,17 +197,13 @@ font-size:18px;
 <h1>REBORNX</h1>
 
 <p>
-
 The Dragon Rises Again  
 <br>
 Fair Launch on Pump.fun
-
 </p>
 
 <a class="btn" href="https://pump.fun" target="_blank">
-
 Launch on Pump.fun
-
 </a>
 
 </div>
@@ -246,35 +217,27 @@ Launch on Pump.fun
 <div class="grid">
 
 <div class="box">
-
 Total Supply  
 <br><br>
 1,000,000,000
-
 </div>
 
 <div class="box">
-
 Liquidity  
 <br><br>
 90%
-
 </div>
 
 <div class="box">
-
 Dev Wallet  
 <br><br>
 10%
-
 </div>
 
 <div class="box">
-
 Tax  
 <br><br>
 0%
-
 </div>
 
 </div>
@@ -291,44 +254,59 @@ Tax
 
 <div class="step">
 
-Phase 1 — Foundation  
-Website launch  
-Social media setup  
-Community building  
+<h3>Phase 1 — Foundation</h3>
+
+<ul>
+<li>✅ Website launch — Completed</li>
+<li>✅ Social media setup — Completed</li>
+<li>🔄 Community building — In Progress</li>
+</ul>
 
 </div>
 
 <div class="step">
 
-Phase 2 — Launch  
-Pump.fun launch  
-Community raids  
-Marketing push  
+<h3>Phase 2 — Launch</h3>
+
+<ul>
+<li>Pump.fun launch</li>
+<li>Community raids</li>
+<li>Marketing push</li>
+</ul>
 
 </div>
 
 <div class="step">
 
-Phase 3 — Growth  
-DEX trading growth  
-Community expansion  
-Meme campaigns  
+<h3>Phase 3 — Growth</h3>
+
+<ul>
+<li>DEX trading growth</li>
+<li>Community expansion</li>
+<li>Meme campaigns</li>
+</ul>
 
 </div>
 
 <div class="step">
 
-Phase 4 — Expansion  
-Global marketing  
-Strategic partnerships  
+<h3>Phase 4 — Expansion</h3>
+
+<ul>
+<li>Global marketing</li>
+<li>Strategic partnerships</li>
+</ul>
 
 </div>
 
 <div class="step">
 
-Phase 5 — Future Vision  
-Exchange listings  
-Long term ecosystem growth  
+<h3>Phase 5 — Future Vision</h3>
+
+<ul>
+<li>Exchange listings</li>
+<li>Long term ecosystem growth</li>
+</ul>
 
 </div>
 
@@ -356,12 +334,10 @@ let particles=[];
 for(let i=0;i<100;i++){
 
 particles.push({
-
 x:Math.random()*canvas.width,
 y:Math.random()*canvas.height,
 size:Math.random()*2,
 speed:Math.random()*0.5
-
 });
 
 }
@@ -375,9 +351,7 @@ particles.forEach(p=>{
 p.y-=p.speed;
 
 if(p.y<0){
-
 p.y=canvas.height;
-
 }
 
 ctx.fillStyle="white";
@@ -394,5 +368,4 @@ animate();
 </script>
 
 </body>
-
 </html>
