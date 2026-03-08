@@ -1,45 +1,338 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>REBORNX</title>
 
-<link rel="stylesheet" href="css/style.css">
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial;
+}
+
+body{
+background:#050505;
+color:white;
+overflow-x:hidden;
+}
+
+/* STAR BACKGROUND */
+
+canvas{
+position:fixed;
+top:0;
+left:0;
+z-index:-1;
+}
+
+/* NAVBAR */
+
+nav{
+position:fixed;
+top:0;
+width:100%;
+display:flex;
+justify-content:center;
+gap:40px;
+padding:15px;
+background:rgba(0,0,0,0.7);
+backdrop-filter:blur(10px);
+z-index:10;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+font-weight:bold;
+}
+
+nav a:hover{
+color:#ff4a00;
+}
+
+/* HERO */
+
+.hero{
+height:100vh;
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+text-align:center;
+}
+
+.hero img{
+width:200px;
+margin-bottom:20px;
+filter:drop-shadow(0 0 25px #ff4a00);
+}
+
+.hero h1{
+font-size:70px;
+color:#ff4a00;
+text-shadow:0 0 40px red;
+}
+
+.hero p{
+font-size:22px;
+margin-top:10px;
+}
+
+/* BUTTON */
+
+.btn{
+margin-top:30px;
+padding:16px 40px;
+background:#ff4a00;
+border-radius:8px;
+color:white;
+text-decoration:none;
+font-weight:bold;
+transition:0.3s;
+box-shadow:0 0 20px #ff4a00;
+}
+
+.btn:hover{
+transform:scale(1.1);
+}
+
+/* SECTION */
+
+.section{
+padding:120px 20px;
+max-width:1100px;
+margin:auto;
+text-align:center;
+}
+
+h2{
+color:#ff4a00;
+font-size:40px;
+margin-bottom:30px;
+}
+
+/* TOKENOMICS */
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+}
+
+.box{
+background:#111;
+padding:30px;
+border-radius:10px;
+}
+
+/* ROADMAP */
+
+.roadmap{
+display:flex;
+flex-direction:column;
+gap:25px;
+}
+
+.step{
+background:#111;
+padding:30px;
+border-radius:10px;
+}
+
+/* FOOTER */
+
+footer{
+background:#000;
+padding:40px;
+text-align:center;
+margin-top:80px;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.hero h1{
+font-size:45px;
+}
+
+.hero p{
+font-size:18px;
+}
+
+}
+
+</style>
 
 </head>
 
 <body>
 
-<nav class="navbar">
+<canvas id="stars"></canvas>
 
-<h2 class="logo">REBORNX</h2>
+<!-- NAVBAR -->
 
-<div class="nav-links">
+<nav>
 
-<a href="index.html">Home</a>
-<a href="about.html">About</a>
-<a href="tokenomics.html">Tokenomics</a>
-<a href="roadmap.html">Roadmap</a>
-
-</div>
+<a href="#home">Home</a>
+<a href="#tokenomics">Tokenomics</a>
+<a href="#chart">Chart</a>
+<a href="#roadmap">Roadmap</a>
+<a href="https://x.com/rebornxonsol" target="_blank">X</a>
 
 </nav>
 
-<section class="hero">
+<!-- HERO -->
 
-<img src="file_0000000079e071fa834bc3a02816a20e.png">
+<div class="hero" id="home">
+
+<img src="images/logo.png">
 
 <h1>REBORNX</h1>
 
 <p>The Dragon Rises Again</p>
 
-<a href="#" class="buy-btn">Launch on Pump.fun</a>
+<a class="btn" href="https://pump.fun" target="_blank">
+Launch on Pump.fun
+</a>
 
-</section>
+</div>
 
-<script src="js/script.js"></script>
+<!-- TOKENOMICS -->
+
+<div class="section" id="tokenomics">
+
+<h2>Tokenomics</h2>
+
+<div class="grid">
+
+<div class="box">
+Total Supply<br><br>
+1,000,000,000
+</div>
+
+<div class="box">
+Liquidity<br><br>
+90%
+</div>
+
+<div class="box">
+Dev Wallet<br><br>
+10%
+</div>
+
+<div class="box">
+Tax<br><br>
+0%
+</div>
+
+</div>
+
+</div>
+
+<!-- CHART -->
+
+<div class="section" id="chart">
+
+<h2>Live Chart</h2>
+
+<iframe
+src="https://dexscreener.com/solana/YOURTOKENADDRESS?embed=1&theme=dark"
+width="100%"
+height="500"
+frameborder="0">
+</iframe>
+
+</div>
+
+<!-- ROADMAP -->
+
+<div class="section" id="roadmap">
+
+<h2>Roadmap</h2>
+
+<div class="roadmap">
+
+<div class="step">
+Phase 1 — Foundation  
+Website launch  
+Community building
+</div>
+
+<div class="step">
+Phase 2 — Launch  
+Pump.fun launch  
+Marketing push
+</div>
+
+<div class="step">
+Phase 3 — Growth  
+DEX expansion  
+Partnerships
+</div>
+
+</div>
+
+</div>
+
+<footer>
+
+REBORNX © 2026  
+Community Meme Coin
+
+</footer>
+
+<script>
+
+/* STARS BACKGROUND */
+
+const canvas=document.getElementById("stars");
+const ctx=canvas.getContext("2d");
+
+canvas.width=window.innerWidth;
+canvas.height=window.innerHeight;
+
+let stars=[];
+
+for(let i=0;i<120;i++){
+stars.push({
+x:Math.random()*canvas.width,
+y:Math.random()*canvas.height,
+size:Math.random()*2,
+speed:Math.random()*0.5
+});
+}
+
+function animate(){
+
+ctx.clearRect(0,0,canvas.width,canvas.height);
+
+stars.forEach(s=>{
+
+s.y+=s.speed;
+
+if(s.y>canvas.height){
+s.y=0;
+}
+
+ctx.fillStyle="white";
+ctx.fillRect(s.x,s.y,s.size,s.size);
+
+});
+
+requestAnimationFrame(animate);
+
+}
+
+animate();
+
+</script>
 
 </body>
 </html>
