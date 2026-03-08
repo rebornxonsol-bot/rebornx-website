@@ -16,7 +16,7 @@ box-sizing:border-box;
 
 body{
 font-family:Arial;
-background:url(dragon-bg.jpg) center/cover no-repeat fixed;
+background:linear-gradient(135deg,#050505,#120000,#050505);
 color:white;
 overflow-x:hidden;
 }
@@ -114,6 +114,10 @@ flex-direction:column;
 align-items:center;
 justify-content:center;
 text-align:center;
+background:url("./hero-bg.jpg");
+background-size:cover;
+background-position:center;
+background-repeat:no-repeat;
 }
 
 .hero h1{
@@ -254,8 +258,6 @@ font-size:18px;
 
 <canvas id="particles"></canvas>
 
-<!-- NAVBAR -->
-
 <nav>
 
 <a href="#home">Home</a>
@@ -267,8 +269,6 @@ font-size:18px;
 <div class="menu-icon" onclick="openMenu()">☰</div>
 
 </nav>
-
-<!-- MENU -->
 
 <div id="menu" class="menu">
 
@@ -283,8 +283,6 @@ font-size:18px;
 <a href="https://x.com/rebornxonsol" target="_blank">X</a>
 
 </div>
-
-<!-- HERO -->
 
 <div class="hero" id="home">
 
@@ -302,8 +300,6 @@ Launch on Pump.fun
 
 </div>
 
-<!-- CONTRACT -->
-
 <div class="section">
 
 <h2>Contract Address</h2>
@@ -315,8 +311,6 @@ CA : Coming Soon
 </div>
 
 </div>
-
-<!-- TOKENOMICS -->
 
 <div class="section" id="tokenomics">
 
@@ -332,8 +326,6 @@ CA : Coming Soon
 </div>
 
 </div>
-
-<!-- CHART -->
 
 <div class="section" id="chart">
 
@@ -356,8 +348,6 @@ Chart will appear automatically after launch
 
 </div>
 
-<!-- BUY -->
-
 <div class="section">
 
 <h2>Buy REBORNX</h2>
@@ -367,8 +357,6 @@ Buy on Jupiter
 </a>
 
 </div>
-
-<!-- ROADMAP -->
 
 <div class="section" id="roadmap">
 
@@ -414,8 +402,6 @@ Community Driven Meme Coin
 
 <script>
 
-/* MENU */
-
 function openMenu(){
 document.getElementById("menu").style.right="0";
 }
@@ -424,14 +410,10 @@ function closeMenu(){
 document.getElementById("menu").style.right="-100%";
 }
 
-/* COPY CA */
-
 function copyCA(){
 navigator.clipboard.writeText("COMING SOON");
 alert("Contract Address Coming Soon");
 }
-
-/* PARTICLES */
 
 const canvas=document.getElementById("particles");
 const ctx=canvas.getContext("2d");
