@@ -1,31 +1,41 @@
-DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>REBORNX</title>
 
 <style>
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
-
 body{
+margin:0;
 font-family:Arial;
-background:linear-gradient(135deg,#050505,#120000,#050505);
 color:white;
+background:black;
 overflow-x:hidden;
 }
 
-canvas{
+/* FIRE BACKGROUND */
+
+body::before{
+content:"";
 position:fixed;
 top:0;
 left:0;
+width:100%;
+height:100%;
+background:radial-gradient(circle,#ff3c00,#000);
+animation:fire 6s infinite alternate;
 z-index:-1;
+}
+
+@keyframes fire{
+0%{filter:brightness(1)}
+50%{filter:brightness(1.4)}
+100%{filter:brightness(1)}
 }
 
 /* NAVBAR */
@@ -38,8 +48,8 @@ display:flex;
 justify-content:center;
 gap:40px;
 padding:15px;
-background:rgba(0,0,0,0.7);
-backdrop-filter:blur(10px);
+background:rgba(0,0,0,0.6);
+backdrop-filter:blur(6px);
 z-index:10;
 }
 
@@ -50,59 +60,7 @@ font-weight:bold;
 }
 
 nav a:hover{
-color:#ff4a00;
-}
-
-/* MENU ICON */
-
-.menu-icon{
-display:none;
-position:absolute;
-right:25px;
-font-size:28px;
-cursor:pointer;
-}
-
-/* FULL SCREEN MENU */
-
-.menu{
-position:fixed;
-top:0;
-right:-100%;
-width:100%;
-height:100%;
-background:black;
-display:flex;
-flex-direction:column;
-align-items:center;
-justify-content:center;
-gap:25px;
-transition:0.4s;
-z-index:20;
-}
-
-.menu a{
-color:white;
-text-decoration:none;
-font-size:24px;
-}
-
-.menu a:hover{
-color:#ff4a00;
-}
-
-.menulogo{
-font-size:40px;
-color:#ff4a00;
-margin-bottom:30px;
-}
-
-.close{
-position:absolute;
-top:30px;
-right:30px;
-font-size:30px;
-cursor:pointer;
+color:#ff3c00;
 }
 
 /* HERO */
@@ -116,104 +74,96 @@ justify-content:center;
 text-align:center;
 }
 
+.logo{
+width:150px;
+margin-bottom:20px;
+filter:drop-shadow(0 0 20px #ff3c00);
+}
+
 .hero h1{
-font-size:80px;
-color:#ff4a00;
+font-size:90px;
+color:#ff3c00;
 text-shadow:0 0 40px red;
 }
 
 .hero p{
 font-size:22px;
-margin-top:10px;
+color:#eee;
 }
 
 /* BUTTON */
 
 .btn{
-margin-top:30px;
-padding:16px 40px;
-background:#ff4a00;
-border-radius:8px;
+display:inline-block;
+margin-top:25px;
+padding:15px 40px;
+background:#ff3c00;
+border-radius:10px;
 color:white;
 text-decoration:none;
-font-weight:bold;
-transition:0.3s;
-}
-
-.btn:hover{
-transform:scale(1.1);
+box-shadow:0 0 20px red;
 }
 
 /* SECTION */
 
 .section{
 padding:120px 20px;
-max-width:1000px;
-margin:auto;
 text-align:center;
 }
 
+/* CARD */
+
+.card{
+max-width:850px;
+margin:auto;
+padding:40px;
+border-radius:15px;
+margin-bottom:40px;
+background:rgba(0,0,0,0.35);
+backdrop-filter:blur(6px);
+}
+
+/* TITLES */
+
 h2{
-color:#ff4a00;
-font-size:38px;
+color:#ff3c00;
+font-size:40px;
 margin-bottom:30px;
 }
 
-/* TOKENOMICS */
-
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-gap:20px;
+h3{
+color:#ff3c00;
 }
 
-.box{
-background:rgba(255,255,255,0.05);
-padding:30px;
-border-radius:12px;
-backdrop-filter:blur(10px);
+/* SOCIAL */
+
+.social{
+margin-top:20px;
 }
 
-/* ROADMAP */
-
-.roadmap{
-display:flex;
-flex-direction:column;
-gap:25px;
-}
-
-.step{
-background:rgba(255,255,255,0.05);
-padding:30px;
-border-radius:12px;
-}
-
-.step ul{
-list-style:none;
-margin-top:10px;
-}
-
-.step li{
-margin:8px 0;
-color:#ddd;
+.social a{
+margin:0 10px;
+color:white;
+text-decoration:none;
+font-size:18px;
 }
 
 /* COPY BUTTON */
 
 .copybtn{
-margin-top:15px;
-padding:10px 20px;
-background:#ff4a00;
+margin-top:20px;
+padding:10px 25px;
+background:#ff3c00;
 border:none;
 color:white;
-border-radius:6px;
+border-radius:8px;
 cursor:pointer;
 }
 
 /* FOOTER */
 
 footer{
-background:#000;
+background:#0b0b0b;
 padding:40px;
 text-align:center;
 }
@@ -222,26 +172,13 @@ text-align:center;
 
 @media(max-width:768px){
 
-nav{
-justify-content:flex-start;
-gap:20px;
-padding-left:20px;
-}
-
-nav a{
-display:none;
-}
-
-.menu-icon{
-display:block;
-}
-
 .hero h1{
-font-size:45px;
+font-size:55px;
 }
 
-.hero p{
-font-size:18px;
+nav{
+gap:20px;
+font-size:14px;
 }
 
 }
@@ -252,53 +189,44 @@ font-size:18px;
 
 <body>
 
-<canvas id="particles"></canvas>
-
 <!-- NAVBAR -->
 
 <nav>
 
-<a href="#home">Home</a>
+<a href="#">Home</a>
 <a href="#tokenomics">Tokenomics</a>
-<a href="#chart">Chart</a>
 <a href="#roadmap">Roadmap</a>
 <a href="https://x.com/rebornxonsol" target="_blank">X</a>
-
-<div class="menu-icon" onclick="openMenu()">☰</div>
 
 </nav>
 
-<!-- MENU -->
-
-<div id="menu" class="menu">
-
-<div class="close" onclick="closeMenu()">✕</div>
-
-<div class="menulogo">REBORNX</div>
-
-<a href="#home">Home</a>
-<a href="#tokenomics">Tokenomics</a>
-<a href="#chart">Chart</a>
-<a href="#roadmap">Roadmap</a>
-<a href="https://x.com/rebornxonsol" target="_blank">X</a>
-
-</div>
-
 <!-- HERO -->
 
-<div class="hero" id="home">
+<div class="hero">
+
+<img src="images/logo.png" class="logo">
 
 <h1>REBORNX</h1>
 
 <p>
+
 The Dragon Rises Again  
 <br>
-Community Meme Coin on Solana
+Launching Soon on Pump.fun
+
 </p>
 
-<a class="btn" href="https://pump.fun" target="_blank">
-Launch on Pump.fun
+<a class="btn" href="https://x.com/rebornxonsol" target="_blank">
+
+Follow on X
+
 </a>
+
+<div class="social">
+
+<a href="https://x.com/rebornxonsol">X</a>
+
+</div>
 
 </div>
 
@@ -308,10 +236,18 @@ Launch on Pump.fun
 
 <h2>Contract Address</h2>
 
-<div class="box">
+<div class="card">
+
 CA : Coming Soon
-<br>
-<button class="copybtn" onclick="copyCA()">Copy Address</button>
+
+<br><br>
+
+The contract address will be revealed at launch.
+
+<br><br>
+
+<button class="copybtn" onclick="copyCA()">Copy CA</button>
+
 </div>
 
 </div>
@@ -322,49 +258,37 @@ CA : Coming Soon
 
 <h2>Tokenomics</h2>
 
-<div class="grid">
+<div class="card">
 
-<div class="box">Total Supply<br><br>1,000,000,000</div>
-<div class="box">Liquidity<br><br>90%</div>
-<div class="box">Dev Wallet<br><br>10%</div>
-<div class="box">Tax<br><br>0%</div>
+Token Name : REBORNX  
+Ticker : RX  
+Network : Solana  
 
-</div>
+<br><br>
 
-</div>
+Total Supply : 1,000,000,000
 
-<!-- CHART -->
+<br><br>
 
-<div class="section" id="chart">
+Pump.fun Launch : Fair Launch
 
-<h2>Live Chart</h2>
+<br><br>
 
-<div style="width:100%;height:500px;border-radius:10px;overflow:hidden;">
+Liquidity : 90%  
+Dev Wallet : 10%
 
-<iframe
-src="https://dexscreener.com/solana/YOURTOKENADDRESS?embed=1&theme=dark"
-width="100%"
-height="500"
-frameborder="0">
-</iframe>
+<br><br>
 
-</div>
+Dev Allocation
 
-<p style="margin-top:20px;color:#888;">
-Chart will appear automatically after launch
-</p>
+5% Active Dev Wallet  
+5% Locked for Future Development
+
+<br><br>
+
+Tax : 0%
 
 </div>
-
-<!-- BUY -->
-
-<div class="section">
-
-<h2>Buy REBORNX</h2>
-
-<a class="btn" href="https://jup.ag" target="_blank">
-Buy on Jupiter
-</a>
 
 </div>
 
@@ -374,100 +298,57 @@ Buy on Jupiter
 
 <h2>Roadmap</h2>
 
-<div class="roadmap">
+<div class="card">
 
-<div class="step">
 <h3>Phase 1 — Foundation</h3>
-<ul>
-<li>Website launch</li>
-<li>Social media setup</li>
-<li>Community building</li>
-</ul>
+
+Website launch  
+Community building  
+Social media setup  
+
 </div>
 
-<div class="step">
+<div class="card">
+
 <h3>Phase 2 — Launch</h3>
-<ul>
-<li>Pump.fun launch</li>
-<li>Community raids</li>
-<li>Marketing push</li>
-</ul>
+
+Pump.fun launch  
+Community raids  
+Marketing push  
+
 </div>
 
-<div class="step">
+<div class="card">
+
 <h3>Phase 3 — Growth</h3>
-<ul>
-<li>DEX trading growth</li>
-<li>Community expansion</li>
-<li>Meme campaigns</li>
-</ul>
-</div>
+
+DEX trading growth  
+Community expansion  
+Meme campaigns  
 
 </div>
 
 </div>
 
 <footer>
+
 REBORNX © 2026  
 Community Driven Meme Coin
+
 </footer>
 
 <script>
 
-/* MENU */
-
-function openMenu(){
-document.getElementById("menu").style.right="0";
-}
-
-function closeMenu(){
-document.getElementById("menu").style.right="-100%";
-}
-
-/* COPY CA */
-
 function copyCA(){
+
 navigator.clipboard.writeText("COMING SOON");
+
 alert("Contract Address Coming Soon");
+
 }
-
-/* PARTICLES */
-
-const canvas=document.getElementById("particles");
-const ctx=canvas.getContext("2d");
-
-canvas.width=window.innerWidth;
-canvas.height=window.innerHeight;
-
-let particles=[];
-
-for(let i=0;i<100;i++){
-particles.push({
-x:Math.random()*canvas.width,
-y:Math.random()*canvas.height,
-size:Math.random()*2,
-speed:Math.random()*0.5
-});
-}
-
-function animate(){
-
-ctx.clearRect(0,0,canvas.width,canvas.height);
-
-particles.forEach(p=>{
-p.y-=p.speed;
-if(p.y<0){p.y=canvas.height;}
-
-ctx.fillStyle="white";
-ctx.fillRect(p.x,p.y,p.size,p.size);
-});
-
-requestAnimationFrame(animate);
-}
-
-animate();
 
 </script>
 
 </body>
+
 </html>
