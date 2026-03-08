@@ -4,6 +4,7 @@
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>REBORNX</title>
 
 <style>
@@ -15,11 +16,13 @@ box-sizing:border-box;
 }
 
 body{
-font-family:Arial;
+font-family:Arial, sans-serif;
 background:linear-gradient(135deg,#050505,#120000,#050505);
 color:white;
 overflow-x:hidden;
 }
+
+/* PARTICLE CANVAS */
 
 canvas{
 position:fixed;
@@ -53,7 +56,7 @@ nav a:hover{
 color:#ff4a00;
 }
 
-/* MENU ICON */
+/* MOBILE MENU ICON */
 
 .menu-icon{
 display:none;
@@ -63,7 +66,7 @@ font-size:28px;
 cursor:pointer;
 }
 
-/* FULL SCREEN MENU */
+/* FULL MENU */
 
 .menu{
 position:fixed;
@@ -76,7 +79,7 @@ display:flex;
 flex-direction:column;
 align-items:center;
 justify-content:center;
-gap:25px;
+gap:30px;
 transition:0.4s;
 z-index:20;
 }
@@ -84,7 +87,7 @@ z-index:20;
 .menu a{
 color:white;
 text-decoration:none;
-font-size:24px;
+font-size:26px;
 }
 
 .menu a:hover{
@@ -114,6 +117,7 @@ flex-direction:column;
 align-items:center;
 justify-content:center;
 text-align:center;
+padding:20px;
 }
 
 .hero h1{
@@ -125,6 +129,7 @@ text-shadow:0 0 40px red;
 .hero p{
 font-size:22px;
 margin-top:10px;
+color:#ddd;
 }
 
 /* BUTTON */
@@ -138,10 +143,11 @@ color:white;
 text-decoration:none;
 font-weight:bold;
 transition:0.3s;
+display:inline-block;
 }
 
 .btn:hover{
-transform:scale(1.1);
+transform:scale(1.08);
 }
 
 /* SECTION */
@@ -159,19 +165,21 @@ font-size:38px;
 margin-bottom:30px;
 }
 
-/* TOKENOMICS */
-
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-gap:20px;
-}
+/* BOX */
 
 .box{
 background:rgba(255,255,255,0.05);
 padding:30px;
 border-radius:12px;
 backdrop-filter:blur(10px);
+}
+
+/* TOKENOMICS GRID */
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:20px;
 }
 
 /* ROADMAP */
@@ -210,12 +218,32 @@ border-radius:6px;
 cursor:pointer;
 }
 
+/* SOCIAL */
+
+.socials{
+margin-top:20px;
+display:flex;
+justify-content:center;
+gap:20px;
+}
+
+.socials a{
+color:white;
+text-decoration:none;
+font-weight:bold;
+}
+
+.socials a:hover{
+color:#ff4a00;
+}
+
 /* FOOTER */
 
 footer{
 background:#000;
 padding:40px;
 text-align:center;
+color:#888;
 }
 
 /* MOBILE */
@@ -258,16 +286,17 @@ font-size:18px;
 
 <nav>
 
-<a href="#home" onclick="closeMenu()">Home</a>
-<a href="#tokenomics" onclick="closeMenu()">Tokenomics</a>
-<a href="#chart" onclick="closeMenu()">Chart</a>
-<a href="#roadmap" onclick="closeMenu()">Roadmap</a>
-<a href="https://x.com/rebornxonsol" onclick="closeMenu()" target="_blank">X</a>
+<a href="#home">Home</a>
+<a href="#tokenomics">Tokenomics</a>
+<a href="#chart">Chart</a>
+<a href="#roadmap">Roadmap</a>
+<a href="https://x.com/rebornxonsol" target="_blank">X</a>
+
 <div class="menu-icon" onclick="openMenu()">☰</div>
 
 </nav>
 
-<!-- MENU -->
+<!-- MOBILE MENU -->
 
 <div id="menu" class="menu">
 
@@ -290,14 +319,24 @@ font-size:18px;
 <h1>REBORNX</h1>
 
 <p>
-The Dragon Rises Again  
+The Dragon Rises Again 🔥  
 <br>
-Community Meme Coin on Solana
+A community-driven meme coin built on Solana.
 </p>
 
 <a class="btn" href="https://pump.fun" target="_blank">
 Launch on Pump.fun
 </a>
+
+<div class="socials">
+
+<a href="https://x.com/rebornxonsol" target="_blank">X</a>
+
+<a href="#">Telegram</a>
+
+<a href="https://dexscreener.com" target="_blank">Dexscreener</a>
+
+</div>
 
 </div>
 
@@ -308,9 +347,15 @@ Launch on Pump.fun
 <h2>Contract Address</h2>
 
 <div class="box">
-CA : Coming Soon
+
+<span id="ca">COMING SOON</span>
+
 <br>
-<button class="copybtn" onclick="copyCA()">Copy Address</button>
+
+<button class="copybtn" onclick="copyCA()">
+Copy Address
+</button>
+
 </div>
 
 </div>
@@ -323,10 +368,29 @@ CA : Coming Soon
 
 <div class="grid">
 
-<div class="box">Total Supply<br><br>1,000,000,000</div>
-<div class="box">Liquidity<br><br>90%</div>
-<div class="box">Dev Wallet<br><br>10%</div>
-<div class="box">Tax<br><br>0%</div>
+<div class="box">
+Total Supply
+<br><br>
+1,000,000,000
+</div>
+
+<div class="box">
+Liquidity
+<br><br>
+90%
+</div>
+
+<div class="box">
+Dev Wallet
+<br><br>
+10%
+</div>
+
+<div class="box">
+Tax
+<br><br>
+0%
+</div>
 
 </div>
 
@@ -376,30 +440,45 @@ Buy on Jupiter
 <div class="roadmap">
 
 <div class="step">
+
 <h3>Phase 1 — Foundation</h3>
+
 <ul>
+
 <li>Website launch</li>
 <li>Social media setup</li>
 <li>Community building</li>
+
 </ul>
+
 </div>
 
 <div class="step">
+
 <h3>Phase 2 — Launch</h3>
+
 <ul>
+
 <li>Pump.fun launch</li>
 <li>Community raids</li>
 <li>Marketing push</li>
+
 </ul>
+
 </div>
 
 <div class="step">
+
 <h3>Phase 3 — Growth</h3>
+
 <ul>
+
 <li>DEX trading growth</li>
 <li>Community expansion</li>
 <li>Meme campaigns</li>
+
 </ul>
+
 </div>
 
 </div>
@@ -407,8 +486,10 @@ Buy on Jupiter
 </div>
 
 <footer>
+
 REBORNX © 2026  
 Community Driven Meme Coin
+
 </footer>
 
 <script>
@@ -423,11 +504,20 @@ function closeMenu(){
 document.getElementById("menu").style.right="-100%";
 }
 
+document.querySelectorAll(".menu a").forEach(link=>{
+link.onclick=()=>closeMenu();
+});
+
 /* COPY CA */
 
 function copyCA(){
-navigator.clipboard.writeText("COMING SOON");
-alert("Contract Address Coming Soon");
+
+const ca=document.getElementById("ca").innerText;
+
+navigator.clipboard.writeText(ca);
+
+alert("Contract Address Copied");
+
 }
 
 /* PARTICLES */
@@ -440,13 +530,17 @@ canvas.height=window.innerHeight;
 
 let particles=[];
 
-for(let i=0;i<100;i++){
+for(let i=0;i<120;i++){
+
 particles.push({
+
 x:Math.random()*canvas.width,
 y:Math.random()*canvas.height,
 size:Math.random()*2,
-speed:Math.random()*0.5
+speed:Math.random()*0.6
+
 });
+
 }
 
 function animate(){
@@ -454,14 +548,19 @@ function animate(){
 ctx.clearRect(0,0,canvas.width,canvas.height);
 
 particles.forEach(p=>{
+
 p.y-=p.speed;
+
 if(p.y<0){p.y=canvas.height;}
 
-ctx.fillStyle="white";
+ctx.fillStyle="#ff4a00";
+
 ctx.fillRect(p.x,p.y,p.size,p.size);
+
 });
 
 requestAnimationFrame(animate);
+
 }
 
 animate();
