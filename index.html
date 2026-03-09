@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
 <meta charset="UTF-8">
@@ -13,16 +14,17 @@
 margin:0;
 padding:0;
 box-sizing:border-box;
+scroll-behavior:smooth;
 }
 
 body{
-font-family:Arial, sans-serif;
-background:linear-gradient(135deg,#050505,#120000,#050505);
+font-family:Arial;
+background:black;
 color:white;
 overflow-x:hidden;
 }
 
-/* PARTICLE CANVAS */
+/* PARTICLES */
 
 canvas{
 position:fixed;
@@ -40,10 +42,10 @@ width:100%;
 display:flex;
 justify-content:center;
 gap:40px;
-padding:15px;
+padding:18px;
 background:rgba(0,0,0,0.7);
-backdrop-filter:blur(10px);
-z-index:10;
+backdrop-filter:blur(12px);
+z-index:100;
 }
 
 nav a{
@@ -56,17 +58,17 @@ nav a:hover{
 color:#ff4a00;
 }
 
-/* MOBILE MENU ICON */
+/* MOBILE */
 
 .menu-icon{
 display:none;
 position:absolute;
 right:25px;
-font-size:28px;
+font-size:30px;
 cursor:pointer;
 }
 
-/* FULL MENU */
+/* MENU */
 
 .menu{
 position:fixed;
@@ -81,23 +83,17 @@ align-items:center;
 justify-content:center;
 gap:30px;
 transition:0.4s;
-z-index:20;
+z-index:200;
 }
 
 .menu a{
 color:white;
-text-decoration:none;
 font-size:26px;
+text-decoration:none;
 }
 
 .menu a:hover{
 color:#ff4a00;
-}
-
-.menulogo{
-font-size:40px;
-color:#ff4a00;
-margin-bottom:30px;
 }
 
 .close{
@@ -106,6 +102,13 @@ top:30px;
 right:30px;
 font-size:30px;
 cursor:pointer;
+}
+
+.logo{
+font-size:45px;
+color:#ff4a00;
+text-shadow:0 0 30px #ff4a00;
+margin-bottom:30px;
 }
 
 /* HERO */
@@ -121,21 +124,30 @@ padding:20px;
 }
 
 .hero h1{
-font-size:80px;
+font-size:90px;
 color:#ff4a00;
-text-shadow:0 0 40px red;
+text-shadow:0 0 60px #ff4a00;
+animation:glow 3s infinite alternate;
+}
+
+@keyframes glow{
+
+from{ text-shadow:0 0 20px #ff4a00; }
+
+to{ text-shadow:0 0 70px red; }
+
 }
 
 .hero p{
 font-size:22px;
-margin-top:10px;
-color:#ddd;
+margin-top:15px;
+color:#ccc;
 }
 
 /* BUTTON */
 
 .btn{
-margin-top:30px;
+margin-top:35px;
 padding:16px 40px;
 background:#ff4a00;
 border-radius:8px;
@@ -143,11 +155,10 @@ color:white;
 text-decoration:none;
 font-weight:bold;
 transition:0.3s;
-display:inline-block;
 }
 
 .btn:hover{
-transform:scale(1.08);
+transform:scale(1.1);
 }
 
 /* SECTION */
@@ -160,8 +171,8 @@ text-align:center;
 }
 
 h2{
+font-size:40px;
 color:#ff4a00;
-font-size:38px;
 margin-bottom:30px;
 }
 
@@ -171,10 +182,14 @@ margin-bottom:30px;
 background:rgba(255,255,255,0.05);
 padding:30px;
 border-radius:12px;
-backdrop-filter:blur(10px);
+transition:0.3s;
 }
 
-/* TOKENOMICS GRID */
+.box:hover{
+transform:translateY(-8px);
+}
+
+/* GRID */
 
 .grid{
 display:grid;
@@ -206,7 +221,7 @@ margin:8px 0;
 color:#ddd;
 }
 
-/* COPY BUTTON */
+/* COPY */
 
 .copybtn{
 margin-top:15px;
@@ -221,7 +236,7 @@ cursor:pointer;
 /* SOCIAL */
 
 .socials{
-margin-top:20px;
+margin-top:25px;
 display:flex;
 justify-content:center;
 gap:20px;
@@ -250,12 +265,6 @@ color:#888;
 
 @media(max-width:768px){
 
-nav{
-justify-content:flex-start;
-gap:20px;
-padding-left:20px;
-}
-
 nav a{
 display:none;
 }
@@ -265,7 +274,7 @@ display:block;
 }
 
 .hero h1{
-font-size:45px;
+font-size:48px;
 }
 
 .hero p{
@@ -290,25 +299,23 @@ font-size:18px;
 <a href="#tokenomics">Tokenomics</a>
 <a href="#chart">Chart</a>
 <a href="#roadmap">Roadmap</a>
-<a href="https://x.com/rebornxonsol" target="_blank">X</a>
 
 <div class="menu-icon" onclick="openMenu()">☰</div>
 
 </nav>
 
-<!-- MOBILE MENU -->
+<!-- MENU -->
 
 <div id="menu" class="menu">
 
 <div class="close" onclick="closeMenu()">✕</div>
 
-<div class="menulogo">REBORNX</div>
+<div class="logo">REBORNX</div>
 
 <a href="#home">Home</a>
 <a href="#tokenomics">Tokenomics</a>
 <a href="#chart">Chart</a>
 <a href="#roadmap">Roadmap</a>
-<a href="https://x.com/rebornxonsol" target="_blank">X</a>
 
 </div>
 
@@ -319,20 +326,23 @@ font-size:18px;
 <h1>REBORNX</h1>
 
 <p>
+
 The Dragon Rises Again 🔥  
-<br>
-A community-driven meme coin built on Solana.
+Community Meme Coin on Solana
+
 </p>
 
 <a class="btn" href="https://pump.fun" target="_blank">
+
 Launch on Pump.fun
+
 </a>
 
 <div class="socials">
 
-<a href="https://x.com/rebornxonsol" target="_blank">X</a>
+<a href="https://x.com/RebornxSol" target="_blank">X</a>
 
-<a href="#">Telegram</a>
+<a href="https://t.me/Rebornx_sol" target="_blank">Telegram</a>
 
 <a href="https://dexscreener.com" target="_blank">Dexscreener</a>
 
@@ -353,7 +363,9 @@ Launch on Pump.fun
 <br>
 
 <button class="copybtn" onclick="copyCA()">
+
 Copy Address
+
 </button>
 
 </div>
@@ -368,29 +380,13 @@ Copy Address
 
 <div class="grid">
 
-<div class="box">
-Total Supply
-<br><br>
-1,000,000,000
-</div>
+<div class="box">Total Supply<br><br>1,000,000,000</div>
 
-<div class="box">
-Liquidity
-<br><br>
-90%
-</div>
+<div class="box">Liquidity<br><br>90%</div>
 
-<div class="box">
-Dev Wallet
-<br><br>
-10%
-</div>
+<div class="box">Dev Wallet<br><br>10%</div>
 
-<div class="box">
-Tax
-<br><br>
-0%
-</div>
+<div class="box">Tax<br><br>0%</div>
 
 </div>
 
@@ -402,32 +398,21 @@ Tax
 
 <h2>Live Chart</h2>
 
-<div style="width:100%;height:500px;border-radius:10px;overflow:hidden;">
+<div style="height:500px;border-radius:10px;overflow:hidden;">
 
 <iframe
+
 src="https://dexscreener.com/solana/YOURTOKENADDRESS?embed=1&theme=dark"
+
 width="100%"
+
 height="500"
+
 frameborder="0">
+
 </iframe>
 
 </div>
-
-<p style="margin-top:20px;color:#888;">
-Chart will appear automatically after launch
-</p>
-
-</div>
-
-<!-- BUY -->
-
-<div class="section">
-
-<h2>Buy REBORNX</h2>
-
-<a class="btn" href="https://jup.ag" target="_blank">
-Buy on Jupiter
-</a>
 
 </div>
 
@@ -441,13 +426,13 @@ Buy on Jupiter
 
 <div class="step">
 
-<h3>Phase 1 — Foundation</h3>
+<h3>Phase 1</h3>
 
 <ul>
 
 <li>Website launch</li>
-<li>Social media setup</li>
 <li>Community building</li>
+<li>Social media growth</li>
 
 </ul>
 
@@ -455,13 +440,13 @@ Buy on Jupiter
 
 <div class="step">
 
-<h3>Phase 2 — Launch</h3>
+<h3>Phase 2</h3>
 
 <ul>
 
 <li>Pump.fun launch</li>
-<li>Community raids</li>
 <li>Marketing push</li>
+<li>Community raids</li>
 
 </ul>
 
@@ -469,13 +454,13 @@ Buy on Jupiter
 
 <div class="step">
 
-<h3>Phase 3 — Growth</h3>
+<h3>Phase 3</h3>
 
 <ul>
 
 <li>DEX trading growth</li>
-<li>Community expansion</li>
-<li>Meme campaigns</li>
+<li>Meme expansion</li>
+<li>Community dominance</li>
 
 </ul>
 
@@ -497,18 +482,18 @@ Community Driven Meme Coin
 /* MENU */
 
 function openMenu(){
+
 document.getElementById("menu").style.right="0";
+
 }
 
 function closeMenu(){
+
 document.getElementById("menu").style.right="-100%";
+
 }
 
-document.querySelectorAll(".menu a").forEach(link=>{
-link.onclick=()=>closeMenu();
-});
-
-/* COPY CA */
+/* COPY */
 
 function copyCA(){
 
@@ -523,9 +508,11 @@ alert("Contract Address Copied");
 /* PARTICLES */
 
 const canvas=document.getElementById("particles");
+
 const ctx=canvas.getContext("2d");
 
 canvas.width=window.innerWidth;
+
 canvas.height=window.innerHeight;
 
 let particles=[];
@@ -535,9 +522,12 @@ for(let i=0;i<120;i++){
 particles.push({
 
 x:Math.random()*canvas.width,
+
 y:Math.random()*canvas.height,
+
 size:Math.random()*2,
-speed:Math.random()*0.6
+
+speed:Math.random()*0.5
 
 });
 
@@ -551,7 +541,7 @@ particles.forEach(p=>{
 
 p.y-=p.speed;
 
-if(p.y<0){p.y=canvas.height;}
+if(p.y<0) p.y=canvas.height;
 
 ctx.fillStyle="#ff4a00";
 
