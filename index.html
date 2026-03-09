@@ -484,17 +484,21 @@ Community Driven Meme Coin
 
 /* MENU */
 
+<script>
+
 function openMenu(){
-
 document.getElementById("menu").style.right="0";
-
 }
 
 function closeMenu(){
-
 document.getElementById("menu").style.right="-100%";
-
 }
+
+document.querySelectorAll(".menu a").forEach(link=>{
+link.onclick=()=>closeMenu();
+});
+
+</script>
 
 /* COPY */
 
