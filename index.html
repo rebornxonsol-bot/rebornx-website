@@ -163,7 +163,25 @@ text-shadow:
 0 0 10px #ff4a00,
 0 0 20px #ff2200;
 }
+.token-card{
+backdrop-filter:blur(10px);
+background:rgba(255,255,255,0.08);
+border:1px solid rgba(255,255,255,0.2);
+border-radius:15px;
+padding:25px;
+margin:20px auto;
+width:80%;
+max-width:350px;
+text-align:center;
 
+box-shadow:0 0 20px rgba(255,80,0,0.6);
+transition:0.3s;
+}
+
+.token-card:hover{
+transform:scale(1.05);
+box-shadow:0 0 30px rgba(255,120,0,0.9);
+}
 /* BUTTON */
 
 .btn{
@@ -399,14 +417,13 @@ Copy Address
 
 <div class="grid">
 
-<div class="box">Total Supply<br><br>1,000,000,000</div>
+<div class="token-card">Total Supply<br><br>1,000,000,000</div>
 
-<div class="box">Liquidity<br><br>90%</div>
+<div class="token-card">Liquidity<br><br>90%</div>
 
-<div class="box">Dev Wallet<br><br>10%</div>
+<div class="token-card">Dev Wallet<br><br>10%</div>
 
-<div class="box">Tax<br><br>0%</div>
-
+<div class="token-card">Tax<br><br>0%</div>
 </div>
 
 </div>
