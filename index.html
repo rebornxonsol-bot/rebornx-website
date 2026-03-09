@@ -1,16 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>REBORNX</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
-
-<style>
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>REBORNX</title><link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap" rel="stylesheet"><style>
 
 *{
 margin:0;
@@ -67,15 +56,18 @@ padding:30px;
 .hero img{
 width:320px;
 margin-bottom:20px;
+filter:drop-shadow(0 0 30px #ff4a00);
+animation:logoGlow 3s infinite alternate;
+}
+
+@keyframes logoGlow{
+from{filter:drop-shadow(0 0 15px #ff4a00);}
+to{filter:drop-shadow(0 0 50px red);}
 }
 
 .hero p{
 font-size:22px;
-margin-top:10px;
-
-text-shadow:
-0 0 10px #ff4a00,
-0 0 20px #ff0000;
+text-shadow:0 0 10px #ff4a00,0 0 20px #ff0000;
 }
 
 /* BUTTON */
@@ -109,10 +101,12 @@ gap:25px;
 color:white;
 text-decoration:none;
 font-weight:bold;
+transition:0.3s;
 }
 
 .socials a:hover{
 color:#ff4a00;
+text-shadow:0 0 10px #ff4a00,0 0 20px #ff4a00,0 0 30px #ff0000;
 }
 
 /* SECTION */
@@ -129,13 +123,8 @@ text-align:center;
 h2{
 font-size:42px;
 margin-bottom:35px;
-
 color:white;
-
-text-shadow:
-0 0 10px #ff4a00,
-0 0 25px #ff4a00,
-0 0 50px #ff0000;
+text-shadow:0 0 10px #ff4a00,0 0 25px #ff4a00,0 0 50px #ff0000;
 }
 
 /* CONTRACT BOX */
@@ -143,17 +132,10 @@ text-shadow:
 .box{
 background:rgba(0,0,0,0.45);
 backdrop-filter:blur(10px);
-
 border:1px solid rgba(255,80,0,0.5);
-
 padding:35px;
-
 border-radius:20px;
-
-box-shadow:
-0 0 20px rgba(255,80,0,0.6),
-inset 0 0 20px rgba(255,80,0,0.4);
-
+box-shadow:0 0 20px rgba(255,80,0,0.6), inset 0 0 20px rgba(255,80,0,0.4);
 }
 
 /* COPY BUTTON */
@@ -168,7 +150,7 @@ border-radius:6px;
 cursor:pointer;
 }
 
-/* TOKEN CARDS */
+/* TOKEN GRID */
 
 .grid{
 display:grid;
@@ -176,31 +158,21 @@ grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
 gap:20px;
 }
 
+/* TOKEN CARD */
+
 .token-card{
-
 background:rgba(0,0,0,0.45);
-
 border:1px solid rgba(255,80,0,0.6);
-
 backdrop-filter:blur(8px);
-
 border-radius:18px;
-
 padding:30px;
-
-box-shadow:
-0 0 20px rgba(255,80,0,0.6);
-
+box-shadow:0 0 20px rgba(255,80,0,0.6);
 transition:0.3s;
 }
 
 .token-card:hover{
-
 transform:translateY(-8px);
-
-box-shadow:
-0 0 35px rgba(255,120,0,0.9);
-
+box-shadow:0 0 35px rgba(255,120,0,0.9);
 }
 
 /* ROADMAP */
@@ -237,182 +209,67 @@ text-align:center;
 color:#888;
 }
 
-</style>
+/* MOBILE */
 
-</head>
+@media(max-width:768px){
 
-<body>
+nav a{
+display:none;
+}
 
-<!-- NAVBAR -->
+.hero img{
+width:220px;
+}
 
-<nav>
+.hero p{
+font-size:18px;
+}
 
-<a href="#home">Home</a>
+}
+
+</style></head><body><!-- NAVBAR --><nav><a href="#home">Home</a>
 <a href="#tokenomics">Tokenomics</a>
 <a href="#chart">Chart</a>
 <a href="#roadmap">Roadmap</a>
 
-</nav>
-
-<!-- HERO -->
-
-<div class="hero" id="home">
-
-<img src="rebornx-logo.png">
-
-<p>
-
+</nav><!-- HERO --><div class="hero" id="home"><img src="rebornx-logo.png"><p>
 The Dragon Rises Again 🔥  
 Community Meme Coin on Solana
-
-</p>
-
-<a class="btn" href="https://pump.fun" target="_blank">
-
+</p><a class="btn" href="https://pump.fun" target="_blank">
 Launch on Pump.fun
+</a><div class="socials"><a href="https://x.com/RebornxSol" target="_blank">X</a>
 
-</a>
+<a href="https://t.me/Rebornx_sol" target="_blank">Telegram</a>
 
-<div class="socials">
+<a href="https://dexscreener.com" target="_blank">Dexscreener</a>
 
-<a href="https://x.com/RebornxSol">X</a>
+</div></div><!-- CONTRACT --><div class="section"><h2>Contract Address</h2><div class="box"><span id="ca">COMING SOON</span>
 
-<a href="https://t.me/Rebornx_sol">Telegram</a>
-
-<a href="https://dexscreener.com">Dexscreener</a>
-
-</div>
-
-</div>
-
-<!-- CONTRACT -->
-
-<div class="section">
-
-<h2>Contract Address</h2>
-
-<div class="box">
-
-<span id="ca">COMING SOON</span>
-
-<br>
-
-<button class="copybtn" onclick="copyCA()">
-
+<br><button class="copybtn" onclick="copyCA()">
 Copy Address
-
-</button>
-
-</div>
-
-</div>
-
-<!-- TOKENOMICS -->
-
-<div class="section" id="tokenomics">
-
-<h2>Tokenomics</h2>
-
-<div class="grid">
-
-<div class="token-card">Total Supply<br><br>1,000,000,000</div>
-
-<div class="token-card">Liquidity<br><br>90%</div>
-
-<div class="token-card">Dev Wallet<br><br>10%</div>
-
-<div class="token-card">Tax<br><br>0%</div>
-
-</div>
-
-</div>
-
-<!-- CHART -->
-
-<div class="section" id="chart">
-
-<h2>Live Chart</h2>
-
-<div style="height:500px;border-radius:10px;overflow:hidden;">
-
-<iframe
-
+</button></div></div><!-- TOKENOMICS --><div class="section" id="tokenomics"><h2>Tokenomics</h2><div class="grid"><div class="token-card">Total Supply<br><br><span id="supply">0</span></div><div class="token-card">Liquidity<br><br>90%</div><div class="token-card">Dev Wallet<br><br>10%</div><div class="token-card">Tax<br><br>0%</div></div></div><!-- CHART --><div class="section" id="chart"><h2>Live Chart</h2><div style="height:500px;border-radius:10px;overflow:hidden;"><iframe
 src="https://dexscreener.com/solana/YOURTOKENADDRESS?embed=1&theme=dark"
-
 width="100%"
-
 height="500"
-
 frameborder="0">
-
-</iframe>
-
-</div>
-
-</div>
-
-<!-- ROADMAP -->
-
-<div class="section" id="roadmap">
-
-<h2>Roadmap</h2>
-
-<div class="roadmap">
-
-<div class="step">
-
-<h3>Phase 1</h3>
-
-<ul>
-
+</iframe></div></div><!-- ROADMAP --><div class="section" id="roadmap"><h2>Roadmap</h2><div class="roadmap"><div class="step"><h3>Phase 1</h3><ul>
 <li>Website launch</li>
 <li>Community building</li>
 <li>Social media growth</li>
-
-</ul>
-
-</div>
-
-<div class="step">
-
-<h3>Phase 2</h3>
-
-<ul>
-
+</ul></div><div class="step"><h3>Phase 2</h3><ul>
 <li>Pump.fun launch</li>
 <li>Marketing push</li>
 <li>Community raids</li>
-
-</ul>
-
-</div>
-
-<div class="step">
-
-<h3>Phase 3</h3>
-
-<ul>
-
+</ul></div><div class="step"><h3>Phase 3</h3><ul>
 <li>DEX trading growth</li>
 <li>Meme expansion</li>
 <li>Community dominance</li>
-
-</ul>
-
-</div>
-
-</div>
-
-</div>
-
-<footer>
-
+</ul></div></div></div><footer>
 REBORNX © 2026  
 Community Driven Meme Coin
+</footer><script>
 
-</footer>
-
-<script>
+/* COPY CA */
 
 function copyCA(){
 
@@ -424,17 +281,78 @@ alert("Contract Address Copied");
 
 }
 
-</script>
+/* TOKEN COUNTER */
 
-</body>
+let count=0;
+let target=1000000000;
 
-</html>
+let counter=setInterval(function(){
+
+count+=5000000;
+
+document.getElementById("supply").innerText=count.toLocaleString();
+
+if(count>=target){
+
+clearInterval(counter);
+
+document.getElementById("supply").innerText=target.toLocaleString();
+
+}
+
+},20);
+
+/* FIRE PARTICLES */
+
+const canvas=document.createElement("canvas");
+document.body.appendChild(canvas);
+
+canvas.style.position="fixed";
+canvas.style.top="0";
+canvas.style.left="0";
+canvas.style.zIndex="-1";
+
+const ctx=canvas.getContext("2d");
+
+canvas.width=window.innerWidth;
+canvas.height=window.innerHeight;
+
+let particles=[];
+
+for(let i=0;i<120;i++){
+
+particles.push({
+
+x:Math.random()*canvas.width,
+y:Math.random()*canvas.height,
+size:Math.random()*3,
+speed:Math.random()*1
+
+});
+
+}
+
+function animate(){
+
+ctx.clearRect(0,0,canvas.width,canvas.height);
+
+particles.forEach(p=>{
+
+p.y-=p.speed;
+
+if(p.y<0) p.y=canvas.height;
+
+ctx.fillStyle="#ff4a00";
+
+ctx.fillRect(p.x,p.y,p.size,p.size);
+
+});
+
+requestAnimationFrame(animate);
 
 }
 
 animate();
 
-</script>
-
-</body>
+</script></body>
 </html>
