@@ -20,43 +20,9 @@ scroll-behavior:smooth;
 
 body{
 font-family:'Orbitron',sans-serif;
+background:#0b0b0b;
 color:white;
-background:black;
 overflow-x:hidden;
-}
-
-/* LAVA BACKGROUND */
-
-body::before{
-content:"";
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:radial-gradient(circle at center,#1a0000,#000);
-z-index:-2;
-}
-
-body::after{
-content:"";
-position:fixed;
-top:0;
-left:0;
-width:200%;
-height:200%;
-background:
-radial-gradient(circle,#ff4a00 0%,transparent 40%),
-radial-gradient(circle,#ff0000 0%,transparent 40%);
-animation:lava 15s infinite linear;
-opacity:0.25;
-z-index:-1;
-}
-
-@keyframes lava{
-0%{transform:translate(-10%,-10%)}
-50%{transform:translate(-20%,-20%)}
-100%{transform:translate(-10%,-10%)}
 }
 
 /* NAVBAR */
@@ -68,8 +34,7 @@ width:100%;
 display:flex;
 justify-content:space-between;
 padding:20px 40px;
-background:rgba(0,0,0,0.6);
-backdrop-filter:blur(10px);
+background:black;
 z-index:100;
 }
 
@@ -89,62 +54,59 @@ color:#ff4a00;
 .hero{
 height:100vh;
 display:flex;
-flex-direction:column;
 align-items:center;
-justify-content:center;
-text-align:center;
+justify-content:space-between;
+padding:120px 10%;
 }
 
-.hero h1{
-font-size:100px;
+.hero-text{
+max-width:500px;
+}
+
+.hero-text h1{
+font-size:70px;
 color:#ff4a00;
-text-shadow:
-0 0 30px #ff4a00,
-0 0 60px red,
-0 0 120px red;
+text-shadow:0 0 40px red;
 }
 
-.hero p{
+.hero-text p{
 margin-top:20px;
-font-size:22px;
 color:#ccc;
+}
+
+.hero img{
+width:420px;
 }
 
 /* BUTTON */
 
 .btn{
-margin-top:35px;
-padding:15px 45px;
-background:linear-gradient(45deg,#ff4a00,#ff0000);
+display:inline-block;
+margin-top:25px;
+padding:15px 40px;
+background:#ff4a00;
 border-radius:10px;
 color:white;
 text-decoration:none;
 font-weight:bold;
-box-shadow:0 0 25px #ff4a00;
-transition:0.3s;
 }
 
 .btn:hover{
 transform:scale(1.1);
-box-shadow:0 0 50px red;
 }
 
-/* SECTIONS */
+/* TOKENOMICS */
 
 .section{
-padding:120px 20px;
-max-width:1100px;
-margin:auto;
+padding:120px 10%;
 text-align:center;
 }
 
 h2{
+color:#ff4a00;
 font-size:45px;
 margin-bottom:40px;
-color:#ff4a00;
 }
-
-/* GLASS CARDS */
 
 .grid{
 display:grid;
@@ -153,17 +115,10 @@ gap:25px;
 }
 
 .card{
-background:rgba(255,255,255,0.05);
-border:1px solid rgba(255,80,0,0.3);
-border-radius:15px;
+background:#111;
+border:1px solid #ff4a00;
 padding:35px;
-backdrop-filter:blur(15px);
-transition:0.3s;
-}
-
-.card:hover{
-transform:translateY(-10px);
-box-shadow:0 0 40px #ff4a00;
+border-radius:10px;
 }
 
 /* ROADMAP */
@@ -175,25 +130,35 @@ gap:25px;
 }
 
 .phase{
-background:rgba(255,255,255,0.05);
-border:1px solid rgba(255,80,0,0.3);
+background:#111;
+border:1px solid #ff4a00;
 padding:35px;
-border-radius:12px;
+border-radius:10px;
 }
 
 /* FOOTER */
 
 footer{
 padding:40px;
-text-align:center;
 background:black;
+text-align:center;
 color:#888;
 }
 
-@media(max-width:768px){
+@media(max-width:900px){
 
-.hero h1{
-font-size:55px;
+.hero{
+flex-direction:column;
+text-align:center;
+}
+
+.hero img{
+margin-top:40px;
+width:300px;
+}
+
+.hero-text h1{
+font-size:50px;
 }
 
 }
@@ -218,14 +183,20 @@ font-size:55px;
 
 <section class="hero" id="home">
 
+<div class="hero-text">
+
 <h1>REBORNX</h1>
 
 <p>
-The Dragon Rises Again 🔥 <br>
+The Dragon Rises Again 🔥  
 Community Meme Coin on Solana
 </p>
 
-<a class="btn" href="#">Launch on Pump.fun</a>
+<a class="btn" href="#">Buy Now</a>
+
+</div>
+
+<img src="rebornx-logo.png">
 
 </section>
 
@@ -235,10 +206,25 @@ Community Meme Coin on Solana
 
 <div class="grid">
 
-<div class="card">Supply<br><br>1,000,000,000</div>
-<div class="card">Liquidity<br><br>90%</div>
-<div class="card">Dev Wallet<br><br>10%</div>
-<div class="card">Tax<br><br>0%</div>
+<div class="card">
+Total Supply<br><br>
+1,000,000,000
+</div>
+
+<div class="card">
+Liquidity<br><br>
+90%
+</div>
+
+<div class="card">
+Dev Wallet<br><br>
+10%
+</div>
+
+<div class="card">
+Tax<br><br>
+0%
+</div>
 
 </div>
 
@@ -252,20 +238,20 @@ Community Meme Coin on Solana
 
 <div class="phase">
 Phase 1<br><br>
-Website Launch<br>
-Community Setup
+Website launch<br>
+Community building
 </div>
 
 <div class="phase">
 Phase 2<br><br>
-Pump.fun Launch<br>
-Marketing Push
+Pump.fun launch<br>
+Marketing push
 </div>
 
 <div class="phase">
 Phase 3<br><br>
-DEX Listing<br>
-Global Expansion
+DEX listings<br>
+Global expansion
 </div>
 
 </div>
