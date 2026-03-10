@@ -20,7 +20,7 @@ scroll-behavior:smooth;
 }
 
 body{
-font-family:'Orbitron', sans-serif;
+font-family:'Orbitron',sans-serif;
 background:url("hero-bg.jpg") no-repeat center center fixed;
 background-size:cover;
 color:white;
@@ -146,6 +146,7 @@ font-weight:bold;
 box-shadow:0 0 20px #ff4a00;
 transition:0.3s;
 margin-top:10px;
+display:inline-block;
 }
 
 .btn:hover{
@@ -205,7 +206,7 @@ padding:30px;
 border-radius:12px;
 }
 
-/* COPY */
+/* COPY BUTTON */
 
 .copybtn{
 margin-top:15px;
@@ -317,23 +318,13 @@ The Dragon Rises Again 🔥 <br>
 Community Meme Coin on Solana
 </p>
 
-<a class="btn" href="https://pump.fun" target="_blank">
-Launch on Pump.fun
-</a>
-
-<a class="btn" href="https://jup.ag" target="_blank">
-Buy on Jupiter
-</a>
-
-<a class="btn" href="https://dexscreener.com" target="_blank">
-View Chart
-</a>
+<a class="btn" href="https://pump.fun" target="_blank">Launch on Pump.fun</a>
+<a class="btn" href="https://jup.ag" target="_blank">Buy on Jupiter</a>
+<a class="btn" href="https://dexscreener.com" target="_blank">View Chart</a>
 
 <div class="socials">
-
 <a href="https://x.com/RebornxSol" target="_blank">X</a>
 <a href="https://t.me/Rebornx_sol" target="_blank">Telegram</a>
-
 </div>
 
 </div>
@@ -419,10 +410,8 @@ height="500">
 </div>
 
 <footer>
-
-REBORNX © 2026  
+REBORNX © 2026<br>
 Community Driven Meme Coin
-
 </footer>
 
 <script>
@@ -477,13 +466,10 @@ function animate(){
 ctx.clearRect(0,0,canvas.width,canvas.height);
 
 particles.forEach(p=>{
-
 p.y-=p.speed;
-
-if(p.y<0) p.y=canvas.height;
+if(p.y<0)p.y=canvas.height;
 
 ctx.fillStyle="#ff4a00";
-
 ctx.fillRect(p.x,p.y,p.size,p.size);
 
 });
