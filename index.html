@@ -1,5 +1,16 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>REBORNX</title><link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap" rel="stylesheet"><style>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>REBORNX</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
+
+<style>
 
 *{
 margin:0;
@@ -44,13 +55,14 @@ nav a{
 color:white;
 text-decoration:none;
 font-weight:bold;
+margin-right:15px;
 }
 
 nav a:hover{
 color:#ff4a00;
 }
 
-/* MOBILE */
+/* MENU */
 
 .menu-icon{
 display:none;
@@ -58,8 +70,6 @@ font-size:32px;
 cursor:pointer;
 margin-left:auto;
 }
-
-/* MENU */
 
 .menu{
 position:fixed;
@@ -71,9 +81,8 @@ background:url("dragon.jpg") center/cover no-repeat;
 display:flex;
 flex-direction:column;
 align-items:center;
-justify-content:flex-start;
-padding-top:5px;
 gap:30px;
+padding-top:60px;
 transition:0.4s;
 z-index:200;
 }
@@ -82,10 +91,6 @@ z-index:200;
 color:white;
 font-size:26px;
 text-decoration:none;
-}
-
-.menu a:hover{
-color:#ff4a00;
 }
 
 .close{
@@ -99,25 +104,23 @@ cursor:pointer;
 /* HERO */
 
 .hero{
-min-height:75vh;
+min-height:80vh;
 display:flex;
 flex-direction:column;
 align-items:center;
 justify-content:center;
 text-align:center;
-padding:30px 20px;
-gap:15px;
+gap:20px;
+padding:30px;
 }
 
-..hero img{
-width:480px;
+.hero img{
+width:420px;
 max-width:90%;
-
 filter:
 drop-shadow(0 0 15px #000)
 drop-shadow(0 0 30px #ff4a00)
 drop-shadow(0 0 70px red);
-
 animation:glow 3s infinite alternate;
 }
 
@@ -128,23 +131,13 @@ to{filter:drop-shadow(0 0 40px red);}
 
 .hero p{
 font-size:22px;
-text-shadow:0 0 10px #ff4a00,0 0 20px #ff2200;
-}
-
-/* HEADINGS */
-
-h2{
-font-size:42px;
-margin-bottom:30px;
-color:white;
-text-shadow:0 0 10px #ff4a00,0 0 30px #ff0000;
+text-shadow:0 0 10px #ff4a00,0 0 20px red;
 }
 
 /* BUTTON */
 
 .btn{
-margin-top:35px;
-padding:16px 40px;
+padding:14px 35px;
 background:linear-gradient(45deg,#ff4a00,#ff0000);
 border-radius:10px;
 color:white;
@@ -152,6 +145,7 @@ text-decoration:none;
 font-weight:bold;
 box-shadow:0 0 20px #ff4a00;
 transition:0.3s;
+margin-top:10px;
 }
 
 .btn:hover{
@@ -159,7 +153,7 @@ transform:scale(1.1);
 box-shadow:0 0 40px #ff4a00;
 }
 
-/* SECTION */
+/* SECTIONS */
 
 .section{
 padding:120px 20px;
@@ -168,18 +162,13 @@ margin:auto;
 text-align:center;
 }
 
-/* CONTRACT BOX */
-
-.box{
-background:rgba(0,0,0,0.45);
-border:1px solid rgba(255,80,0,0.6);
-backdrop-filter:blur(10px);
-padding:30px;
-border-radius:15px;
-box-shadow:0 0 20px rgba(255,80,0,0.5);
+h2{
+font-size:40px;
+margin-bottom:30px;
+text-shadow:0 0 10px #ff4a00;
 }
 
-/* TOKEN GRID */
+/* TOKEN CARDS */
 
 .grid{
 display:grid;
@@ -187,12 +176,9 @@ grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
 gap:20px;
 }
 
-/* TOKEN CARD */
-
 .token-card{
 background:rgba(0,0,0,0.45);
 border:1px solid rgba(255,80,0,0.6);
-backdrop-filter:blur(8px);
 border-radius:15px;
 padding:25px;
 box-shadow:0 0 20px rgba(255,80,0,0.5);
@@ -219,16 +205,6 @@ padding:30px;
 border-radius:12px;
 }
 
-.step ul{
-list-style:none;
-margin-top:10px;
-}
-
-.step li{
-margin:8px 0;
-color:#ddd;
-}
-
 /* COPY */
 
 .copybtn{
@@ -244,10 +220,9 @@ cursor:pointer;
 /* SOCIAL */
 
 .socials{
-margin-top:25px;
 display:flex;
-justify-content:center;
 gap:20px;
+margin-top:15px;
 }
 
 .socials a{
@@ -256,17 +231,20 @@ text-decoration:none;
 font-weight:bold;
 }
 
-.socials a:hover{
-color:#ff4a00;
-}
+/* FIRE CURSOR */
 
-/* FOOTER */
-
-footer{
-background:#000;
-padding:40px;
-text-align:center;
-color:#888;
+.fire-cursor{
+position:fixed;
+width:12px;
+height:12px;
+background:#ff4a00;
+border-radius:50%;
+pointer-events:none;
+box-shadow:
+0 0 10px #ff4a00,
+0 0 20px red,
+0 0 40px red;
+z-index:9999;
 }
 
 /* MOBILE */
@@ -282,7 +260,7 @@ display:block;
 }
 
 .hero img{
-width:420px;
+width:300px;
 }
 
 .hero p{
@@ -291,64 +269,163 @@ font-size:18px;
 
 }
 
-</style></head><body><canvas id="particles"></canvas>
+footer{
+background:#000;
+padding:40px;
+text-align:center;
+color:#888;
+}
 
-<!-- NAVBAR --><nav><a href="#home">Home</a>
+</style>
+
+</head>
+
+<body>
+
+<canvas id="particles"></canvas>
+
+<nav>
+
+<a href="#home">Home</a>
 <a href="#tokenomics">Tokenomics</a>
 <a href="#chart">Chart</a>
 <a href="#roadmap">Roadmap</a>
 
-<div class="menu-icon" onclick="openMenu()">☰</div></nav><!-- MENU --><div id="menu" class="menu"><div class="close" onclick="closeMenu()">✕</div><img src="rebornx-logo.png" width="250" style="margin-bottom:25px;"><a href="#home">Home</a>
+<div class="menu-icon" onclick="openMenu()">☰</div>
+
+</nav>
+
+<div id="menu" class="menu">
+
+<div class="close" onclick="closeMenu()">✕</div>
+
+<img src="rebornx-logo.png" width="220">
+
+<a href="#home">Home</a>
 <a href="#tokenomics">Tokenomics</a>
 <a href="#chart">Chart</a>
 <a href="#roadmap">Roadmap</a>
 
 </div>
 
-<div class="fire-banner">
-
-<!-- HERO -->
-
 <div class="hero" id="home">
+
 <img src="rebornx-logo.png">
+
 <p>
-The Dragon Rises Again 🔥<br>
+The Dragon Rises Again 🔥 <br>
 Community Meme Coin on Solana
 </p>
+
 <a class="btn" href="https://pump.fun" target="_blank">
 Launch on Pump.fun
 </a>
-<div class="socials"><a href="https://x.com/RebornxSol" target="_blank">X</a>
 
+<a class="btn" href="https://jup.ag" target="_blank">
+Buy on Jupiter
+</a>
+
+<a class="btn" href="https://dexscreener.com" target="_blank">
+View Chart
+</a>
+
+<div class="socials">
+
+<a href="https://x.com/RebornxSol" target="_blank">X</a>
 <a href="https://t.me/Rebornx_sol" target="_blank">Telegram</a>
 
-<a href="https://dexscreener.com" target="_blank">Dexscreener</a>
+</div>
 
-</div></div><!-- CONTRACT --><div class="section"><h2>Contract Address</h2><div class="box"><span id="ca">COMING SOON</span>
+</div>
 
-<br><button class="copybtn" onclick="copyCA()">
-Copy Address
-</button></div></div><!-- TOKENOMICS --><div class="section" id="tokenomics"><h2>Tokenomics</h2><div class="grid"><div class="token-card">Total Supply<br><br>1,000,000,000</div><div class="token-card">Liquidity<br><br>90%</div><div class="token-card">Dev Wallet<br><br>10%</div><div class="token-card">Tax<br><br>0%</div></div></div><!-- CHART --><div class="section" id="chart"><h2>Live Chart</h2><div style="height:500px;border-radius:10px;overflow:hidden;"><iframe
+<div class="section">
+
+<h2>Contract Address</h2>
+
+<div class="token-card">
+
+<span id="ca">COMING SOON</span>
+
+<br>
+
+<button class="copybtn" onclick="copyCA()">Copy Address</button>
+
+</div>
+
+</div>
+
+<div class="section" id="tokenomics">
+
+<h2>Tokenomics</h2>
+
+<div class="grid">
+
+<div class="token-card">Total Supply<br><br>1,000,000,000</div>
+<div class="token-card">Liquidity<br><br>90%</div>
+<div class="token-card">Dev Wallet<br><br>10%</div>
+<div class="token-card">Tax<br><br>0%</div>
+
+</div>
+
+</div>
+
+<div class="section" id="chart">
+
+<h2>Live Chart</h2>
+
+<iframe
 src="https://dexscreener.com/solana/YOURTOKENADDRESS?embed=1&theme=dark"
 width="100%"
-height="500"
-frameborder="0">
-</iframe></div></div><!-- ROADMAP --><div class="section" id="roadmap"><h2>Roadmap</h2><div class="roadmap"><div class="step"><h3>Phase 1</h3><ul>
+height="500">
+</iframe>
+
+</div>
+
+<div class="section" id="roadmap">
+
+<h2>Roadmap</h2>
+
+<div class="roadmap">
+
+<div class="step">
+<h3>Phase 1</h3>
+<ul>
 <li>Website launch</li>
 <li>Community building</li>
 <li>Social media growth</li>
-</ul></div><div class="step"><h3>Phase 2</h3><ul>
+</ul>
+</div>
+
+<div class="step">
+<h3>Phase 2</h3>
+<ul>
 <li>Pump.fun launch</li>
 <li>Marketing push</li>
 <li>Community raids</li>
-</ul></div><div class="step"><h3>Phase 3</h3><ul>
+</ul>
+</div>
+
+<div class="step">
+<h3>Phase 3</h3>
+<ul>
 <li>DEX trading growth</li>
 <li>Meme expansion</li>
 <li>Community dominance</li>
-</ul></div></div></div><footer>
+</ul>
+</div>
+
+</div>
+
+</div>
+
+<footer>
+
 REBORNX © 2026  
 Community Driven Meme Coin
-</footer><script>
+
+</footer>
+
+<script>
 
 /* MENU */
 
@@ -379,7 +456,6 @@ alert("Contract Address Copied");
 /* PARTICLES */
 
 const canvas=document.getElementById("particles");
-
 const ctx=canvas.getContext("2d");
 
 canvas.width=window.innerWidth;
@@ -388,16 +464,12 @@ canvas.height=window.innerHeight;
 let particles=[];
 
 for(let i=0;i<120;i++){
-
 particles.push({
-
 x:Math.random()*canvas.width,
 y:Math.random()*canvas.height,
 size:Math.random()*2,
 speed:Math.random()*0.5
-
 });
-
 }
 
 function animate(){
@@ -417,10 +489,22 @@ ctx.fillRect(p.x,p.y,p.size,p.size);
 });
 
 requestAnimationFrame(animate);
-
 }
 
 animate();
 
-</script></body>
+/* FIRE CURSOR */
+
+const cursor=document.createElement("div");
+cursor.classList.add("fire-cursor");
+document.body.appendChild(cursor);
+
+document.addEventListener("mousemove",e=>{
+cursor.style.left=e.clientX+"px";
+cursor.style.top=e.clientY+"px";
+});
+
+</script>
+
+</body>
 </html>
