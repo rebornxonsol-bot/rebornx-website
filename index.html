@@ -10,38 +10,26 @@
 body{
 margin:0;
 font-family:Arial, sans-serif;
-background:#050507;
+background:#07070a;
 color:white;
 text-align:center;
 overflow-x:hidden;
 }
 
-/* animated background */
-
-body::before{
-content:"";
-position:fixed;
-width:100%;
-height:100%;
-background:
-radial-gradient(circle at 20% 30%,#ff3c0030 0%,transparent 25%),
-radial-gradient(circle at 80% 70%,#ff000020 0%,transparent 25%);
-animation:bgmove 12s linear infinite;
-z-index:-1;
-}
-
-@keyframes bgmove{
-0%{transform:translateY(0)}
-50%{transform:translateY(-50px)}
-100%{transform:translateY(0)}
-}
-
-/* HERO */
+/* HERO FULL CENTER */
 
 header{
 position:relative;
-padding:200px 20px;
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+padding:20px;
+overflow:hidden;
 }
+
+/* RED GLOW BG */
 
 header::before{
 content:"";
@@ -52,8 +40,9 @@ background:radial-gradient(circle,#ff2a00 0%,transparent 60%);
 top:50%;
 left:50%;
 transform:translate(-50%,-50%);
-animation:pulse 4s infinite;
-opacity:.9;
+animation:pulse 5s infinite;
+opacity:.8;
+z-index:0;
 }
 
 @keyframes pulse{
@@ -62,13 +51,16 @@ opacity:.9;
 100%{transform:translate(-50%,-50%) scale(.8)}
 }
 
-/* VERY BIG LOGO */
+/* BIG CINEMATIC LOGO */
 
 .logo{
 width:420px;
 max-width:90%;
+margin-bottom:25px;
 filter:drop-shadow(0 0 60px #ff3c00);
-animation:float 5s ease-in-out infinite;
+animation:float 6s ease-in-out infinite;
+position:relative;
+z-index:2;
 }
 
 @keyframes float{
@@ -80,31 +72,34 @@ animation:float 5s ease-in-out infinite;
 /* TEXT */
 
 .tag{
-margin-top:20px;
-opacity:.7;
+opacity:.8;
 font-size:20px;
+position:relative;
+z-index:2;
 }
 
 /* BUTTONS */
 
 .btnWrap{
 margin-top:40px;
+position:relative;
+z-index:2;
 }
 
 .btn{
 display:inline-block;
 margin:12px;
-padding:16px 40px;
+padding:16px 38px;
 border-radius:40px;
 text-decoration:none;
 font-weight:bold;
-font-size:16px;
+font-size:17px;
 transition:.3s;
 }
 
 .tg{
 background:#ff3c00;
-box-shadow:0 0 30px #ff3c00;
+box-shadow:0 0 25px #ff3c00;
 color:white;
 }
 
@@ -122,7 +117,7 @@ background:#ff3c00;
 transform:scale(1.08);
 }
 
-/* MEME */
+/* MEME FEED */
 
 .section{
 padding:80px 20px;
@@ -130,8 +125,8 @@ padding:80px 20px;
 
 .memeBox{
 position:relative;
-height:120px;
-max-width:600px;
+height:110px;
+max-width:540px;
 margin:50px auto;
 }
 
@@ -139,13 +134,14 @@ margin:50px auto;
 position:absolute;
 width:100%;
 background:rgba(20,20,30,0.6);
-backdrop-filter:blur(14px);
-padding:30px;
-border-radius:22px;
+backdrop-filter:blur(10px);
+padding:26px;
+border-radius:20px;
 opacity:0;
-transform:translateY(60px);
-transition:.8s;
+transform:translateY(40px);
+transition:.7s;
 border:1px solid rgba(255,60,0,0.4);
+font-size:18px;
 }
 
 .meme.active{
@@ -153,9 +149,50 @@ opacity:1;
 transform:translateY(0);
 }
 
+/* MARKET */
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+gap:25px;
+margin-top:40px;
+}
+
+.card{
+background:#111118;
+padding:26px;
+border-radius:20px;
+transition:.3s;
+}
+
+.card:hover{
+transform:translateY(-8px);
+box-shadow:0 0 20px #ff3c00;
+}
+
+/* MYSTERY */
+
+.mystery{
+padding:120px 20px;
+background:linear-gradient(180deg,#000,#07070a);
+}
+
+.rx{
+font-size:50px;
+letter-spacing:10px;
+opacity:.5;
+animation:glow 2s infinite alternate;
+}
+
+@keyframes glow{
+from{opacity:.3}
+to{opacity:1}
+}
+
 footer{
 padding:50px;
 opacity:.5;
+font-size:14px;
 }
 
 </style>
@@ -180,15 +217,45 @@ opacity:.5;
 <h2>🔥 Viral Meme Feed</h2>
 
 <div class="memeBox">
+
 <div class="meme active">Solana when gas = zero 🚀</div>
 <div class="meme">Buy high sell low club 😂</div>
 <div class="meme">Diamond hands vs paper hands 💎</div>
-<div class="meme">Waiting perfect entry forever 🤡</div>
-<div class="meme">Whales watching silently 🐋</div>
-<div class="meme">Liquidity tsunami coming 🌊</div>
-<div class="meme">Bullish vibes only 🔥</div>
+<div class="meme">Waiting for perfect entry forever 🤡</div>
+<div class="meme">Bull run prediction every Monday</div>
+<div class="meme">Portfolio red but vibes green</div>
+<div class="meme">Influencer calls top signal</div>
+<div class="meme">Airdrop hunters never sleep</div>
+<div class="meme">Liquidity vanished magically</div>
+<div class="meme">New narrative every week</div>
+<div class="meme">Diamond hands until -90%</div>
+<div class="meme">Chart looks bullish if zoomed out</div>
+<div class="meme">Pump.fun addicts online</div>
+<div class="meme">Whales watching silently</div>
+<div class="meme">Launch day chaos incoming</div>
+<div class="meme">Crypto Twitter never sleeps</div>
+<div class="meme">Bullish on vibes only</div>
+<div class="meme">Waiting for Binance listing</div>
+<div class="meme">Early believers always win</div>
+<div class="meme">Liquidity tsunami coming</div>
+
 </div>
 
+</div>
+
+<div class="section">
+<h2>📰 Market Mood</h2>
+<div class="grid">
+<div class="card">Memecoin season loading…</div>
+<div class="card">Community > Utility</div>
+<div class="card">Whales are watching</div>
+</div>
+</div>
+
+<div class="mystery">
+<h2>🌌 Something is Building</h2>
+<div class="rx">RX</div>
+<p>Only the early will understand.</p>
 </div>
 
 <footer>
