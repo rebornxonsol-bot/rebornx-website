@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>REBORNX Memes</title>
+<title>REBORNX Meme Portal</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
 
@@ -11,7 +11,7 @@
 body{
 margin:0;
 font-family:Inter,sans-serif;
-background:#0a0a0d;
+background:#0b0b0f;
 color:white;
 }
 
@@ -22,6 +22,9 @@ padding:18px 6%;
 display:flex;
 justify-content:space-between;
 background:#111;
+position:sticky;
+top:0;
+z-index:99;
 }
 
 .logo{
@@ -46,7 +49,7 @@ width:100%;
 height:100%;
 opacity:0;
 transform:scale(1.1);
-transition:1.2s;
+transition:1s;
 }
 
 .slide img{
@@ -60,7 +63,7 @@ opacity:1;
 transform:scale(1);
 }
 
-/* GRID */
+/* MEME GRID */
 
 .grid{
 padding:40px 6%;
@@ -87,12 +90,31 @@ object-fit:cover;
 }
 
 .meme p{
-padding:14px;
-font-size:15px;
+padding:12px;
+font-size:14px;
+}
+
+.like{
+padding:0 12px 12px;
+font-size:14px;
+cursor:pointer;
+opacity:.7;
+}
+
+button{
+display:block;
+margin:40px auto;
+padding:14px 32px;
+border:none;
+background:linear-gradient(90deg,#ff3c00,#ff00aa);
+color:white;
+border-radius:999px;
+font-weight:700;
+cursor:pointer;
 }
 
 footer{
-padding:50px;
+padding:60px;
 text-align:center;
 opacity:.4;
 }
@@ -107,7 +129,7 @@ opacity:.4;
 <div>Meme Portal</div>
 </nav>
 
-<!-- AUTO HERO MEME SLIDER -->
+<!-- HERO AUTO SLIDER -->
 
 <div class="slider">
 
@@ -116,11 +138,11 @@ opacity:.4;
 </div>
 
 <div class="slide">
-<img src="https://source.unsplash.com/random/1200x701?trading">
+<img src="https://source.unsplash.com/random/1200x701?bitcoin">
 </div>
 
 <div class="slide">
-<img src="https://source.unsplash.com/random/1200x702?bitcoin">
+<img src="https://source.unsplash.com/random/1200x702?trading">
 </div>
 
 <div class="slide">
@@ -129,41 +151,15 @@ opacity:.4;
 
 </div>
 
-<!-- MEME GRID -->
+<!-- MEMES -->
 
-<div class="grid">
+<div class="grid" id="grid">
 
-<div class="meme">
-<img src="https://source.unsplash.com/random/400x300?meme1">
-<p>Sold early pain 😭</p>
-</div>
-
-<div class="meme">
-<img src="https://source.unsplash.com/random/401x300?meme2">
-<p>Diamond hands 💎</p>
-</div>
-
-<div class="meme">
-<img src="https://source.unsplash.com/random/402x300?crypto">
-<p>Solana speed 🚀</p>
-</div>
-
-<div class="meme">
-<img src="https://source.unsplash.com/random/403x300?chart">
-<p>Waiting entry forever 🤡</p>
-</div>
-
-<div class="meme">
-<img src="https://source.unsplash.com/random/404x300?market">
-<p>CT drama loading</p>
-</div>
-
-<div class="meme">
-<img src="https://source.unsplash.com/random/405x300?bitcoin">
-<p>New narrative</p>
-</div>
+<!-- initial memes -->
 
 </div>
+
+<button onclick="load()">Load More Memes</button>
 
 <footer>
 REBORNX Meme Portal © 2026
@@ -171,19 +167,58 @@ REBORNX Meme Portal © 2026
 
 <script>
 
-let slides = document.querySelectorAll(".slide")
-let i = 0
+/* HERO SLIDER */
+
+let slides=document.querySelectorAll(".slide")
+let i=0
 
 setInterval(()=>{
-
 slides[i].classList.remove("active")
-
 i++
-if(i>=slides.length) i=0
-
+if(i>=slides.length)i=0
 slides[i].classList.add("active")
-
 },3500)
+
+/* MEME SYSTEM */
+
+let grid=document.getElementById("grid")
+
+function meme(){
+let div=document.createElement("div")
+div.className="meme"
+
+let img=document.createElement("img")
+img.src="https://source.unsplash.com/random/400x30"+Math.floor(Math.random()*100)+"?crypto"
+
+let p=document.createElement("p")
+p.innerText="Crypto life meme 😂"
+
+let like=document.createElement("div")
+like.className="like"
+like.innerText="❤️ 0"
+
+like.onclick=function(){
+let n=parseInt(like.innerText.split(" ")[1])
+like.innerText="❤️ "+(n+1)
+}
+
+div.appendChild(img)
+div.appendChild(p)
+div.appendChild(like)
+
+grid.appendChild(div)
+}
+
+function load(){
+for(let i=0;i<6;i++){
+meme()
+}
+}
+
+/* first load */
+
+load()
+load()
 
 </script>
 
