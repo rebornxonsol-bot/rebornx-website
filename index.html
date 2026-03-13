@@ -3,218 +3,291 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>REBORNX ⚡ Meme Movement</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+<title>REBORNX</title>
 
 <style>
+
 body{
 margin:0;
-background:#0a0a0a;
+font-family:Arial, sans-serif;
+background:#07070a;
 color:white;
-font-family:Orbitron;
+text-align:center;
+overflow-x:hidden;
 }
+
+/* HERO FULL CENTER */
 
 header{
-text-align:center;
-padding:80px 20px;
-background:linear-gradient(45deg,#ff0080,#ff8c00);
+position:relative;
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+padding:20px;
+overflow:hidden;
 }
 
-h1{
-font-size:50px;
-margin:0;
+/* RED GLOW BG */
+
+header::before{
+content:"";
+position:absolute;
+width:900px;
+height:900px;
+background:radial-gradient(circle,#ff2a00 0%,transparent 60%);
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+animation:pulse 5s infinite;
+opacity:.8;
+z-index:0;
 }
 
-.tagline{
-font-size:22px;
-margin-top:10px;
+@keyframes pulse{
+0%{transform:translate(-50%,-50%) scale(.8)}
+50%{transform:translate(-50%,-50%) scale(1.3)}
+100%{transform:translate(-50%,-50%) scale(.8)}
 }
 
-.cta{
-margin-top:30px;
+/* BIG CINEMATIC LOGO */
+
+.logo{
+width:420px;
+max-width:90%;
+margin-bottom:25px;
+filter:drop-shadow(0 0 60px #ff3c00);
+animation:float 6s ease-in-out infinite;
+position:relative;
+z-index:2;
 }
 
-.cta a{
-background:white;
-color:black;
-padding:15px 30px;
-margin:10px;
+@keyframes float{
+0%{transform:translateY(0)}
+50%{transform:translateY(-20px)}
+100%{transform:translateY(0)}
+}
+
+/* TEXT */
+
+.tag{
+opacity:.8;
+font-size:20px;
+position:relative;
+z-index:2;
+}
+
+/* BUTTONS */
+
+.btnWrap{
+margin-top:40px;
+position:relative;
+z-index:2;
+}
+
+.btn{
 display:inline-block;
+margin:12px;
+padding:16px 38px;
+border-radius:40px;
 text-decoration:none;
 font-weight:bold;
-border-radius:10px;
+font-size:17px;
+transition:.3s;
 }
+
+.tg{
+background:#ff3c00;
+box-shadow:0 0 25px #ff3c00;
+color:white;
+}
+
+.tg:hover{
+transform:scale(1.08);
+}
+
+.xbtn{
+border:2px solid #ff3c00;
+color:white;
+}
+
+.xbtn:hover{
+background:#ff3c00;
+transform:scale(1.08);
+}
+
+/* MEME FEED */
 
 .section{
-padding:60px 20px;
-max-width:1000px;
-margin:auto;
+padding:80px 20px;
 }
 
-h2{
-color:#ff8c00;
-}
-
-.tokenomics div{
-background:#111;
-padding:15px;
-margin:10px 0;
-border-radius:8px;
-}
-
-.roadmap div{
-margin:15px 0;
-}
-
-.stats{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
-gap:15px;
-}
-
-.stat{
-background:#111;
-padding:20px;
-text-align:center;
-border-radius:10px;
-}
-
-.meme-feed{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-gap:10px;
+.memeBox{
+position:relative;
+height:110px;
+max-width:540px;
+margin:50px auto;
+display:flex;
+align-items:center;
+justify-content:center;
 }
 
 .meme{
-background:#111;
-padding:15px;
-border-radius:10px;
+position:absolute;
+left:50%;
+top:50%;
+transform:translate(-50%,40px);
+width:100%;
+background:rgba(20,20,30,0.6);
+backdrop-filter:blur(10px);
+padding:26px;
+border-radius:20px;
+opacity:0;
+transition:.7s;
+border:1px solid rgba(255,60,0,0.4);
+font-size:18px;
 }
 
-footer{
-text-align:center;
-padding:30px;
-background:#050505;
+.meme.active{
+opacity:1;
+transform:translate(-50%, -50%);
+}
+
+/* MARKET */
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+gap:25px;
 margin-top:40px;
 }
 
-.sticky-buy{
-position:fixed;
-bottom:20px;
-right:20px;
-background:#ff0080;
-padding:18px 30px;
-border-radius:50px;
-font-weight:bold;
-box-shadow:0 0 15px #ff0080;
+.card{
+background:#111118;
+padding:26px;
+border-radius:20px;
+transition:.3s;
 }
 
-.sticky-buy a{
-color:white;
-text-decoration:none;
+.card:hover{
+transform:translateY(-8px);
+box-shadow:0 0 20px #ff3c00;
 }
+
+/* MYSTERY */
+
+.mystery{
+padding:120px 20px;
+background:linear-gradient(180deg,#000,#07070a);
+}
+
+/* NEW PHOTO STYLE */
+
+.mysteryPhoto{
+width:220px;
+max-width:80%;
+margin-top:30px;
+border-radius:0;
+box-shadow:none;
+animation:floatMystery 6s ease-in-out infinite;
+background:none;
+}
+
+@keyframes floatMystery{
+0%{transform:translateY(0)}
+50%{transform:translateY(-18px)}
+100%{transform:translateY(0)}
+}
+
+footer{
+padding:50px;
+opacity:.5;
+font-size:14px;
+}
+
 </style>
 </head>
 
 <body>
 
 <header>
-<h1>⚡ REBORNX</h1>
-<div class="tagline">
-Born in Chaos. Pumped by Believers.
+
+<img src="rebornx-logo.png" class="logo">
+
+<div class="tag">Crypto Memes • Alpha • Community</div>
+
+<div class="btnWrap">
+<a href="https://t.me/Rebornx_sol" class="btn tg">Join Telegram</a>
+<a href="https://x.com/RebornxSol" class="btn xbtn">Follow on X</a>
 </div>
 
-<div class="cta">
-<a href="https://t.me/Rebornx_sol">Join Telegram</a>
-<a href="https://x.com/RebornxSol">Follow X</a>
-</div>
 </header>
-
-<div class="section">
-<h2>⚡ What is REBORNX?</h2>
-<p>
-REBORNX is not just a meme coin.  
-It’s a viral crypto movement built by degens and powered by unstoppable community energy.
-</p>
-</div>
-
-<div class="section">
-<h2>💰 Tokenomics</h2>
-
-<div class="tokenomics">
-<div>Supply — 1,000,000,000</div>
-<div>Liquidity — 40% 🔒 Locked</div>
-<div>Marketing — 25%</div>
-<div>Rewards — 20%</div>
-<div>Burn — 15%</div>
-<div>Fair Launch ✅</div>
-<div>No Dev Dump ✅</div>
-</div>
-
-</div>
-
-<div class="section">
-<h2>🗺️ Viral Roadmap</h2>
-
-<div class="roadmap">
-<div>🔥 Phase 1 — Pump.fun Domination</div>
-<div>🚀 Phase 2 — Twitter Raid Army</div>
-<div>🌍 Phase 3 — Influencer Takeover</div>
-<div>💎 Phase 4 — CEX Dream</div>
-</div>
-
-</div>
-
-<div class="section">
-<h2>👥 Community Stats</h2>
-
-<div class="stats">
-<div class="stat">Holders<br><b>1200+</b></div>
-<div class="stat">Telegram<br><b>3.8K</b></div>
-<div class="stat">X<br><b>5K+</b></div>
-<div class="stat">Volume<br><b>$120K</b></div>
-</div>
-
-</div>
 
 <div class="section">
 <h2>🔥 Viral Meme Feed</h2>
 
-<div class="meme-feed">
+<div class="memeBox">
+
+<div class="meme active">Solana when gas = zero 🚀</div>
 <div class="meme">Buy high sell low club 😂</div>
-<div class="meme">Diamond hands until -90%</div>
-<div class="meme">Bullish on vibes only</div>
-<div class="meme">Whales watching silently</div>
-<div class="meme">Crypto Twitter never sleeps</div>
-<div class="meme">Waiting for Binance listing</div>
-<div class="meme">Pump.fun addicts online</div>
+<div class="meme">Diamond hands vs paper hands 💎</div>
+<div class="meme">Waiting for perfect entry forever 🤡</div>
+<div class="meme">Bull run prediction every Monday</div>
+<div class="meme">Portfolio red but vibes green</div>
+<div class="meme">Influencer calls top signal</div>
+<div class="meme">Airdrop hunters never sleep</div>
 <div class="meme">Liquidity vanished magically</div>
+<div class="meme">New narrative every week</div>
+<div class="meme">Diamond hands until -90%</div>
+<div class="meme">Chart looks bullish if zoomed out</div>
+<div class="meme">Pump.fun addicts online</div>
+<div class="meme">Whales watching silently</div>
+<div class="meme">Launch day chaos incoming</div>
+<div class="meme">Crypto Twitter never sleeps</div>
+<div class="meme">Bullish on vibes only</div>
+<div class="meme">Waiting for Binance listing</div>
+<div class="meme">Early believers always win</div>
+<div class="meme">Liquidity tsunami coming</div>
+
 </div>
 
 </div>
 
 <div class="section">
-<h2>📈 Live Chart</h2>
+<h2>📰 Market Mood</h2>
+<div class="grid">
+<div class="card">Memecoin season loading…</div>
+<div class="card">Community > Utility</div>
+<div class="card">Whales are watching</div>
+</div>
+</div>
 
-<iframe 
-src="https://dexscreener.com/solana" 
-width="100%" 
-height="500" 
-frameborder="0">
-</iframe>
+<div class="mystery">
+<h2>🌌 Something is Building</h2>
 
+<img src="mystery.png" class="mysteryPhoto">
+
+<p>Only the early will understand.</p>
 </div>
 
 <footer>
-⚡ Meme Today. Movement Tomorrow.  
-<br><br>
 © 2026 REBORNX
 </footer>
 
-<div class="sticky-buy">
-<a href="#">🚀 BUY NOW</a>
-</div>
+<script>
+
+let memes=document.querySelectorAll(".meme")
+let i=0
+
+setInterval(()=>{
+memes[i].classList.remove("active")
+i++
+if(i>=memes.length)i=0
+memes[i].classList.add("active")
+},2000)
+
+</script>
 
 </body>
 </html>
