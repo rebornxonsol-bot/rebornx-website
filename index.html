@@ -1,13 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>REBORNX</title>
-
-<style>
-
-body{
+<!DOCTYPE html>  <html lang="en">    <head>    
+<meta charset="UTF-8">    
+<meta name="viewport" content="width=device-width, initial-scale=1.0">    
+<title>REBORNX</title>  <style>    body{
 margin:0;
 font-family:Arial, sans-serif;
 background:#07070a;
@@ -141,8 +135,41 @@ border:2px solid #ff3c00;
 color:white;
 }
 
+.about{
+max-width:700px;
+margin:120px auto 0;
+padding:0 20px;
+font-size:18px;
+line-height:1.7;
+opacity:.9;
+}
+
+.about h2{
+font-size:34px;
+margin-bottom:25px;
+text-shadow:0 0 20px #ff3c00;
+}
+
+.liveChart{
+margin-top:80px;
+padding:0 20px;
+}
+
 .section{
 padding:80px 20px;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+gap:25px;
+margin-top:40px;
+}
+
+.card{
+background:#111118;
+padding:26px;
+border-radius:20px;
 }
 
 .memeBox{
@@ -176,39 +203,6 @@ opacity:1;
 transform:translate(-50%, -50%);
 }
 
-.about{
-max-width:700px;
-margin:120px auto 0;
-padding:0 20px;
-font-size:18px;
-line-height:1.7;
-opacity:.9;
-}
-
-.about h2{
-font-size:34px;
-margin-bottom:25px;
-text-shadow:0 0 20px #ff3c00;
-}
-
-.liveChart{
-margin-top:80px;
-padding:0 20px;
-}
-
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-gap:25px;
-margin-top:40px;
-}
-
-.card{
-background:#111118;
-padding:26px;
-border-radius:20px;
-}
-
 .mystery{
 padding:120px 20px;
 background:linear-gradient(180deg,#000,#07070a);
@@ -233,81 +227,107 @@ opacity:.5;
 font-size:14px;
 }
 
-</style>
-</head>
+</style>  </head>  <body>  <header>  <div class="topTag">⚡ VIRAL MEME MOVEMENT</div>
 
-<body>
-
-<header>
-
-<div class="topTag">⚡ VIRAL MEME MOVEMENT</div>
-<div class="topLine"></div>
-
-<img src="rebornx-logo.png" class="logo">
-
-<div class="story">
-REBORNX is not just a meme.<br>
-It’s a movement born from chaos.<br>
-Built by degens. Powered by community.<br>
-The next viral wave is loading…
-</div>
-
-<div class="tag">Crypto Memes • Alpha • Community</div>
-
-<div class="btnWrap">
-<a href="https://t.me/Rebornx_sol" class="btn tg">Join Telegram</a>
-<a href="https://x.com/RebornxSol" class="btn xbtn">Follow on X</a>
-</div>
-
-</header>
-
-<!-- 🔥 LIVE MEMES SHIFTED HERE -->
-<div class="section">
-<h2>🔥 Viral Meme Feed</h2>
-<div class="memeBox">
-<div class="meme active">Solana when gas = zero 🚀</div>
-<div class="meme">Buy high sell low club 😂</div>
-<div class="meme">Diamond hands vs paper hands 💎</div>
-<div class="meme">Waiting for perfect entry forever 🤡</div>
-<div class="meme">Bull run prediction every Monday</div>
-<div class="meme">Portfolio red but vibes green</div>
-<div class="meme">Influencer calls top signal</div>
-<div class="meme">Airdrop hunters never sleep</div>
-<div class="meme">Liquidity vanished magically</div>
-<div class="meme">New narrative every week</div>
-<div class="meme">Diamond hands until -90%</div>
-<div class="meme">Chart looks bullish if zoomed out</div>
-<div class="meme">Pump.fun addicts online</div>
-<div class="meme">Whales watching silently</div>
-<div class="meme">Launch day chaos incoming</div>
-<div class="meme">Crypto Twitter never sleeps</div>
-<div class="meme">Bullish on vibes only</div>
-<div class="meme">Waiting for Binance listing</div>
-<div class="meme">Early believers always win</div>
-<div class="meme">Liquidity tsunami coming</div>
-</div>
-</div>
-
-<div class="about">
-<h2>⚡ What is REBORNX?</h2>
-<p>
-REBORNX is a next-generation meme movement focused on viral growth, alpha signals and unstoppable community energy.
-</p>
-<p>
-From chaos to rebirth — we are building the next wave of crypto culture.
-</p>
-</div>
-
-<script>
-let memes=document.querySelectorAll(".meme")
-let i=0
-setInterval(()=>{
-memes[i].classList.remove("active")
-i++
-if(i>=memes.length)i=0
-memes[i].classList.add("active")
-},2000)
-</script>
-
-</body>
-</html>
+<div class="topLine"></div>  <img src="rebornx-logo.png" class="logo">  <div class="story">    
+REBORNX is not just a meme.<br>    
+It’s a movement born from chaos.<br>    
+Built by degens. Powered by community.<br>    
+The next viral wave is loading…    
+</div>  <div class="tag">Crypto Memes • Alpha • Community</div>  <div class="btnWrap">    
+<a href="https://t.me/Rebornx_sol" class="btn tg">Join Telegram</a>    
+<a href="https://x.com/RebornxSol" class="btn xbtn">Follow on X</a>    
+</div>  </header>  <div class="about">    
+<h2>⚡ What is REBORNX?</h2>    
+<p>    
+REBORNX is a next-generation meme movement focused on viral growth, alpha signals and unstoppable community energy.    
+</p>    
+<p>    
+From chaos to rebirth — we are building the next wave of crypto culture.    
+</p>    
+</div>  <div class="liveChart">    
+<h2>📈 Live Crypto Market</h2>  <div class="tradingview-widget-container">    
+<div id="tradingview_chart"></div>  <script src="https://s3.tradingview.com/tv.js"></script>  <script>    
+new TradingView.widget({    
+"width": "100%",    
+"height": 500,    
+"symbol": "BINANCE:BTCUSDT",    
+"interval": "30",    
+"timezone": "Asia/Kolkata",    
+"theme": "dark",    
+"style": "1",    
+"locale": "en",    
+"container_id": "tradingview_chart"    
+});    
+</script>  </div>    
+</div>  <!-- 🚀 ROADMAP -->  <div class="section">    
+<h2>🗺️ Roadmap</h2>    
+<div class="grid">    
+<div class="card">🔥 Phase 1 — Token Launch</div>    
+<div class="card">🚀 Phase 2 — Viral Growth</div>    
+<div class="card">🌍 Phase 3 — Expansion</div>    
+<div class="card">♻️ Phase 4 — Rebirth</div>    
+</div>    
+</div>  <!-- 💰 TOKENOMICS -->  <div class="section">    
+<h2>💰 Tokenomics</h2>    
+<div class="grid">    
+<div class="card">Supply — 1B</div>    
+<div class="card">Liquidity — 40%</div>    
+<div class="card">Marketing — 25%</div>    
+<div class="card">Rewards — 20%</div>    
+<div class="card">Burn — 15%</div>    
+</div>    
+</div>  <!-- 👥 COMMUNITY -->  <div class="section">    
+<h2>👥 Community Stats</h2>    
+<div class="grid">    
+<div class="card">Holders — 1200+</div>    
+<div class="card">Telegram — 3.8K</div>    
+<div class="card">X — 5K+</div>    
+<div class="card">Volume — $120K</div>    
+</div>    
+</div>  <div class="section">    
+<h2>🔥 Viral Meme Feed</h2>  <div class="memeBox">    
+<div class="meme active">Solana when gas = zero 🚀</div>    
+<div class="meme">Buy high sell low club 😂</div>    
+<div class="meme">Diamond hands vs paper hands 💎</div>    
+<div class="meme">Waiting for perfect entry forever 🤡</div>    
+<div class="meme">Bull run prediction every Monday</div>    
+<div class="meme">Portfolio red but vibes green</div>    
+<div class="meme">Influencer calls top signal</div>    
+<div class="meme">Airdrop hunters never sleep</div>    
+<div class="meme">Liquidity vanished magically</div>    
+<div class="meme">New narrative every week</div>    
+<div class="meme">Diamond hands until -90%</div>    
+<div class="meme">Chart looks bullish if zoomed out</div>    
+<div class="meme">Pump.fun addicts online</div>    
+<div class="meme">Whales watching silently</div>    
+<div class="meme">Launch day chaos incoming</div>    
+<div class="meme">Crypto Twitter never sleeps</div>    
+<div class="meme">Bullish on vibes only</div>    
+<div class="meme">Waiting for Binance listing</div>    
+<div class="meme">Early believers always win</div>    
+<div class="meme">Liquidity tsunami coming</div>    
+</div>  </div>  <div class="section">    
+<h2>📰 Market Mood</h2>    
+<div class="grid">    
+<div class="card">Memecoin season loading…</div>    
+<div class="card">Community > Utility</div>    
+<div class="card">Whales are watching</div>    
+</div>    
+</div>  <div class="mystery">    
+<h2>🌌 Something is Building</h2>    
+<img src="mystery.png" class="mysteryPhoto">    
+<p>Only the early will understand.</p>    
+</div>  <footer>    
+© 2026 REBORNX    
+</footer>  <script>    
+let memes=document.querySelectorAll(".meme")    
+let i=0    
+setInterval(()=>{    
+memes[i].classList.remove("active")    
+i++    
+if(i>=memes.length)i=0    
+memes[i].classList.add("active")    
+},2000)    
+</script>  </body>    
+</html> 
