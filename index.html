@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>REBORNX MEME</title>
+<title>REBORNX Memes</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
 
@@ -11,20 +11,17 @@
 body{
 margin:0;
 font-family:Inter,sans-serif;
-background:#0b0b0f;
+background:#0a0a0d;
 color:white;
 }
 
 /* NAV */
 
 nav{
-padding:20px 6%;
+padding:18px 6%;
 display:flex;
 justify-content:space-between;
-align-items:center;
 background:#111;
-position:sticky;
-top:0;
 }
 
 .logo{
@@ -35,35 +32,35 @@ background:linear-gradient(90deg,#ff3c00,#ff00aa);
 -webkit-text-fill-color:transparent;
 }
 
-/* HERO */
+/* HERO SLIDER */
 
-.hero{
-padding:80px 6%;
-text-align:center;
+.slider{
+height:65vh;
+position:relative;
+overflow:hidden;
 }
 
-.hero h1{
-font-size:64px;
-margin:0;
+.slide{
+position:absolute;
+width:100%;
+height:100%;
+opacity:0;
+transform:scale(1.1);
+transition:1.2s;
 }
 
-.hero p{
-opacity:.7;
-margin-top:10px;
+.slide img{
+width:100%;
+height:100%;
+object-fit:cover;
 }
 
-.btn{
-margin-top:25px;
-display:inline-block;
-padding:12px 28px;
-background:linear-gradient(90deg,#ff3c00,#ff00aa);
-border-radius:999px;
-text-decoration:none;
-color:white;
-font-weight:700;
+.slide.active{
+opacity:1;
+transform:scale(1);
 }
 
-/* MEME GRID */
+/* GRID */
 
 .grid{
 padding:40px 6%;
@@ -94,8 +91,6 @@ padding:14px;
 font-size:15px;
 }
 
-/* FOOTER */
-
 footer{
 padding:50px;
 text-align:center;
@@ -112,42 +107,60 @@ opacity:.4;
 <div>Meme Portal</div>
 </nav>
 
-<div class="hero">
-<h1>Crypto Meme Culture</h1>
-<p>Daily viral memes • alpha vibes • community energy</p>
-<a class="btn" href="#">Join Telegram</a>
+<!-- AUTO HERO MEME SLIDER -->
+
+<div class="slider">
+
+<div class="slide active">
+<img src="https://source.unsplash.com/random/1200x700?crypto">
 </div>
+
+<div class="slide">
+<img src="https://source.unsplash.com/random/1200x701?trading">
+</div>
+
+<div class="slide">
+<img src="https://source.unsplash.com/random/1200x702?bitcoin">
+</div>
+
+<div class="slide">
+<img src="https://source.unsplash.com/random/1200x703?technology">
+</div>
+
+</div>
+
+<!-- MEME GRID -->
 
 <div class="grid">
 
 <div class="meme">
-<img src="https://picsum.photos/400/300?1">
-<p>When you sell before pump 😭</p>
+<img src="https://source.unsplash.com/random/400x300?meme1">
+<p>Sold early pain 😭</p>
 </div>
 
 <div class="meme">
-<img src="https://picsum.photos/400/300?2">
-<p>Diamond hands activated 💎</p>
+<img src="https://source.unsplash.com/random/401x300?meme2">
+<p>Diamond hands 💎</p>
 </div>
 
 <div class="meme">
-<img src="https://picsum.photos/400/300?3">
-<p>Solana speed be like 🚀</p>
+<img src="https://source.unsplash.com/random/402x300?crypto">
+<p>Solana speed 🚀</p>
 </div>
 
 <div class="meme">
-<img src="https://picsum.photos/400/300?4">
-<p>Waiting for perfect entry forever 🤡</p>
+<img src="https://source.unsplash.com/random/403x300?chart">
+<p>Waiting entry forever 🤡</p>
 </div>
 
 <div class="meme">
-<img src="https://picsum.photos/400/300?5">
-<p>CT drama loading…</p>
+<img src="https://source.unsplash.com/random/404x300?market">
+<p>CT drama loading</p>
 </div>
 
 <div class="meme">
-<img src="https://picsum.photos/400/300?6">
-<p>New narrative every week</p>
+<img src="https://source.unsplash.com/random/405x300?bitcoin">
+<p>New narrative</p>
 </div>
 
 </div>
@@ -155,6 +168,24 @@ opacity:.4;
 <footer>
 REBORNX Meme Portal © 2026
 </footer>
+
+<script>
+
+let slides = document.querySelectorAll(".slide")
+let i = 0
+
+setInterval(()=>{
+
+slides[i].classList.remove("active")
+
+i++
+if(i>=slides.length) i=0
+
+slides[i].classList.add("active")
+
+},3500)
+
+</script>
 
 </body>
 </html>
