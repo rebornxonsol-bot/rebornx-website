@@ -5,59 +5,45 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>REBORNX</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700;900&display=swap" rel="stylesheet">
 
 <style>
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
-
 body{
-font-family:'Space Grotesk',sans-serif;
-background:#050508;
+margin:0;
+font-family:Inter;
+background:#050505;
 color:white;
 overflow-x:hidden;
 }
 
-/* gradient glow bg */
-body::before{
-content:"";
+/* animated background */
+
+.bg{
 position:fixed;
-width:1200px;
-height:1200px;
-background:radial-gradient(circle,#ff3c0025,transparent 60%);
-top:-300px;
-left:-200px;
+width:100%;
+height:100%;
+background:
+radial-gradient(circle at 20% 30%,#ff004015,transparent),
+radial-gradient(circle at 80% 70%,#ff880015,transparent),
+#050505;
 z-index:-1;
 }
 
-nav{
-display:flex;
-justify-content:space-between;
-padding:25px 60px;
-}
-
-.logo{
-font-size:26px;
-letter-spacing:6px;
-color:#ff3c00;
-font-weight:700;
-}
+/* hero */
 
 .hero{
-height:95vh;
+min-height:100vh;
 display:flex;
 flex-direction:column;
 justify-content:center;
-padding-left:10%;
+padding:0 25px;
 }
 
 .hero h1{
-font-size:90px;
-line-height:1;
+font-size:55px;
+line-height:1.05;
+font-weight:900;
 }
 
 .gradient{
@@ -66,65 +52,93 @@ background:linear-gradient(90deg,#ff3c00,#ff0080);
 -webkit-text-fill-color:transparent;
 }
 
-.hero p{
-margin-top:20px;
+.sub{
+margin-top:18px;
 opacity:.7;
-font-size:20px;
-max-width:500px;
+font-size:17px;
+max-width:520px;
 }
 
 .cta{
-margin-top:40px;
+margin-top:35px;
+display:flex;
+flex-wrap:wrap;
+gap:14px;
 }
 
 .btn{
-padding:16px 40px;
+padding:14px 28px;
 background:linear-gradient(90deg,#ff3c00,#ff0080);
-border-radius:40px;
+border-radius:999px;
 text-decoration:none;
 color:white;
 font-weight:600;
-margin-right:15px;
+transition:.3s;
 }
 
-.section{
-padding:120px 10%;
+.btn:hover{
+transform:scale(1.05);
 }
+
+/* section */
+
+.section{
+padding:80px 25px;
+max-width:1100px;
+margin:auto;
+}
+
+.title{
+font-size:32px;
+font-weight:800;
+margin-bottom:30px;
+}
+
+/* meme grid */
 
 .grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-gap:30px;
-margin-top:50px;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
 }
 
 .card{
-background:#0c0c14;
-padding:40px;
-border-radius:25px;
-transition:.4s;
+background:#0b0b0b;
+padding:20px;
+border-radius:16px;
+border:1px solid #ffffff10;
+transition:.3s;
 }
 
 .card:hover{
-transform:translateY(-15px);
-box-shadow:0 20px 40px #ff3c0025;
+transform:translateY(-6px);
+border:1px solid #ff008040;
 }
 
-.big{
-font-size:50px;
-letter-spacing:10px;
-margin-top:30px;
-opacity:.6;
-}
+/* mystery */
 
-.center{
+.mystery{
 text-align:center;
+padding:120px 25px;
 }
 
-footer{
-padding:60px;
+.mystery h2{
+font-size:40px;
+font-weight:900;
+background:linear-gradient(90deg,#ff3c00,#ff0080);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+.footer{
+padding:40px;
 text-align:center;
 opacity:.5;
+font-size:14px;
+}
+
+@media(min-width:700px){
+.hero h1{font-size:90px}
 }
 
 </style>
@@ -132,57 +146,73 @@ opacity:.5;
 
 <body>
 
-<nav>
-<div class="logo">REBORNX</div>
-<div>Media • Community • Alpha</div>
-</nav>
+<div class="bg"></div>
+
+<!-- HERO -->
 
 <div class="hero">
+
 <h1>
 <span class="gradient">REBORN</span><br>
 THE NEXT WAVE
 </h1>
 
-<p>
+<p class="sub">
 A new crypto media movement is forming quietly.
-Memes, alpha, culture and community — before the spotlight.
+Memes • Alpha • Culture • Community
 </p>
 
 <div class="cta">
-<a class="btn" href="#">Join Community</a>
+<a class="btn" href="#">Join Telegram</a>
 <a class="btn" href="#">Follow X</a>
 </div>
+
 </div>
+
+<!-- MEMES -->
 
 <div class="section">
-<h2>🔥 Culture & Memes</h2>
+<div class="title">🔥 Latest Memes</div>
 
 <div class="grid">
-<div class="card">Trader psychology memes</div>
-<div class="card">Solana ecosystem humor</div>
-<div class="card">Market cycle content</div>
+
+<div class="card">Solana when gas = zero 🚀</div>
+<div class="card">Buy high sell low club 😂</div>
+<div class="card">Diamond hands vs paper hands 💎</div>
+<div class="card">Waiting for perfect entry forever 🤡</div>
+
 </div>
 </div>
+
+<!-- ALPHA -->
 
 <div class="section">
-<h2>📊 Alpha & Market Insight</h2>
+<div class="title">📊 Market Alpha</div>
 
 <div class="grid">
-<div class="card">Narrative tracking</div>
-<div class="card">Community sentiment</div>
-<div class="card">Early trend detection</div>
+
+<div class="card">SOL ecosystem heating up</div>
+<div class="card">Meme coin season signal forming</div>
+<div class="card">Liquidity rotation incoming</div>
+
 </div>
 </div>
 
-<div class="section center">
-<h2>🌌 A Signal is Forming</h2>
-<div class="big">RX</div>
-<p>Only early observers will connect the dots.</p>
+<!-- MYSTERY -->
+
+<div class="mystery">
+
+<h2>Something Powerful Is Coming</h2>
+
+<p style="opacity:.6;margin-top:10px">
+Early community will understand first.
+</p>
+
 </div>
 
-<footer>
-© 2026 REBORNX — All Rights Reserved
-</footer>
+<div class="footer">
+© 2026 REBORNX — Community Driven Crypto Culture
+</div>
 
 </body>
 </html>
