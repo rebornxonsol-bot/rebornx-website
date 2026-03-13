@@ -16,8 +16,6 @@ text-align:center;
 overflow-x:hidden;
 }
 
-/* HERO FULL CENTER */
-
 header{
 position:relative;
 height:100vh;
@@ -28,8 +26,6 @@ align-items:center;
 padding-top:80px;
 overflow:hidden;
 }
-
-/* RED GLOW BG */
 
 header::before{
 content:"";
@@ -51,13 +47,10 @@ z-index:0;
 100%{transform:translate(-50%,-50%) scale(.8)}
 }
 
-/* BIG CINEMATIC LOGO */
-
 .logo{
 width:420px;
 max-width:90%;
 margin-bottom:20px;
-margin-top:0;
 filter:drop-shadow(0 0 60px #ff3c00);
 animation:float 6s ease-in-out infinite;
 position:relative;
@@ -69,8 +62,6 @@ z-index:2;
 50%{transform:translateY(-20px)}
 100%{transform:translateY(0)}
 }
-
-/* 🔥 STORY STYLE */
 
 .story{
 max-width:420px;
@@ -89,16 +80,12 @@ from{opacity:0; transform:translateY(20px)}
 to{opacity:.85; transform:translateY(0)}
 }
 
-/* TEXT */
-
 .tag{
 opacity:.8;
 font-size:20px;
 position:relative;
 z-index:2;
 }
-
-/* BUTTONS */
 
 .btnWrap{
 margin-top:40px;
@@ -123,60 +110,10 @@ box-shadow:0 0 25px #ff3c00;
 color:white;
 }
 
-.tg:hover{
-transform:scale(1.08);
-}
-
 .xbtn{
 border:2px solid #ff3c00;
 color:white;
 }
-
-.xbtn:hover{
-background:#ff3c00;
-transform:scale(1.08);
-}
-
-/* 🔥 LIVE NEWS */
-
-.newsWrap{
-margin-top:70px;
-width:100%;
-overflow:hidden;
-position:relative;
-z-index:2;
-}
-
-.newsTitle{
-font-size:22px;
-margin-bottom:15px;
-text-shadow:0 0 12px #ff3c00;
-}
-
-.newsTicker{
-width:100%;
-white-space:nowrap;
-overflow:hidden;
-background:rgba(255,60,0,.08);
-border-top:1px solid rgba(255,60,0,.4);
-border-bottom:1px solid rgba(255,60,0,.4);
-padding:14px 0;
-}
-
-.newsMove{
-display:inline-block;
-padding-left:100%;
-animation:scrollNews 18s linear infinite;
-font-size:18px;
-opacity:.9;
-}
-
-@keyframes scrollNews{
-0%{transform:translateX(0)}
-100%{transform:translateX(-100%)}
-}
-
-/* 🔥 ABOUT PROJECT */
 
 .about{
 max-width:700px;
@@ -193,7 +130,10 @@ margin-bottom:25px;
 text-shadow:0 0 20px #ff3c00;
 }
 
-/* MEME FEED */
+.liveChart{
+margin-top:80px;
+padding:0 20px;
+}
 
 .section{
 padding:80px 20px;
@@ -230,8 +170,6 @@ opacity:1;
 transform:translate(-50%, -50%);
 }
 
-/* MARKET */
-
 .grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
@@ -243,15 +181,7 @@ margin-top:40px;
 background:#111118;
 padding:26px;
 border-radius:20px;
-transition:.3s;
 }
-
-.card:hover{
-transform:translateY(-8px);
-box-shadow:0 0 20px #ff3c00;
-}
-
-/* MYSTERY */
 
 .mystery{
 padding:120px 20px;
@@ -300,25 +230,8 @@ The next viral wave is loading…
 <a href="https://x.com/RebornxSol" class="btn xbtn">Follow on X</a>
 </div>
 
-<!-- ✅ LIVE NEWS ADDED -->
-
-<div class="newsWrap">
-<div class="newsTitle">🟢 LIVE Market News</div>
-
-<div class="newsTicker">
-<div class="newsMove">
-🚀 Bitcoin whales accumulating heavily &nbsp;&nbsp;&nbsp;
-🔥 Memecoin volume exploding on Solana &nbsp;&nbsp;&nbsp;
-⚡ New viral tokens trending on X &nbsp;&nbsp;&nbsp;
-📈 Market sentiment turning bullish &nbsp;&nbsp;&nbsp;
-💎 Early buyers positioning for next pump
-</div>
-</div>
-</div>
-
 </header>
 
-<!-- 🔥 NEW ABOUT SECTION -->
 <div class="about">
 <h2>⚡ What is REBORNX?</h2>
 <p>
@@ -327,6 +240,31 @@ REBORNX is a next-generation meme movement focused on viral growth, alpha signal
 <p>
 From chaos to rebirth — we are building the next wave of crypto culture.
 </p>
+</div>
+
+<!-- ⭐ REAL LIVE CHART ADDED -->
+<div class="liveChart">
+<h2>📈 Live Crypto Market</h2>
+
+<div class="tradingview-widget-container">
+<div id="tradingview_chart"></div>
+
+<script src="https://s3.tradingview.com/tv.js"></script>
+<script>
+new TradingView.widget({
+"width": "100%",
+"height": 500,
+"symbol": "BINANCE:BTCUSDT",
+"interval": "30",
+"timezone": "Asia/Kolkata",
+"theme": "dark",
+"style": "1",
+"locale": "en",
+"container_id": "tradingview_chart"
+});
+</script>
+
+</div>
 </div>
 
 <div class="section">
