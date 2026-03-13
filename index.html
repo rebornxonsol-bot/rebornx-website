@@ -45,6 +45,29 @@ font-weight:bold;
 padding:50px 20px;
 }
 
+.memeBox{
+position:relative;
+height:90px;
+max-width:500px;
+margin:30px auto;
+}
+
+.meme{
+position:absolute;
+width:100%;
+background:#14141a;
+padding:20px;
+border-radius:15px;
+opacity:0;
+transform:translateY(30px);
+transition:.5s;
+}
+
+.meme.active{
+opacity:1;
+transform:translateY(0);
+}
+
 .grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
@@ -93,13 +116,62 @@ font-size:14px;
 </header>
 
 <div class="section">
-<h2>🔥 Latest Memes</h2>
-<div class="grid">
-<div class="card">When you sell early 😭</div>
-<div class="card">Diamond hands mode 💎</div>
-<div class="card">Waiting for perfect entry 😂</div>
-<div class="card">Solana speed be like 🚀</div>
+<h2>🔥 Viral Meme Feed</h2>
+
+<div class="memeBox">
+
+<div class="meme active">Solana when gas = zero 🚀</div>
+<div class="meme">Buy high sell low club 😂</div>
+<div class="meme">Diamond hands vs paper hands 💎</div>
+<div class="meme">Waiting for perfect entry forever 🤡</div>
+<div class="meme">Bull run prediction every Monday</div>
+<div class="meme">Portfolio red but vibes green</div>
+<div class="meme">Dev says marketing soon</div>
+<div class="meme">Influencer calls top signal</div>
+<div class="meme">Airdrop hunters never sleep</div>
+<div class="meme">CT drama season started</div>
+<div class="meme">Liquidity vanished magically</div>
+<div class="meme">Memecoin whitepaper = meme</div>
+<div class="meme">New narrative every week</div>
+<div class="meme">Diamond hands until -90%</div>
+<div class="meme">Chart looks bullish if zoomed out</div>
+<div class="meme">Traders become philosophers</div>
+<div class="meme">Pump.fun addicts online</div>
+<div class="meme">Whales watching silently</div>
+<div class="meme">Launch day chaos incoming</div>
+<div class="meme">Liquidity rotation mystery</div>
+<div class="meme">Crypto Twitter never sleeps</div>
+<div class="meme">Holders checking price every minute</div>
+<div class="meme">Bullish on vibes only</div>
+<div class="meme">Bear market influencers vanish</div>
+<div class="meme">Token launch = warzone</div>
+<div class="meme">Chart green → life good</div>
+<div class="meme">Chart red → spiritual phase</div>
+<div class="meme">Waiting for Binance listing</div>
+<div class="meme">Devs cooking behind scenes</div>
+<div class="meme">Early believers always win</div>
+<div class="meme">Airdrop season mania</div>
+<div class="meme">Solana speed unmatched</div>
+<div class="meme">Crypto cycle repeating again</div>
+<div class="meme">Fear → hope → euphoria</div>
+<div class="meme">Rekt → rebuild → reborn</div>
+<div class="meme">Community stronger than chart</div>
+<div class="meme">Next wave forming quietly</div>
+<div class="meme">Hidden gems everywhere</div>
+<div class="meme">New alpha dropping soon</div>
+<div class="meme">Whales loading silently</div>
+<div class="meme">Liquidity tsunami coming</div>
+<div class="meme">Memes stronger than fundamentals</div>
+<div class="meme">Crypto never boring</div>
+<div class="meme">Market dips → influencers disappear</div>
+<div class="meme">Bull trap again 😭</div>
+<div class="meme">Telegram mods panic mode</div>
+<div class="meme">Shillers working overtime</div>
+<div class="meme">Green candle dopamine hit</div>
+<div class="meme">Red candle character development</div>
+
 </div>
+
 </div>
 
 <div class="section">
@@ -111,12 +183,6 @@ font-size:14px;
 </div>
 </div>
 
-<div class="section">
-<h2>👥 Community</h2>
-<p>Early believers are gathering.</p>
-<p>Telegram • X • Dex</p>
-</div>
-
 <div class="mystery">
 <h2>🌌 Something is Building</h2>
 <div class="rx">RX</div>
@@ -126,6 +192,20 @@ font-size:14px;
 <footer>
 © 2026 REBORNX
 </footer>
+
+<script>
+
+let memes=document.querySelectorAll(".meme")
+let i=0
+
+setInterval(()=>{
+memes[i].classList.remove("active")
+i++
+if(i>=memes.length)i=0
+memes[i].classList.add("active")
+},2000)
+
+</script>
 
 </body>
 </html>
