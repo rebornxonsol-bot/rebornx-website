@@ -1,41 +1,36 @@
-!DOCTYPE html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>REBORNX</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
 
 <style>
 
-*{
-box-sizing:border-box;
-}
+*{box-sizing:border-box}
 
 body{
 margin:0;
-font-family:Inter,Arial;
-background:radial-gradient(circle at top,#1a0000,#000);
+font-family:'Space Grotesk',sans-serif;
+background:#07070a;
 color:white;
-overflow-x:hidden;
 }
 
 /* NAV */
 
 nav{
-position:fixed;
-top:0;
-width:100%;
-padding:18px 30px;
-backdrop-filter:blur(10px);
-background:#00000060;
+padding:22px 8%;
 display:flex;
 justify-content:space-between;
-z-index:99;
+align-items:center;
 }
 
 .logo{
-font-weight:800;
-letter-spacing:2px;
-background:linear-gradient(90deg,#ff3c00,#ff0080);
+font-size:24px;
+font-weight:700;
+letter-spacing:3px;
+background:linear-gradient(90deg,#ff3c00,#ff00aa);
 -webkit-background-clip:text;
 -webkit-text-fill-color:transparent;
 }
@@ -43,104 +38,103 @@ background:linear-gradient(90deg,#ff3c00,#ff0080);
 /* HERO */
 
 .hero{
-min-height:100vh;
-display:flex;
-flex-direction:column;
-justify-content:center;
-padding:0 30px;
+padding:140px 8% 120px;
+max-width:1200px;
 }
 
 .hero h1{
-font-size:68px;
-line-height:1.05;
+font-size:80px;
+line-height:1;
 margin:0;
 }
 
-@media(min-width:800px){
-.hero h1{
-font-size:110px;
-}
+.grad{
+background:linear-gradient(90deg,#ff3c00,#ff00aa);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
 }
 
-.sub{
-margin-top:20px;
+.hero p{
+margin-top:25px;
 opacity:.7;
-max-width:600px;
-font-size:18px;
+font-size:20px;
+max-width:520px;
 }
 
-.cta{
-margin-top:35px;
+.btns{
+margin-top:40px;
 display:flex;
-gap:14px;
+gap:16px;
 flex-wrap:wrap;
 }
 
 .btn{
-padding:16px 32px;
-border-radius:999px;
-background:linear-gradient(90deg,#ff3c00,#ff0080);
+padding:16px 34px;
+border-radius:12px;
+background:linear-gradient(90deg,#ff3c00,#ff00aa);
 text-decoration:none;
 color:white;
 font-weight:700;
-box-shadow:0 0 30px #ff008050;
 }
 
-/* SECTION */
+/* SECTIONS */
 
 .section{
-padding:100px 30px;
+padding:120px 8%;
+max-width:1200px;
 }
 
-.title{
-font-size:44px;
-margin-bottom:30px;
+.section h2{
+font-size:48px;
+margin-bottom:40px;
 }
 
-/* MEME SLIDER */
-
-.memeBox{
-position:relative;
-height:110px;
-overflow:hidden;
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:25px;
 }
-
-.meme{
-position:absolute;
-width:100%;
-background:#0b0b0b;
-padding:28px;
-border-radius:20px;
-border:1px solid #ffffff10;
-opacity:0;
-transform:translateY(50px);
-transition:.7s;
-font-size:20px;
-}
-
-.meme.active{
-opacity:1;
-transform:translateY(0);
-}
-
-/* GLASS CARDS */
 
 .card{
-background:linear-gradient(180deg,#ffffff10,#00000040);
-padding:28px;
+background:#111118;
+padding:30px;
 border-radius:20px;
-margin-bottom:18px;
 border:1px solid #ffffff10;
-backdrop-filter:blur(10px);
-font-size:20px;
+font-size:18px;
+transition:.3s;
+}
+
+.card:hover{
+transform:translateY(-10px);
+border:1px solid #ff00aa50;
+}
+
+/* TOKENOMICS */
+
+.token{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:20px;
+}
+
+.token div{
+background:#111118;
+padding:30px;
+border-radius:16px;
+text-align:center;
+font-size:22px;
 }
 
 /* FOOTER */
 
 footer{
+padding:80px;
 text-align:center;
-padding:50px;
 opacity:.4;
+}
+
+@media(max-width:700px){
+.hero h1{font-size:48px}
 }
 
 </style>
@@ -150,126 +144,60 @@ opacity:.4;
 
 <nav>
 <div class="logo">REBORNX</div>
-<div>MEDIA</div>
+<div>Community • Culture • Alpha</div>
 </nav>
 
 <div class="hero">
-
 <h1>
-<span style="background:linear-gradient(90deg,#ff3c00,#ff0080);
--webkit-background-clip:text;
--webkit-text-fill-color:transparent;">
-REBORN
-</span><br>
-THE NEXT WAVE
+<span class="grad">REBORN</span><br>
+A NEW CRYPTO ERA
 </h1>
 
-<p class="sub">
-Crypto culture is shifting again.  
-Memes. Alpha. Community.  
-A silent media movement before the storm.
+<p>
+A media driven crypto movement focused on memes, alpha and community.
+Built silently before the spotlight.
 </p>
 
-<div class="cta">
-<a class="btn" href="#">Join Community</a>
+<div class="btns">
+<a class="btn" href="#">Join Telegram</a>
 <a class="btn" href="#">Follow X</a>
 </div>
-
 </div>
 
 <div class="section">
+<h2>🔥 Culture Engine</h2>
 
-<div class="title">🔥 Viral Memes</div>
-
-<div class="memeBox">
-
-<div class="meme active">Solana when gas = zero 🚀</div>
-<div class="meme">Buy high sell low club 😂</div>
-<div class="meme">Diamond hands vs paper hands 💎</div>
-<div class="meme">Waiting for perfect entry forever 🤡</div>
-<div class="meme">Market dips → influencers disappear</div>
-<div class="meme">Bull run prediction every Monday</div>
-<div class="meme">Portfolio red but vibes green</div>
-<div class="meme">Dev says marketing soon</div>
-<div class="meme">Gas fee higher than investment</div>
-<div class="meme">Influencer calls top signal</div>
-<div class="meme">Airdrop hunters never sleep</div>
-<div class="meme">CT drama season started</div>
-<div class="meme">Liquidity vanished magically</div>
-<div class="meme">Roadmap updated after pump</div>
-<div class="meme">Memecoin whitepaper = meme</div>
-<div class="meme">Telegram mods working overtime</div>
-<div class="meme">New narrative every week</div>
-<div class="meme">Diamond hands until -90%</div>
-<div class="meme">Chart looks bullish if zoomed out</div>
-<div class="meme">Influencers become traders</div>
-<div class="meme">Traders become philosophers</div>
-<div class="meme">Pump.fun addicts online</div>
-<div class="meme">Whales watching silently</div>
-<div class="meme">Launch day chaos incoming</div>
-<div class="meme">Liquidity rotation mystery</div>
-<div class="meme">New token same community</div>
-<div class="meme">Crypto Twitter never sleeps</div>
-<div class="meme">Holders checking price every minute</div>
-<div class="meme">Bullish on vibes only</div>
-<div class="meme">Bear market influencers vanish</div>
-<div class="meme">Token launch = warzone</div>
-<div class="meme">Chart green → life good</div>
-<div class="meme">Chart red → spiritual phase</div>
-<div class="meme">Waiting for Binance listing</div>
-<div class="meme">Devs cooking behind scenes</div>
-<div class="meme">Early believers always win</div>
-<div class="meme">Airdrop season mania</div>
-<div class="meme">Solana speed unmatched</div>
-<div class="meme">Crypto cycle repeating again</div>
-<div class="meme">Fear → hope → euphoria</div>
-<div class="meme">Rekt → rebuild → reborn</div>
-<div class="meme">Community stronger than chart</div>
-<div class="meme">Next wave forming quietly</div>
-<div class="meme">Hidden gems everywhere</div>
-<div class="meme">New alpha dropping soon</div>
-<div class="meme">Whales loading silently</div>
-<div class="meme">Liquidity tsunami coming</div>
-<div class="meme">Memes stronger than fundamentals</div>
-<div class="meme">Crypto never boring</div>
-
+<div class="cards">
+<div class="card">Viral crypto meme content</div>
+<div class="card">Community engagement systems</div>
+<div class="card">Narrative driven growth</div>
 </div>
-
 </div>
 
 <div class="section">
+<h2>📊 Market Alpha</h2>
 
-<div class="title">📊 Market Alpha</div>
+<div class="cards">
+<div class="card">Early trend discovery</div>
+<div class="card">Liquidity cycle awareness</div>
+<div class="card">Sentiment tracking</div>
+</div>
+</div>
 
-<div class="card">SOL ecosystem heating up</div>
-<div class="card">Meme coin cycle forming</div>
-<div class="card">Liquidity rotation starting</div>
-<div class="card">New narratives emerging</div>
-<div class="card">Community driven tokens rising</div>
+<div class="section">
+<h2>💰 Tokenomics</h2>
 
+<div class="token">
+<div>Supply 1B</div>
+<div>Community 70%</div>
+<div>Marketing 20%</div>
+<div>Team 10%</div>
+</div>
 </div>
 
 <footer>
-REBORNX MEDIA © 2026
+REBORNX © 2026
 </footer>
-
-<script>
-
-let memes = document.querySelectorAll(".meme")
-let i = 0
-
-setInterval(()=>{
-
-memes[i].classList.remove("active")
-
-i++
-if(i>=memes.length) i = 0
-
-memes[i].classList.add("active")
-
-},2000)
-
-</script>
 
 </body>
 </html>
