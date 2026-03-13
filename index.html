@@ -128,17 +128,22 @@ position:relative;
 height:110px;
 max-width:540px;
 margin:50px auto;
+display:flex;
+align-items:center;
+justify-content:center;
 }
 
 .meme{
 position:absolute;
+left:50%;
+top:50%;
+transform:translate(-50%,40px);
 width:100%;
 background:rgba(20,20,30,0.6);
 backdrop-filter:blur(10px);
 padding:26px;
 border-radius:20px;
 opacity:0;
-transform:translateY(40px);
 transition:.7s;
 border:1px solid rgba(255,60,0,0.4);
 font-size:18px;
@@ -146,7 +151,7 @@ font-size:18px;
 
 .meme.active{
 opacity:1;
-transform:translateY(0);
+transform:translate(-50%, -50%);
 }
 
 /* MARKET */
