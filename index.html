@@ -177,16 +177,21 @@ padding:120px 20px;
 background:linear-gradient(180deg,#000,#07070a);
 }
 
-.rx{
-font-size:50px;
-letter-spacing:10px;
-opacity:.5;
-animation:glow 2s infinite alternate;
+/* NEW PHOTO STYLE */
+
+.mysteryPhoto{
+width:260px;
+max-width:85%;
+margin-top:30px;
+border-radius:20px;
+box-shadow:0 0 50px #ff3c00;
+animation:floatMystery 6s ease-in-out infinite;
 }
 
-@keyframes glow{
-from{opacity:.3}
-to{opacity:1}
+@keyframes floatMystery{
+0%{transform:translateY(0)}
+50%{transform:translateY(-18px)}
+100%{transform:translateY(0)}
 }
 
 footer{
@@ -254,7 +259,9 @@ font-size:14px;
 
 <div class="mystery">
 <h2>🌌 Something is Building</h2>
-<div class="rx">RX</div>
+
+<img src="mystery.png" class="mysteryPhoto">
+
 <p>Only the early will understand.</p>
 </div>
 
