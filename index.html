@@ -6,76 +6,147 @@
 <title>REBORNX</title>
 
 <style>
+
 body{
 margin:0;
 font-family:Arial, sans-serif;
-background:#0b0b0f;
+background:#050507;
 color:white;
 text-align:center;
+overflow-x:hidden;
 }
+
+/* animated background particles */
+
+body::before{
+content:"";
+position:fixed;
+width:100%;
+height:100%;
+background:
+radial-gradient(circle at 20% 30%,#ff3c0030 0%,transparent 25%),
+radial-gradient(circle at 80% 70%,#ff000020 0%,transparent 25%),
+radial-gradient(circle at 50% 50%,#ff2a0015 0%,transparent 30%);
+animation:bgmove 12s linear infinite;
+z-index:-1;
+}
+
+@keyframes bgmove{
+0%{transform:translateY(0)}
+50%{transform:translateY(-40px)}
+100%{transform:translateY(0)}
+}
+
+/* HERO */
 
 header{
-padding:80px 20px;
-background: radial-gradient(circle at center,#ff3c00 0%,#000 70%);
+position:relative;
+padding:130px 20px;
 }
+
+header::before{
+content:"";
+position:absolute;
+width:750px;
+height:750px;
+background:radial-gradient(circle,#ff2a00 0%,transparent 60%);
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+animation:pulse 4s infinite;
+opacity:.8;
+}
+
+@keyframes pulse{
+0%{transform:translate(-50%,-50%) scale(.8)}
+50%{transform:translate(-50%,-50%) scale(1.25)}
+100%{transform:translate(-50%,-50%) scale(.8)}
+}
+
+/* LOGO */
 
 .logo{
-width:120px;
-margin-bottom:20px;
+width:260px;
+margin-bottom:25px;
+filter:drop-shadow(0 0 35px #ff3c00);
+animation:float 4s ease-in-out infinite;
 }
 
-h1{
-font-size:55px;
-margin:0;
-letter-spacing:4px;
+@keyframes float{
+0%{transform:translateY(0)}
+50%{transform:translateY(-15px)}
+100%{transform:translateY(0)}
 }
+
+/* TEXT */
 
 .tag{
-opacity:0.7;
-margin-top:10px;
+opacity:.75;
+font-size:19px;
+}
+
+/* BUTTONS */
+
+.btnWrap{
+margin-top:40px;
 }
 
 .btn{
 display:inline-block;
-margin:10px;
-padding:14px 30px;
-background:#ff3c00;
-color:white;
+margin:12px;
+padding:15px 36px;
+border-radius:40px;
 text-decoration:none;
-border-radius:30px;
 font-weight:bold;
+font-size:16px;
 transition:.3s;
 }
 
-.btn:hover{
-transform:scale(1.08);
+.tg{
+background:#ff3c00;
+box-shadow:0 0 25px #ff3c00;
+color:white;
 }
 
-.btnX{
-background:#111;
-border:1px solid #ff3c00;
+.tg:hover{
+transform:scale(1.07);
 }
+
+.xbtn{
+border:2px solid #ff3c00;
+color:white;
+}
+
+.xbtn:hover{
+background:#ff3c00;
+transform:scale(1.07);
+}
+
+/* MEME FEED */
 
 .section{
-padding:60px 20px;
+padding:70px 20px;
 }
 
 .memeBox{
 position:relative;
-height:100px;
-max-width:520px;
-margin:40px auto;
+height:110px;
+max-width:540px;
+margin:45px auto;
 }
 
 .meme{
 position:absolute;
 width:100%;
-background:#14141a;
-padding:22px;
-border-radius:18px;
+background:rgba(20,20,30,0.6);
+backdrop-filter:blur(12px);
+padding:26px;
+border-radius:20px;
 opacity:0;
-transform:translateY(40px);
-transition:.6s;
+transform:translateY(50px);
+transition:.7s;
+border:1px solid rgba(255,60,0,0.4);
+box-shadow:0 0 25px #ff3c0020;
 }
 
 .meme.active{
@@ -83,30 +154,48 @@ opacity:1;
 transform:translateY(0);
 }
 
+/* MARKET */
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+gap:22px;
+margin-top:35px;
+}
+
+.card{
+background:#101017;
+padding:26px;
+border-radius:20px;
+box-shadow:0 0 20px #000;
+}
+
+/* MYSTERY */
+
 .mystery{
-padding:100px 20px;
-background:linear-gradient(180deg,#000,#0b0b0f);
+padding:120px 20px;
+background:linear-gradient(180deg,#000,#050507);
 }
 
 .rx{
-font-size:50px;
+font-size:46px;
 letter-spacing:10px;
-opacity:0.5;
-animation: glow 2s infinite alternate;
+opacity:.5;
+animation:glow 2s infinite alternate;
 }
 
 @keyframes glow{
-from{opacity:0.3}
+from{opacity:.3}
 to{opacity:1}
 }
 
 footer{
-padding:40px;
-opacity:0.5;
+padding:50px;
+opacity:.5;
 font-size:14px;
 }
-</style>
 
+</style>
 </head>
 
 <body>
@@ -115,16 +204,12 @@ font-size:14px;
 
 <img src="rebornx-logo.png" class="logo">
 
-<h1>REBORNX</h1>
 <div class="tag">Crypto Memes • Alpha • Community</div>
 
-<a class="btn" href="https://t.me/Rebornx_sol" target="_blank">
-Join Telegram
-</a>
-
-<a class="btn btnX" href="https://x.com/RebornxSol" target="_blank">
-Follow on X
-</a>
+<div class="btnWrap">
+<a href="https://t.me/Rebornx_sol" class="btn tg">Join Telegram</a>
+<a href="https://x.com/RebornxSol" class="btn xbtn">Follow on X</a>
+</div>
 
 </header>
 
@@ -137,15 +222,26 @@ Follow on X
 <div class="meme">Buy high sell low club 😂</div>
 <div class="meme">Diamond hands vs paper hands 💎</div>
 <div class="meme">Waiting for perfect entry forever 🤡</div>
-<div class="meme">Bull run prediction every Monday</div>
 <div class="meme">Portfolio red but vibes green</div>
-<div class="meme">Dev says marketing soon</div>
 <div class="meme">Influencer calls top signal</div>
 <div class="meme">Airdrop hunters never sleep</div>
-<div class="meme">CT drama season started</div>
+<div class="meme">Whales watching silently</div>
+<div class="meme">Crypto Twitter never sleeps</div>
+<div class="meme">Bullish on vibes only</div>
+<div class="meme">Early believers always win</div>
+<div class="meme">Liquidity tsunami coming</div>
 
 </div>
 
+</div>
+
+<div class="section">
+<h2>📰 Market Mood</h2>
+<div class="grid">
+<div class="card">Memecoin season loading…</div>
+<div class="card">Community > Utility</div>
+<div class="card">Whales are watching</div>
+</div>
 </div>
 
 <div class="mystery">
@@ -159,14 +255,17 @@ Follow on X
 </footer>
 
 <script>
+
 let memes=document.querySelectorAll(".meme")
 let i=0
+
 setInterval(()=>{
 memes[i].classList.remove("active")
 i++
 if(i>=memes.length)i=0
 memes[i].classList.add("active")
 },2000)
+
 </script>
 
 </body>
