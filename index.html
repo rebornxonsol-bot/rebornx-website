@@ -23,9 +23,9 @@ position:relative;
 height:100vh;
 display:flex;
 flex-direction:column;
-justify-content:flex-start;   /* centre inda top ge change */
+justify-content:flex-start;
 align-items:center;
-padding-top:80px;             /* top gap */
+padding-top:80px;
 overflow:hidden;
 }
 
@@ -56,7 +56,7 @@ z-index:0;
 .logo{
 width:420px;
 max-width:90%;
-margin-bottom:40px;
+margin-bottom:20px;
 margin-top:0;
 filter:drop-shadow(0 0 60px #ff3c00);
 animation:float 6s ease-in-out infinite;
@@ -68,6 +68,25 @@ z-index:2;
 0%{transform:translateY(0)}
 50%{transform:translateY(-20px)}
 100%{transform:translateY(0)}
+}
+
+/* 🔥 NEW STORY STYLE */
+
+.story{
+max-width:420px;
+line-height:1.6;
+font-size:18px;
+opacity:.85;
+margin-bottom:25px;
+text-shadow:0 0 10px rgba(255,60,0,.6);
+animation:fadeIn 2s ease;
+position:relative;
+z-index:2;
+}
+
+@keyframes fadeIn{
+from{opacity:0; transform:translateY(20px)}
+to{opacity:.85; transform:translateY(0)}
 }
 
 /* TEXT */
@@ -216,6 +235,14 @@ font-size:14px;
 
 <img src="rebornx-logo.png" class="logo">
 
+<!-- 🔥 STORY ADDED -->
+<div class="story">
+REBORNX is not just a meme.<br>
+It’s a movement born from chaos.<br>
+Built by degens. Powered by community.<br>
+The next viral wave is loading…
+</div>
+
 <div class="tag">Crypto Memes • Alpha • Community</div>
 
 <div class="btnWrap">
@@ -252,7 +279,6 @@ font-size:14px;
 <div class="meme">Liquidity tsunami coming</div>
 
 </div>
-
 </div>
 
 <div class="section">
