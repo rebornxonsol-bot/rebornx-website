@@ -1,335 +1,220 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>REBORNX</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>REBORNX ⚡ Meme Movement</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
 
 <style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-scroll-behavior:smooth;
-}
-
 body{
-font-family:'Orbitron',sans-serif;
-background:#050507;
+margin:0;
+background:#0a0a0a;
 color:white;
-overflow-x:hidden;
+font-family:Orbitron;
 }
 
-/* LOADER */
-
-#loader{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:#000;
-display:flex;
-align-items:center;
-justify-content:center;
-z-index:9999;
-}
-
-.loaderText{
-font-size:30px;
-color:#ff3c00;
-animation:pulse 1s infinite;
-}
-
-@keyframes pulse{
-0%{opacity:.3}
-50%{opacity:1}
-100%{opacity:.3}
-}
-
-/* NAVBAR */
-
-nav{
-position:fixed;
-top:0;
-width:100%;
-padding:20px 40px;
-display:flex;
-justify-content:space-between;
-align-items:center;
-background:rgba(0,0,0,0.6);
-backdrop-filter:blur(10px);
-transition:.4s;
-z-index:100;
-}
-
-nav.shrink{
-padding:10px 40px;
-background:rgba(0,0,0,0.9);
-}
-
-nav a{
-color:white;
-text-decoration:none;
-margin-left:20px;
-font-weight:bold;
-}
-
-nav a:hover{
-color:#ff3c00;
-}
-
-/* HERO */
-
-.hero{
-height:100vh;
-display:flex;
-flex-direction:column;
-align-items:center;
-justify-content:center;
+header{
 text-align:center;
-padding:20px;
-position:relative;
+padding:80px 20px;
+background:linear-gradient(45deg,#ff0080,#ff8c00);
 }
 
-.hero::before{
-content:"";
-position:absolute;
-width:800px;
-height:800px;
-background:radial-gradient(circle,#ff3c00 0%,transparent 60%);
-animation:rotateGlow 12s linear infinite;
-opacity:.6;
+h1{
+font-size:50px;
+margin:0;
 }
 
-@keyframes rotateGlow{
-0%{transform:rotate(0)}
-100%{transform:rotate(360deg)}
-}
-
-.logo{
-width:420px;
-max-width:90%;
-z-index:2;
-filter:drop-shadow(0 0 40px #ff3c00);
-animation:float 6s ease-in-out infinite;
-}
-
-@keyframes float{
-0%{transform:translateY(0)}
-50%{transform:translateY(-25px)}
-100%{transform:translateY(0)}
-}
-
-.hero h1{
-margin-top:20px;
-font-size:42px;
-z-index:2;
-text-shadow:0 0 20px #ff3c00;
-}
-
-.hero p{
-opacity:.8;
+.tagline{
+font-size:22px;
 margin-top:10px;
-z-index:2;
 }
 
-.btn{
+.cta{
 margin-top:30px;
-padding:16px 40px;
-border-radius:40px;
-background:linear-gradient(45deg,#ff3c00,#ff0000);
-color:white;
+}
+
+.cta a{
+background:white;
+color:black;
+padding:15px 30px;
+margin:10px;
+display:inline-block;
 text-decoration:none;
 font-weight:bold;
-box-shadow:0 0 25px #ff3c00;
-transition:.3s;
-z-index:2;
+border-radius:10px;
 }
-
-.btn:hover{
-transform:scale(1.1);
-box-shadow:0 0 50px #ff3c00;
-}
-
-/* SECTION */
 
 .section{
-padding:120px 20px;
+padding:60px 20px;
 max-width:1000px;
 margin:auto;
-text-align:center;
-opacity:0;
-transform:translateY(80px);
-transition:.8s;
-}
-
-.section.show{
-opacity:1;
-transform:translateY(0);
 }
 
 h2{
-font-size:38px;
-margin-bottom:30px;
-text-shadow:0 0 20px #ff3c00;
+color:#ff8c00;
 }
 
-/* GRID */
-
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:25px;
-}
-
-.card{
+.tokenomics div{
 background:#111;
-padding:30px;
-border-radius:20px;
-border:1px solid rgba(255,60,0,.5);
-box-shadow:0 0 20px rgba(255,60,0,.4);
-transition:.3s;
+padding:15px;
+margin:10px 0;
+border-radius:8px;
 }
 
-.card:hover{
-transform:translateY(-10px);
-box-shadow:0 0 40px rgba(255,60,0,.9);
+.roadmap div{
+margin:15px 0;
 }
 
-/* FOOTER */
+.stats{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+gap:15px;
+}
+
+.stat{
+background:#111;
+padding:20px;
+text-align:center;
+border-radius:10px;
+}
+
+.meme-feed{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:10px;
+}
+
+.meme{
+background:#111;
+padding:15px;
+border-radius:10px;
+}
 
 footer{
-padding:50px;
 text-align:center;
-opacity:.5;
+padding:30px;
+background:#050505;
+margin-top:40px;
 }
 
-/* MOBILE */
-
-@media(max-width:768px){
-
-.hero h1{
-font-size:30px;
+.sticky-buy{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#ff0080;
+padding:18px 30px;
+border-radius:50px;
+font-weight:bold;
+box-shadow:0 0 15px #ff0080;
 }
 
-.logo{
-width:300px;
+.sticky-buy a{
+color:white;
+text-decoration:none;
 }
-
-nav{
-padding:15px;
-}
-
-}
-
 </style>
 </head>
 
 <body>
 
-<div id="loader">
-<div class="loaderText">REBORNX LOADING...</div>
+<header>
+<h1>⚡ REBORNX</h1>
+<div class="tagline">
+Born in Chaos. Pumped by Believers.
 </div>
 
-<nav id="nav">
-<div>REBORNX</div>
-<div>
-<a href="#about">About</a>
-<a href="#token">Tokenomics</a>
-<a href="#road">Roadmap</a>
+<div class="cta">
+<a href="https://t.me/Rebornx_sol">Join Telegram</a>
+<a href="https://x.com/RebornxSol">Follow X</a>
 </div>
-</nav>
+</header>
 
-<div class="hero">
-
-<img src="rebornx-logo.png" class="logo">
-
-<h1>The Meme Rebirth Begins 🔥</h1>
-<p>Community Driven • Viral Energy • Solana Powered</p>
-
-<a class="btn" href="https://t.me/Rebornx_sol">JOIN COMMUNITY</a>
-
-</div>
-
-<div class="section" id="about">
-
-<h2>⚡ What is REBORNX</h2>
-
+<div class="section">
+<h2>⚡ What is REBORNX?</h2>
 <p>
-REBORNX is a viral meme movement built for speed, hype and unstoppable community growth.
+REBORNX is not just a meme coin.  
+It’s a viral crypto movement built by degens and powered by unstoppable community energy.
 </p>
-
 </div>
 
-<div class="section" id="token">
-
+<div class="section">
 <h2>💰 Tokenomics</h2>
 
-<div class="grid">
-<div class="card">Supply 1B</div>
-<div class="card">Liquidity 90%</div>
-<div class="card">Tax 0%</div>
-<div class="card">Burn Coming</div>
+<div class="tokenomics">
+<div>Supply — 1,000,000,000</div>
+<div>Liquidity — 40% 🔒 Locked</div>
+<div>Marketing — 25%</div>
+<div>Rewards — 20%</div>
+<div>Burn — 15%</div>
+<div>Fair Launch ✅</div>
+<div>No Dev Dump ✅</div>
 </div>
 
 </div>
 
-<div class="section" id="road">
+<div class="section">
+<h2>🗺️ Viral Roadmap</h2>
 
-<h2>🚀 Roadmap</h2>
-
-<div class="grid">
-<div class="card">Launch</div>
-<div class="card">Viral Marketing</div>
-<div class="card">DEX Growth</div>
-<div class="card">CEX Future</div>
+<div class="roadmap">
+<div>🔥 Phase 1 — Pump.fun Domination</div>
+<div>🚀 Phase 2 — Twitter Raid Army</div>
+<div>🌍 Phase 3 — Influencer Takeover</div>
+<div>💎 Phase 4 — CEX Dream</div>
 </div>
+
+</div>
+
+<div class="section">
+<h2>👥 Community Stats</h2>
+
+<div class="stats">
+<div class="stat">Holders<br><b>1200+</b></div>
+<div class="stat">Telegram<br><b>3.8K</b></div>
+<div class="stat">X<br><b>5K+</b></div>
+<div class="stat">Volume<br><b>$120K</b></div>
+</div>
+
+</div>
+
+<div class="section">
+<h2>🔥 Viral Meme Feed</h2>
+
+<div class="meme-feed">
+<div class="meme">Buy high sell low club 😂</div>
+<div class="meme">Diamond hands until -90%</div>
+<div class="meme">Bullish on vibes only</div>
+<div class="meme">Whales watching silently</div>
+<div class="meme">Crypto Twitter never sleeps</div>
+<div class="meme">Waiting for Binance listing</div>
+<div class="meme">Pump.fun addicts online</div>
+<div class="meme">Liquidity vanished magically</div>
+</div>
+
+</div>
+
+<div class="section">
+<h2>📈 Live Chart</h2>
+
+<iframe 
+src="https://dexscreener.com/solana" 
+width="100%" 
+height="500" 
+frameborder="0">
+</iframe>
 
 </div>
 
 <footer>
-REBORNX © 2026
+⚡ Meme Today. Movement Tomorrow.  
+<br><br>
+© 2026 REBORNX
 </footer>
 
-<script>
-
-/* loader */
-
-window.onload=()=>{
-setTimeout(()=>{
-document.getElementById("loader").style.display="none"
-},1500)
-}
-
-/* navbar shrink */
-
-window.addEventListener("scroll",()=>{
-if(window.scrollY>100){
-nav.classList.add("shrink")
-}else{
-nav.classList.remove("shrink")
-}
-})
-
-/* scroll reveal */
-
-let sections=document.querySelectorAll(".section")
-
-window.addEventListener("scroll",()=>{
-sections.forEach(sec=>{
-let pos=sec.getBoundingClientRect().top
-if(pos<window.innerHeight-100){
-sec.classList.add("show")
-}
-})
-})
-
-</script>
+<div class="sticky-buy">
+<a href="#">🚀 BUY NOW</a>
+</div>
 
 </body>
 </html>
