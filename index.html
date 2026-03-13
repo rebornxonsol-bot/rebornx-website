@@ -1,333 +1,335 @@
-<!DOCTYPE html>  <html lang="en">    <head>    
-<meta charset="UTF-8">    
-<meta name="viewport" content="width=device-width, initial-scale=1.0">    
-<title>REBORNX</title>  <style>    body{
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>REBORNX</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
 margin:0;
-font-family:Arial, sans-serif;
-background:#07070a;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth;
+}
+
+body{
+font-family:'Orbitron',sans-serif;
+background:#050507;
 color:white;
-text-align:center;
 overflow-x:hidden;
 }
 
-header{
-position:relative;
-height:100vh;
+/* LOADER */
+
+#loader{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:#000;
 display:flex;
-flex-direction:column;
-justify-content:flex-start;
 align-items:center;
-padding-top:80px;
-overflow:hidden;
+justify-content:center;
+z-index:9999;
 }
 
-header::before{
-content:"";
-position:absolute;
-width:900px;
-height:900px;
-background:radial-gradient(circle,#ff2a00 0%,transparent 60%);
-top:50%;
-left:50%;
-transform:translate(-50%,-50%);
-animation:pulse 5s infinite;
-opacity:.8;
-z-index:0;
+.loaderText{
+font-size:30px;
+color:#ff3c00;
+animation:pulse 1s infinite;
 }
 
 @keyframes pulse{
-0%{transform:translate(-50%,-50%) scale(.8)}
-50%{transform:translate(-50%,-50%) scale(1.3)}
-100%{transform:translate(-50%,-50%) scale(.8)}
-}
-
-.topTag{
-position:relative;
-z-index:2;
-font-size:14px;
-letter-spacing:4px;
-opacity:.7;
-margin-bottom:12px;
-text-transform:uppercase;
-}
-
-.topLine{
-width:120px;
-height:3px;
-background:#ff3c00;
-box-shadow:0 0 15px #ff3c00;
-margin-bottom:30px;
-animation:pulseLine 2s infinite;
-z-index:2;
-}
-
-@keyframes pulseLine{
-0%{opacity:.4}
+0%{opacity:.3}
 50%{opacity:1}
-100%{opacity:.4}
+100%{opacity:.3}
+}
+
+/* NAVBAR */
+
+nav{
+position:fixed;
+top:0;
+width:100%;
+padding:20px 40px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:rgba(0,0,0,0.6);
+backdrop-filter:blur(10px);
+transition:.4s;
+z-index:100;
+}
+
+nav.shrink{
+padding:10px 40px;
+background:rgba(0,0,0,0.9);
+}
+
+nav a{
+color:white;
+text-decoration:none;
+margin-left:20px;
+font-weight:bold;
+}
+
+nav a:hover{
+color:#ff3c00;
+}
+
+/* HERO */
+
+.hero{
+height:100vh;
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+text-align:center;
+padding:20px;
+position:relative;
+}
+
+.hero::before{
+content:"";
+position:absolute;
+width:800px;
+height:800px;
+background:radial-gradient(circle,#ff3c00 0%,transparent 60%);
+animation:rotateGlow 12s linear infinite;
+opacity:.6;
+}
+
+@keyframes rotateGlow{
+0%{transform:rotate(0)}
+100%{transform:rotate(360deg)}
 }
 
 .logo{
 width:420px;
 max-width:90%;
-margin-bottom:20px;
-filter:drop-shadow(0 0 60px #ff3c00);
-animation:float 6s ease-in-out infinite;
-position:relative;
 z-index:2;
+filter:drop-shadow(0 0 40px #ff3c00);
+animation:float 6s ease-in-out infinite;
 }
 
 @keyframes float{
 0%{transform:translateY(0)}
-50%{transform:translateY(-20px)}
+50%{transform:translateY(-25px)}
 100%{transform:translateY(0)}
 }
 
-.story{
-max-width:420px;
-line-height:1.6;
-font-size:18px;
-opacity:.85;
-margin-bottom:25px;
-text-shadow:0 0 10px rgba(255,60,0,.6);
-animation:fadeIn 2s ease;
-position:relative;
+.hero h1{
+margin-top:20px;
+font-size:42px;
 z-index:2;
+text-shadow:0 0 20px #ff3c00;
 }
 
-@keyframes fadeIn{
-from{opacity:0; transform:translateY(20px)}
-to{opacity:.85; transform:translateY(0)}
-}
-
-.tag{
+.hero p{
 opacity:.8;
-font-size:20px;
-position:relative;
-z-index:2;
-}
-
-.btnWrap{
-margin-top:40px;
-position:relative;
+margin-top:10px;
 z-index:2;
 }
 
 .btn{
-display:inline-block;
-margin:12px;
-padding:16px 38px;
+margin-top:30px;
+padding:16px 40px;
 border-radius:40px;
+background:linear-gradient(45deg,#ff3c00,#ff0000);
+color:white;
 text-decoration:none;
 font-weight:bold;
-font-size:17px;
-transition:.3s;
-}
-
-.tg{
-background:#ff3c00;
 box-shadow:0 0 25px #ff3c00;
-color:white;
+transition:.3s;
+z-index:2;
 }
 
-.xbtn{
-border:2px solid #ff3c00;
-color:white;
+.btn:hover{
+transform:scale(1.1);
+box-shadow:0 0 50px #ff3c00;
 }
 
-.about{
-max-width:700px;
-margin:120px auto 0;
-padding:0 20px;
-font-size:18px;
-line-height:1.7;
-opacity:.9;
+/* SECTION */
+
+.section{
+padding:120px 20px;
+max-width:1000px;
+margin:auto;
+text-align:center;
+opacity:0;
+transform:translateY(80px);
+transition:.8s;
 }
 
-.about h2{
-font-size:34px;
-margin-bottom:25px;
+.section.show{
+opacity:1;
+transform:translateY(0);
+}
+
+h2{
+font-size:38px;
+margin-bottom:30px;
 text-shadow:0 0 20px #ff3c00;
 }
 
-.liveChart{
-margin-top:80px;
-padding:0 20px;
-}
-
-.section{
-padding:80px 20px;
-}
+/* GRID */
 
 .grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
 gap:25px;
-margin-top:40px;
 }
 
 .card{
-background:#111118;
-padding:26px;
+background:#111;
+padding:30px;
 border-radius:20px;
+border:1px solid rgba(255,60,0,.5);
+box-shadow:0 0 20px rgba(255,60,0,.4);
+transition:.3s;
 }
 
-.memeBox{
-position:relative;
-height:110px;
-max-width:540px;
-margin:50px auto;
-display:flex;
-align-items:center;
-justify-content:center;
+.card:hover{
+transform:translateY(-10px);
+box-shadow:0 0 40px rgba(255,60,0,.9);
 }
 
-.meme{
-position:absolute;
-left:50%;
-top:50%;
-transform:translate(-50%,40px);
-width:100%;
-background:rgba(20,20,30,0.6);
-backdrop-filter:blur(10px);
-padding:26px;
-border-radius:20px;
-opacity:0;
-transition:.7s;
-border:1px solid rgba(255,60,0,0.4);
-font-size:18px;
-}
-
-.meme.active{
-opacity:1;
-transform:translate(-50%, -50%);
-}
-
-.mystery{
-padding:120px 20px;
-background:linear-gradient(180deg,#000,#07070a);
-}
-
-.mysteryPhoto{
-width:220px;
-max-width:80%;
-margin-top:30px;
-animation:floatMystery 6s ease-in-out infinite;
-}
-
-@keyframes floatMystery{
-0%{transform:translateY(0)}
-50%{transform:translateY(-18px)}
-100%{transform:translateY(0)}
-}
+/* FOOTER */
 
 footer{
 padding:50px;
+text-align:center;
 opacity:.5;
-font-size:14px;
 }
 
-</style>  </head>  <body>  <header>  <div class="topTag">⚡ VIRAL MEME MOVEMENT</div>
+/* MOBILE */
 
-<div class="topLine"></div>  <img src="rebornx-logo.png" class="logo">  <div class="story">    
-REBORNX is not just a meme.<br>    
-It’s a movement born from chaos.<br>    
-Built by degens. Powered by community.<br>    
-The next viral wave is loading…    
-</div>  <div class="tag">Crypto Memes • Alpha • Community</div>  <div class="btnWrap">    
-<a href="https://t.me/Rebornx_sol" class="btn tg">Join Telegram</a>    
-<a href="https://x.com/RebornxSol" class="btn xbtn">Follow on X</a>    
-</div>  </header>  <div class="about">    
-<h2>⚡ What is REBORNX?</h2>    
-<p>    
-REBORNX is a next-generation meme movement focused on viral growth, alpha signals and unstoppable community energy.    
-</p>    
-<p>    
-From chaos to rebirth — we are building the next wave of crypto culture.    
-</p>    
-</div>  <div class="liveChart">    
-<h2>📈 Live Crypto Market</h2>  <div class="tradingview-widget-container">    
-<div id="tradingview_chart"></div>  <script src="https://s3.tradingview.com/tv.js"></script>  <script>    
-new TradingView.widget({    
-"width": "100%",    
-"height": 500,    
-"symbol": "BINANCE:BTCUSDT",    
-"interval": "30",    
-"timezone": "Asia/Kolkata",    
-"theme": "dark",    
-"style": "1",    
-"locale": "en",    
-"container_id": "tradingview_chart"    
-});    
-</script>  </div>    
-</div>  <!-- 🚀 ROADMAP -->  <div class="section">    
-<h2>🗺️ Roadmap</h2>    
-<div class="grid">    
-<div class="card">🔥 Phase 1 — Token Launch</div>    
-<div class="card">🚀 Phase 2 — Viral Growth</div>    
-<div class="card">🌍 Phase 3 — Expansion</div>    
-<div class="card">♻️ Phase 4 — Rebirth</div>    
-</div>    
-</div>  <!-- 💰 TOKENOMICS -->  <div class="section">    
-<h2>💰 Tokenomics</h2>    
-<div class="grid">    
-<div class="card">Supply — 1B</div>    
-<div class="card">Liquidity — 40%</div>    
-<div class="card">Marketing — 25%</div>    
-<div class="card">Rewards — 20%</div>    
-<div class="card">Burn — 15%</div>    
-</div>    
-</div>  <!-- 👥 COMMUNITY -->  <div class="section">    
-<h2>👥 Community Stats</h2>    
-<div class="grid">    
-<div class="card">Holders — 1200+</div>    
-<div class="card">Telegram — 3.8K</div>    
-<div class="card">X — 5K+</div>    
-<div class="card">Volume — $120K</div>    
-</div>    
-</div>  <div class="section">    
-<h2>🔥 Viral Meme Feed</h2>  <div class="memeBox">    
-<div class="meme active">Solana when gas = zero 🚀</div>    
-<div class="meme">Buy high sell low club 😂</div>    
-<div class="meme">Diamond hands vs paper hands 💎</div>    
-<div class="meme">Waiting for perfect entry forever 🤡</div>    
-<div class="meme">Bull run prediction every Monday</div>    
-<div class="meme">Portfolio red but vibes green</div>    
-<div class="meme">Influencer calls top signal</div>    
-<div class="meme">Airdrop hunters never sleep</div>    
-<div class="meme">Liquidity vanished magically</div>    
-<div class="meme">New narrative every week</div>    
-<div class="meme">Diamond hands until -90%</div>    
-<div class="meme">Chart looks bullish if zoomed out</div>    
-<div class="meme">Pump.fun addicts online</div>    
-<div class="meme">Whales watching silently</div>    
-<div class="meme">Launch day chaos incoming</div>    
-<div class="meme">Crypto Twitter never sleeps</div>    
-<div class="meme">Bullish on vibes only</div>    
-<div class="meme">Waiting for Binance listing</div>    
-<div class="meme">Early believers always win</div>    
-<div class="meme">Liquidity tsunami coming</div>    
-</div>  </div>  <div class="section">    
-<h2>📰 Market Mood</h2>    
-<div class="grid">    
-<div class="card">Memecoin season loading…</div>    
-<div class="card">Community > Utility</div>    
-<div class="card">Whales are watching</div>    
-</div>    
-</div>  <div class="mystery">    
-<h2>🌌 Something is Building</h2>    
-<img src="mystery.png" class="mysteryPhoto">    
-<p>Only the early will understand.</p>    
-</div>  <footer>    
-© 2026 REBORNX    
-</footer>  <script>    
-let memes=document.querySelectorAll(".meme")    
-let i=0    
-setInterval(()=>{    
-memes[i].classList.remove("active")    
-i++    
-if(i>=memes.length)i=0    
-memes[i].classList.add("active")    
-},2000)    
-</script>  </body>    
-</html> 
+@media(max-width:768px){
+
+.hero h1{
+font-size:30px;
+}
+
+.logo{
+width:300px;
+}
+
+nav{
+padding:15px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div id="loader">
+<div class="loaderText">REBORNX LOADING...</div>
+</div>
+
+<nav id="nav">
+<div>REBORNX</div>
+<div>
+<a href="#about">About</a>
+<a href="#token">Tokenomics</a>
+<a href="#road">Roadmap</a>
+</div>
+</nav>
+
+<div class="hero">
+
+<img src="rebornx-logo.png" class="logo">
+
+<h1>The Meme Rebirth Begins 🔥</h1>
+<p>Community Driven • Viral Energy • Solana Powered</p>
+
+<a class="btn" href="https://t.me/Rebornx_sol">JOIN COMMUNITY</a>
+
+</div>
+
+<div class="section" id="about">
+
+<h2>⚡ What is REBORNX</h2>
+
+<p>
+REBORNX is a viral meme movement built for speed, hype and unstoppable community growth.
+</p>
+
+</div>
+
+<div class="section" id="token">
+
+<h2>💰 Tokenomics</h2>
+
+<div class="grid">
+<div class="card">Supply 1B</div>
+<div class="card">Liquidity 90%</div>
+<div class="card">Tax 0%</div>
+<div class="card">Burn Coming</div>
+</div>
+
+</div>
+
+<div class="section" id="road">
+
+<h2>🚀 Roadmap</h2>
+
+<div class="grid">
+<div class="card">Launch</div>
+<div class="card">Viral Marketing</div>
+<div class="card">DEX Growth</div>
+<div class="card">CEX Future</div>
+</div>
+
+</div>
+
+<footer>
+REBORNX © 2026
+</footer>
+
+<script>
+
+/* loader */
+
+window.onload=()=>{
+setTimeout(()=>{
+document.getElementById("loader").style.display="none"
+},1500)
+}
+
+/* navbar shrink */
+
+window.addEventListener("scroll",()=>{
+if(window.scrollY>100){
+nav.classList.add("shrink")
+}else{
+nav.classList.remove("shrink")
+}
+})
+
+/* scroll reveal */
+
+let sections=document.querySelectorAll(".section")
+
+window.addEventListener("scroll",()=>{
+sections.forEach(sec=>{
+let pos=sec.getBoundingClientRect().top
+if(pos<window.innerHeight-100){
+sec.classList.add("show")
+}
+})
+})
+
+</script>
+
+</body>
+</html>
