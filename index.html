@@ -5,30 +5,44 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>REBORNX</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
 
 <style>
-
 body{
 margin:0;
-background:#050507;
-color:white;
 font-family:Orbitron, sans-serif;
+background:#030305;
+color:white;
+overflow-x:hidden;
 }
 
-.nav{
+/* animated background */
+.bg{
+position:fixed;
+width:100%;
+height:100%;
+background:radial-gradient(circle at 20% 30%, #ff3c0020, transparent),
+radial-gradient(circle at 80% 70%, #ff000020, transparent);
+animation:move 10s infinite alternate;
+z-index:-1;
+}
+@keyframes move{
+from{transform:scale(1)}
+to{transform:scale(1.2)}
+}
+
+nav{
 display:flex;
 justify-content:space-between;
 padding:20px 40px;
-background:#0a0a0f;
-position:sticky;
-top:0;
+background:#00000080;
+backdrop-filter:blur(10px);
 }
 
 .logo{
-font-size:24px;
-letter-spacing:4px;
 color:#ff3c00;
+letter-spacing:6px;
+font-size:22px;
 }
 
 .hero{
@@ -38,12 +52,12 @@ flex-direction:column;
 justify-content:center;
 align-items:center;
 text-align:center;
-background: radial-gradient(circle,#ff3c0020,transparent 70%);
 }
 
 .hero h1{
-font-size:70px;
+font-size:80px;
 margin:0;
+text-shadow:0 0 20px #ff3c00;
 }
 
 .hero p{
@@ -51,62 +65,72 @@ opacity:0.7;
 margin-top:10px;
 }
 
-.btn{
+.btns{
 margin-top:30px;
-padding:14px 32px;
-background:#ff3c00;
+}
+
+.btn{
+padding:14px 30px;
+margin:10px;
 border-radius:40px;
+background:#ff3c00;
 text-decoration:none;
 color:white;
 font-weight:bold;
 }
 
-.section{
-padding:80px 40px;
-text-align:center;
+.glass{
+background:#ffffff08;
+border:1px solid #ffffff10;
+backdrop-filter:blur(20px);
+padding:30px;
+border-radius:20px;
+margin:40px;
 }
 
 .grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:25px;
-margin-top:40px;
+grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+gap:20px;
 }
 
 .card{
-background:#0f0f16;
-padding:30px;
-border-radius:20px;
-transition:0.3s;
+background:#0a0a12;
+padding:25px;
+border-radius:15px;
+transition:.3s;
 }
 
 .card:hover{
-transform:translateY(-10px);
+transform:translateY(-8px);
 box-shadow:0 0 20px #ff3c00aa;
 }
 
 .mystery{
-padding:120px 20px;
-background:linear-gradient(180deg,#050507,#000);
 text-align:center;
+padding:100px 20px;
 }
 
 .rx{
-font-size:60px;
+font-size:70px;
 letter-spacing:12px;
 color:#ff3c00;
 animation:glow 2s infinite alternate;
 }
-
 @keyframes glow{
-from{opacity:0.4}
+from{opacity:.4}
 to{opacity:1}
 }
 
-.footer{
-padding:40px;
+.count{
+font-size:28px;
+margin-top:20px;
+}
+
+footer{
 text-align:center;
-opacity:0.5;
+padding:30px;
+opacity:.5;
 }
 
 </style>
@@ -114,51 +138,66 @@ opacity:0.5;
 
 <body>
 
-<div class="nav">
+<div class="bg"></div>
+
+<nav>
 <div class="logo">REBORNX</div>
-<div>Media • Memes • Community</div>
-</div>
+<div>Media • Memes • Alpha</div>
+</nav>
 
 <div class="hero">
 <h1>REBORNX</h1>
-<p>Building a powerful crypto community before the storm.</p>
+<p>Community before hype. Vision before launch.</p>
+
+<div class="btns">
 <a class="btn" href="#">Join Telegram</a>
+<a class="btn" href="#">Follow X</a>
 </div>
 
-<div class="section">
-<h2>🔥 Crypto Meme Feed</h2>
+</div>
+
+<div class="glass">
+<h2 align="center">🔥 Meme Energy</h2>
 <div class="grid">
 <div class="card">Waiting for perfect entry 😂</div>
-<div class="card">Diamond hands activated 💎</div>
-<div class="card">Sold early → Pain 😭</div>
-<div class="card">Solana speed mode 🚀</div>
+<div class="card">Diamond hands mode 💎</div>
+<div class="card">Sold early pain 😭</div>
+<div class="card">Solana speed 🚀</div>
 </div>
 </div>
 
-<div class="section">
-<h2>📰 Market Signals</h2>
+<div class="glass">
+<h2 align="center">📊 Market Pulse</h2>
 <div class="grid">
-<div class="card">Memecoin season loading</div>
-<div class="card">Smart communities growing</div>
-<div class="card">Liquidity rotating fast</div>
+<div class="card">Memecoin cycle loading</div>
+<div class="card">Communities getting stronger</div>
+<div class="card">Liquidity rotating</div>
 </div>
-</div>
-
-<div class="section">
-<h2>👥 Community Power</h2>
-<p>Early believers gathering across platforms.</p>
-<p>Telegram • X • Dex</p>
 </div>
 
 <div class="mystery">
-<h2>🌌 A New Era is Forming</h2>
+<h2>🌌 Something is Reborn</h2>
 <div class="rx">RX</div>
-<p>Only the early will recognize the signs.</p>
+<div class="count" id="count"></div>
 </div>
 
-<div class="footer">
+<footer>
 © 2026 REBORNX
-</div>
+</footer>
+
+<script>
+// simple countdown demo
+let target = new Date().getTime() + 86400000 * 7;
+setInterval(()=>{
+let now = new Date().getTime();
+let diff = target - now;
+let d = Math.floor(diff/(1000*60*60*24));
+let h = Math.floor((diff%(1000*60*60*24))/(1000*60*60));
+let m = Math.floor((diff%(1000*60*60))/(1000*60));
+document.getElementById("count").innerHTML =
+"Launch signal in "+d+"d "+h+"h "+m+"m";
+},1000);
+</script>
 
 </body>
 </html>
