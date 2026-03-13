@@ -47,6 +47,34 @@ z-index:0;
 100%{transform:translate(-50%,-50%) scale(.8)}
 }
 
+/* ⭐ TOP TAG */
+
+.topTag{
+position:relative;
+z-index:2;
+font-size:14px;
+letter-spacing:4px;
+opacity:.7;
+margin-bottom:12px;
+text-transform:uppercase;
+}
+
+.topLine{
+width:120px;
+height:3px;
+background:#ff3c00;
+box-shadow:0 0 15px #ff3c00;
+margin-bottom:30px;
+animation:pulseLine 2s infinite;
+z-index:2;
+}
+
+@keyframes pulseLine{
+0%{opacity:.4}
+50%{opacity:1}
+100%{opacity:.4}
+}
+
 .logo{
 width:420px;
 max-width:90%;
@@ -214,6 +242,9 @@ font-size:14px;
 
 <header>
 
+<div class="topTag">⚡ VIRAL MEME MOVEMENT</div>
+<div class="topLine"></div>
+
 <img src="rebornx-logo.png" class="logo">
 
 <div class="story">
@@ -242,7 +273,6 @@ From chaos to rebirth — we are building the next wave of crypto culture.
 </p>
 </div>
 
-<!-- ⭐ REAL LIVE CHART ADDED -->
 <div class="liveChart">
 <h2>📈 Live Crypto Market</h2>
 
