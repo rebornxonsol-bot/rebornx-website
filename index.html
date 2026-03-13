@@ -1,49 +1,33 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>REBORNX</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700;900&display=swap" rel="stylesheet">
 
 <style>
 
 body{
 margin:0;
-font-family:Inter;
-background:#050505;
+font-family:Arial,Helvetica,sans-serif;
+background:linear-gradient(180deg,#120000,#000);
 color:white;
-overflow-x:hidden;
 }
 
-/* animated background */
-
-.bg{
-position:fixed;
-width:100%;
-height:100%;
-background:
-radial-gradient(circle at 20% 30%,#ff004015,transparent),
-radial-gradient(circle at 80% 70%,#ff880015,transparent),
-#050505;
-z-index:-1;
+.section{
+padding:70px 24px;
 }
-
-/* hero */
 
 .hero{
 min-height:100vh;
 display:flex;
 flex-direction:column;
 justify-content:center;
-padding:0 25px;
 }
 
-.hero h1{
-font-size:55px;
+h1{
+font-size:56px;
 line-height:1.05;
-font-weight:900;
+margin:0;
 }
 
 .gradient{
@@ -62,83 +46,59 @@ max-width:520px;
 .cta{
 margin-top:35px;
 display:flex;
-flex-wrap:wrap;
 gap:14px;
+flex-wrap:wrap;
 }
 
 .btn{
-padding:14px 28px;
+padding:14px 26px;
 background:linear-gradient(90deg,#ff3c00,#ff0080);
 border-radius:999px;
 text-decoration:none;
 color:white;
 font-weight:600;
-transition:.3s;
-}
-
-.btn:hover{
-transform:scale(1.05);
-}
-
-/* section */
-
-.section{
-padding:80px 25px;
-max-width:1100px;
-margin:auto;
 }
 
 .title{
-font-size:32px;
-font-weight:800;
-margin-bottom:30px;
+font-size:38px;
+margin-bottom:20px;
 }
 
-/* meme grid */
+.memeBox{
+position:relative;
+height:90px;
+overflow:hidden;
+}
 
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
+.meme{
+position:absolute;
+width:100%;
+background:#0b0b0b;
+padding:22px;
+border-radius:14px;
+border:1px solid #ffffff15;
+opacity:0;
+transform:translateY(40px);
+transition:.6s;
+}
+
+.meme.active{
+opacity:1;
+transform:translateY(0);
 }
 
 .card{
 background:#0b0b0b;
-padding:20px;
-border-radius:16px;
-border:1px solid #ffffff10;
-transition:.3s;
+padding:22px;
+border-radius:14px;
+border:1px solid #ffffff15;
+margin-bottom:14px;
 }
 
-.card:hover{
-transform:translateY(-6px);
-border:1px solid #ff008040;
-}
-
-/* mystery */
-
-.mystery{
+footer{
 text-align:center;
-padding:120px 25px;
-}
-
-.mystery h2{
-font-size:40px;
-font-weight:900;
-background:linear-gradient(90deg,#ff3c00,#ff0080);
--webkit-background-clip:text;
--webkit-text-fill-color:transparent;
-}
-
-.footer{
 padding:40px;
-text-align:center;
 opacity:.5;
-font-size:14px;
-}
-
-@media(min-width:700px){
-.hero h1{font-size:90px}
 }
 
 </style>
@@ -146,11 +106,7 @@ font-size:14px;
 
 <body>
 
-<div class="bg"></div>
-
-<!-- HERO -->
-
-<div class="hero">
+<div class="section hero">
 
 <h1>
 <span class="gradient">REBORN</span><br>
@@ -159,60 +115,60 @@ THE NEXT WAVE
 
 <p class="sub">
 A new crypto media movement is forming quietly.
-Memes • Alpha • Culture • Community
+Memes, alpha, culture and community — before the spotlight.
 </p>
 
 <div class="cta">
-<a class="btn" href="#">Join Telegram</a>
+<a class="btn" href="#">Join Community</a>
 <a class="btn" href="#">Follow X</a>
 </div>
 
 </div>
 
-<!-- MEMES -->
-
 <div class="section">
+
 <div class="title">🔥 Latest Memes</div>
 
-<div class="grid">
-
-<div class="card">Solana when gas = zero 🚀</div>
-<div class="card">Buy high sell low club 😂</div>
-<div class="card">Diamond hands vs paper hands 💎</div>
-<div class="card">Waiting for perfect entry forever 🤡</div>
-
-</div>
+<div class="memeBox">
+<div class="meme active">Solana when gas = zero 🚀</div>
+<div class="meme">Buy high sell low club 😂</div>
+<div class="meme">Diamond hands vs paper hands 💎</div>
+<div class="meme">Waiting for perfect entry forever 🤡</div>
 </div>
 
-<!-- ALPHA -->
+</div>
 
 <div class="section">
-<div class="title">📊 Market Alpha</div>
 
-<div class="grid">
+<div class="title">📊 Market Alpha</div>
 
 <div class="card">SOL ecosystem heating up</div>
 <div class="card">Meme coin season signal forming</div>
 <div class="card">Liquidity rotation incoming</div>
 
 </div>
-</div>
 
-<!-- MYSTERY -->
+<footer>
+REBORNX MEDIA © 2026
+</footer>
 
-<div class="mystery">
+<script>
 
-<h2>Something Powerful Is Coming</h2>
+let memes = document.querySelectorAll(".meme")
+let i = 0
 
-<p style="opacity:.6;margin-top:10px">
-Early community will understand first.
-</p>
+setInterval(()=>{
 
-</div>
+memes[i].classList.remove("active")
 
-<div class="footer">
-© 2026 REBORNX — Community Driven Crypto Culture
-</div>
+i++
+if(i>=memes.length) i = 0
+
+memes[i].classList.add("active")
+
+},2500)
+
+</script>
 
 </body>
 </html>
