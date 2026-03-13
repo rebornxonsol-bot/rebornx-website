@@ -1,35 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>REBORNX</title>
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>REBORNX MEME</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
 
 <style>
 
-*{box-sizing:border-box}
-
 body{
 margin:0;
-font-family:'Space Grotesk',sans-serif;
-background:#07070a;
+font-family:Inter,sans-serif;
+background:#0b0b0f;
 color:white;
 }
 
 /* NAV */
 
 nav{
-padding:22px 8%;
+padding:20px 6%;
 display:flex;
 justify-content:space-between;
 align-items:center;
+background:#111;
+position:sticky;
+top:0;
 }
 
 .logo{
-font-size:24px;
-font-weight:700;
-letter-spacing:3px;
+font-weight:900;
+font-size:22px;
 background:linear-gradient(90deg,#ff3c00,#ff00aa);
 -webkit-background-clip:text;
 -webkit-text-fill-color:transparent;
@@ -38,103 +38,68 @@ background:linear-gradient(90deg,#ff3c00,#ff00aa);
 /* HERO */
 
 .hero{
-padding:140px 8% 120px;
-max-width:1200px;
+padding:80px 6%;
+text-align:center;
 }
 
 .hero h1{
-font-size:80px;
-line-height:1;
+font-size:64px;
 margin:0;
 }
 
-.grad{
-background:linear-gradient(90deg,#ff3c00,#ff00aa);
--webkit-background-clip:text;
--webkit-text-fill-color:transparent;
-}
-
 .hero p{
-margin-top:25px;
 opacity:.7;
-font-size:20px;
-max-width:520px;
-}
-
-.btns{
-margin-top:40px;
-display:flex;
-gap:16px;
-flex-wrap:wrap;
+margin-top:10px;
 }
 
 .btn{
-padding:16px 34px;
-border-radius:12px;
+margin-top:25px;
+display:inline-block;
+padding:12px 28px;
 background:linear-gradient(90deg,#ff3c00,#ff00aa);
+border-radius:999px;
 text-decoration:none;
 color:white;
 font-weight:700;
 }
 
-/* SECTIONS */
+/* MEME GRID */
 
-.section{
-padding:120px 8%;
-max-width:1200px;
-}
-
-.section h2{
-font-size:48px;
-margin-bottom:40px;
-}
-
-.cards{
+.grid{
+padding:40px 6%;
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:25px;
-}
-
-.card{
-background:#111118;
-padding:30px;
-border-radius:20px;
-border:1px solid #ffffff10;
-font-size:18px;
-transition:.3s;
-}
-
-.card:hover{
-transform:translateY(-10px);
-border:1px solid #ff00aa50;
-}
-
-/* TOKENOMICS */
-
-.token{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
 gap:20px;
 }
 
-.token div{
-background:#111118;
-padding:30px;
-border-radius:16px;
-text-align:center;
-font-size:22px;
+.meme{
+background:#15151c;
+border-radius:18px;
+overflow:hidden;
+transition:.3s;
+}
+
+.meme:hover{
+transform:translateY(-6px);
+}
+
+.meme img{
+width:100%;
+height:220px;
+object-fit:cover;
+}
+
+.meme p{
+padding:14px;
+font-size:15px;
 }
 
 /* FOOTER */
 
 footer{
-padding:80px;
+padding:50px;
 text-align:center;
 opacity:.4;
-}
-
-@media(max-width:700px){
-.hero h1{font-size:48px}
 }
 
 </style>
@@ -144,59 +109,51 @@ opacity:.4;
 
 <nav>
 <div class="logo">REBORNX</div>
-<div>Community • Culture • Alpha</div>
+<div>Meme Portal</div>
 </nav>
 
 <div class="hero">
-<h1>
-<span class="grad">REBORN</span><br>
-A NEW CRYPTO ERA
-</h1>
-
-<p>
-A media driven crypto movement focused on memes, alpha and community.
-Built silently before the spotlight.
-</p>
-
-<div class="btns">
+<h1>Crypto Meme Culture</h1>
+<p>Daily viral memes • alpha vibes • community energy</p>
 <a class="btn" href="#">Join Telegram</a>
-<a class="btn" href="#">Follow X</a>
-</div>
 </div>
 
-<div class="section">
-<h2>🔥 Culture Engine</h2>
+<div class="grid">
 
-<div class="cards">
-<div class="card">Viral crypto meme content</div>
-<div class="card">Community engagement systems</div>
-<div class="card">Narrative driven growth</div>
-</div>
+<div class="meme">
+<img src="https://picsum.photos/400/300?1">
+<p>When you sell before pump 😭</p>
 </div>
 
-<div class="section">
-<h2>📊 Market Alpha</h2>
-
-<div class="cards">
-<div class="card">Early trend discovery</div>
-<div class="card">Liquidity cycle awareness</div>
-<div class="card">Sentiment tracking</div>
-</div>
+<div class="meme">
+<img src="https://picsum.photos/400/300?2">
+<p>Diamond hands activated 💎</p>
 </div>
 
-<div class="section">
-<h2>💰 Tokenomics</h2>
-
-<div class="token">
-<div>Supply 1B</div>
-<div>Community 70%</div>
-<div>Marketing 20%</div>
-<div>Team 10%</div>
+<div class="meme">
+<img src="https://picsum.photos/400/300?3">
+<p>Solana speed be like 🚀</p>
 </div>
+
+<div class="meme">
+<img src="https://picsum.photos/400/300?4">
+<p>Waiting for perfect entry forever 🤡</p>
+</div>
+
+<div class="meme">
+<img src="https://picsum.photos/400/300?5">
+<p>CT drama loading…</p>
+</div>
+
+<div class="meme">
+<img src="https://picsum.photos/400/300?6">
+<p>New narrative every week</p>
+</div>
+
 </div>
 
 <footer>
-REBORNX © 2026
+REBORNX Meme Portal © 2026
 </footer>
 
 </body>
