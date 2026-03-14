@@ -7,9 +7,7 @@
 
 <style>
 
-html{
-scroll-behavior:smooth;
-}
+html{scroll-behavior:smooth;}
 
 body{
 margin:0;
@@ -20,12 +18,20 @@ text-align:center;
 overflow-x:hidden;
 }
 
-/* NAVBAR */
+/* PARTICLE CANVAS */
 
-nav{
+canvas{
 position:fixed;
 top:0;
 left:0;
+z-index:-1;
+}
+
+/* NAVBAR */
+
+.nav{
+position:fixed;
+top:0;
 width:100%;
 background:rgba(0,0,0,.6);
 backdrop-filter:blur(10px);
@@ -33,15 +39,15 @@ padding:14px;
 z-index:999;
 }
 
-nav a{
+.nav a{
 color:white;
 margin:0 18px;
 text-decoration:none;
-font-size:14px;
 opacity:.8;
+font-size:14px;
 }
 
-nav a:hover{
+.nav a:hover{
 color:#ff3c00;
 }
 
@@ -106,6 +112,20 @@ position:relative;
 z-index:2;
 }
 
+@keyframes fadeIn{
+from{opacity:0; transform:translateY(20px)}
+to{opacity:.85; transform:translateY(0)}
+}
+
+.tag{
+opacity:.8;
+font-size:20px;
+position:relative;
+z-index:2;
+}
+
+.btnWrap{margin-top:40px; position:relative; z-index:2;}
+
 .btn{
 display:inline-block;
 margin:12px;
@@ -117,15 +137,12 @@ font-size:17px;
 transition:.3s;
 }
 
+.btn:hover{transform:scale(1.08);}
+
 .tg{
 background:#ff3c00;
 box-shadow:0 0 25px #ff3c00;
 color:white;
-}
-
-.tg:hover{
-transform:scale(1.08);
-box-shadow:0 0 45px #ff3c00;
 }
 
 .xbtn{
@@ -133,15 +150,8 @@ border:2px solid #ff3c00;
 color:white;
 }
 
-.xbtn:hover{
-background:#ff3c00;
-transform:scale(1.08);
-}
-
-/* SECTIONS */
-
 .section{
-padding:90px 20px;
+padding:80px 20px;
 opacity:0;
 transform:translateY(40px);
 transition:.6s;
@@ -168,24 +178,28 @@ transition:.4s;
 
 .card:hover{
 transform:translateY(-10px);
-box-shadow:0 0 30px rgba(255,60,0,.5);
+box-shadow:0 0 30px rgba(255,60,0,.6);
 }
 
-/* FOOTER */
+.about{
+max-width:700px;
+margin:120px auto 0;
+padding:0 20px;
+font-size:18px;
+line-height:1.7;
+opacity:.9;
+}
+
+.about h2{
+font-size:34px;
+margin-bottom:25px;
+text-shadow:0 0 20px #ff3c00;
+}
 
 footer{
 padding:50px;
 opacity:.5;
 font-size:14px;
-}
-
-/* PARTICLES */
-
-canvas{
-position:fixed;
-top:0;
-left:0;
-z-index:-1;
 }
 
 </style>
@@ -195,50 +209,79 @@ z-index:-1;
 
 <canvas id="bg"></canvas>
 
-<nav>
+<nav class="nav">
 <a href="#">Home</a>
-<a href="#">About</a>
-<a href="#">Tokenomics</a>
-<a href="#">Roadmap</a>
+<a href="#about">About</a>
+<a href="#roadmap">Roadmap</a>
+<a href="#token">Tokenomics</a>
+<a href="#chart">Chart</a>
 </nav>
 
 <header>
+
+<div class="topTag">⚡ VIRAL MEME MOVEMENT</div>
+<div class="topLine"></div>
 
 <img src="rebornx-logo.png" class="logo">
 
 <div class="story">
 REBORNX is not just a meme.<br>
 It’s a movement born from chaos.<br>
-Built by degens. Powered by community.
+Built by degens. Powered by community.<br>
+The next viral wave is loading…
 </div>
 
+<div class="tag">Crypto Memes • Alpha • Community</div>
+
+<div class="btnWrap">
 <a href="https://t.me/Rebornx_sol" class="btn tg">Join Telegram</a>
-<a href="https://x.com/RebornxSol" class="btn xbtn">Follow X</a>
+<a href="https://x.com/RebornxSol" class="btn xbtn">Follow on X</a>
+</div>
 
 </header>
 
-<div class="section">
-<h2>⚡ About</h2>
-<p>Next generation viral meme movement.</p>
+<div class="about section" id="about">
+<h2>⚡ What is REBORNX?</h2>
+<p>REBORNX is a next-generation meme movement focused on viral growth.</p>
 </div>
 
-<div class="section">
+<div class="section" id="chart">
+<h2>📈 Live Crypto Market</h2>
+<div id="tradingview_chart"></div>
+<script src="https://s3.tradingview.com/tv.js"></script>
+<script>
+new TradingView.widget({
+"width":"100%",
+"height":500,
+"symbol":"BINANCE:BTCUSDT",
+"interval":"30",
+"timezone":"Asia/Kolkata",
+"theme":"dark",
+"style":"1",
+"locale":"en",
+"container_id":"tradingview_chart"
+});
+</script>
+</div>
+
+<div class="section" id="roadmap">
+<h2>🗺️ Roadmap</h2>
+<div class="grid">
+<div class="card">🔥 Phase 1 — Token Launch</div>
+<div class="card">🚀 Phase 2 — Viral Growth</div>
+<div class="card">🌍 Phase 3 — Expansion</div>
+<div class="card">♻️ Phase 4 — Rebirth</div>
+</div>
+</div>
+
+<div class="section" id="token">
 <h2>💰 Tokenomics</h2>
 <div class="grid">
 <div class="card">Supply — 1B</div>
 <div class="card">Liquidity — 40%</div>
 <div class="card">Marketing — 25%</div>
 <div class="card">Rewards — 20%</div>
-</div>
-</div>
-
-<div class="section">
-<h2>🗺️ Roadmap</h2>
-<div class="grid">
-<div class="card">Launch</div>
-<div class="card">Viral</div>
-<div class="card">Expansion</div>
-<div class="card">Rebirth</div>
+<div class="card">Burn — 15%</div>
 </div>
 </div>
 
@@ -248,7 +291,7 @@ Built by degens. Powered by community.
 
 <script>
 
-/* section reveal */
+/* scroll reveal */
 
 let sections=document.querySelectorAll(".section")
 
@@ -271,7 +314,7 @@ c.height=window.innerHeight
 
 let particles=[]
 
-for(let i=0;i<60;i++){
+for(let i=0;i<70;i++){
 particles.push({
 x:Math.random()*c.width,
 y:Math.random()*c.height,
